@@ -1,0 +1,216 @@
+%% ============================================================
+%% CORE MODEL / ARCHITECTURE REFERENCES
+%% ============================================================
+
+@article{devlin2018bert,
+  title   = {{BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding}},
+  author  = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  journal = {arXiv preprint arXiv:1810.04805},
+  year    = {2018}
+} % used: Chapter 2 (Related Work)
+
+@inproceedings{nguyen2020phobert,
+  title     = {{PhoBERT: Pre-trained language models for Vietnamese}},
+  author    = {Nguyen, Dat Quoc and Nguyen, Anh Tuan},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2020},
+  pages     = {1037--1042},
+  year      = {2020},
+  publisher = {Association for Computational Linguistics},
+  url       = {https://aclanthology.org/2020.findings-emnlp.92}
+} % used: Chapter 1 (Background), Chapter 2 (Related Work + Table 2.1)
+
+@article{hochreiter1997lstm,
+  title     = {{Long Short-Term Memory}},
+  author    = {Hochreiter, Sepp and Schmidhuber, J{\"u}rgen},
+  journal   = {Neural Computation},
+  volume    = {9},
+  number    = {8},
+  pages     = {1735--1780},
+  year      = {1997},
+  publisher = {MIT Press}
+} % used: Chapter 2 (Related Work, foundational LSTM citation)
+
+@inproceedings{mikolov2013word2vec,
+  title     = {{Distributed Representations of Words and Phrases and their Compositionality}},
+  author    = {Mikolov, Tomas and Sutskever, Ilya and Chen, Kai and Corrado, Greg S and Dean, Jeff},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {26},
+  year      = {2013}
+} % used: Chapter 2 (Related Work)
+
+@article{thin2023vietnamese,
+  title   = {Vietnamese Sentiment Analysis: An Overview and Comparative Study of Fine-tuning Pretrained Language Models},
+  author  = {Van Thin, Dang and Hao, Duong Ngoc and Nguyen, Ngan Luu-Thuy},
+  journal = {ACM Transactions on Asian and Low-Resource Language Information Processing},
+  volume  = {22},
+  number  = {6},
+  pages   = {1--27},
+  year    = {2023},
+  doi     = {10.1145/3589131}
+} % used: Chapter 2 (Research Gap 1)
+
+@inproceedings{ha2016lifelong,
+  title     = {Lifelong Learning for Cross-Domain {V}ietnamese Sentiment Classification},
+  author    = {Ha, Quang-Vinh and Nguyen-Hoang, Bao-Dai and Nghiem, Minh-Quoc},
+  booktitle = {Computational Social Networks (CSoNet 2016)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {9795},
+  publisher = {Springer},
+  year      = {2016},
+  doi       = {10.1007/978-3-319-42345-6_26}
+} % used: Chapter 2 (Research Gap 3)
+
+@inproceedings{bert2dnn2020,
+  title  = {{BERT2DNN}: {BERT} Distillation with Massive Unlabeled Data for Online E-Commerce Search},
+  author = {Tian, Yunzhi and Jing, Weijun and others},
+  year   = {2020},
+  note   = {arXiv:2010.10442}
+} % used: Chapter 2 (Research Gap 4 - general BERT deployment/latency motivation)
+
+@article{kingma2014adam,
+  title   = {{Adam: A Method for Stochastic Optimization}},
+  author  = {Kingma, Diederik P. and Ba, Jimmy},
+  journal = {arXiv preprint arXiv:1412.6980},
+  year    = {2014}
+} % reserved for Chapter 3 (Training Procedure - AdamW optimizer)
+
+%% ============================================================
+%% VIETNAMESE SENTIMENT ANALYSIS - RELATED WORK
+%% ============================================================
+
+@inproceedings{nguyen2018vlsp,
+  title     = {VLSP Shared Task: Sentiment Analysis},
+  author    = {Nguyen, Phuong-Thai and others},
+  booktitle = {Proceedings of the 5th Workshop on Vietnamese Language and Speech Processing (VLSP)},
+  year      = {2018}
+} % used: Chapter 1 (Background)
+
+@article{pham2020sentiment,
+  title   = {Sentiment Analysis for {V}ietnamese: A Deep Learning Approach Using {BiLSTM}},
+  author  = {Pham, Duc-Vu and others},
+  journal = {Journal of Information and Telecommunication},
+  year    = {2020}
+} % used: Chapter 1 (Background), Chapter 2 (Hybrid Approaches)
+
+@inproceedings{hoang2018,
+  title        = {{Vietnamese Sentiment Analysis based on Recurrent Neural Networks}},
+  author       = {Hoang, Manh Quoc and Dinh, Dien},
+  booktitle    = {2018 International Conference on System Science and Engineering (ICSSE)},
+  pages        = {1--6},
+  year         = {2018},
+  organization = {IEEE},
+  doi          = {10.1109/ICSSE.2018.8520002}
+} % used: Chapter 2 (Related Work - BiLSTM Efficiency)
+
+@inproceedings{nguyen2018uitvsfc,
+  title        = {{UIT-VSFC: Vietnamese Students' Feedback Corpus for Sentiment Analysis}},
+  author       = {Nguyen, Kiet Van and Nguyen, Duc-Vu and Nguyen, Phu X. V. and Truong, Tham T. H. and Nguyen, Ngan Luu-Thuy},
+  booktitle    = {2018 10th International Conference on Knowledge and Systems Engineering (KSE)},
+  pages        = {19--24},
+  year         = {2018},
+  organization = {IEEE},
+  doi          = {10.1109/KSE.2018.8573337}
+} % used: Chapter 2 (Related Work - PhoBERT on UIT-VSFC)
+
+@inproceedings{nguyen_2018_dl,
+  title     = {Deep Learning for Vietnamese Sentiment Analysis},
+  author    = {Nguyen, H. T. and Nguyen, M. L.},
+  booktitle = {Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing (VLSP)},
+  year      = {2018}
+} % used: Chapter 2 (Table 2.1 - BiLSTM + CNN, VLSP 2016)
+
+@article{tran_2023_hybrid,
+  title   = {Sentiment Analysis on Vietnamese E-commerce Reviews using Hybrid Deep Learning Models},
+  author  = {Tran, V. K. and Le, T. H.},
+  journal = {Journal of Computer Science and Cybernetics},
+  volume  = {39},
+  number  = {1},
+  year    = {2023}
+} % used: Chapter 2 (Table 2.1 - BERT + CNN, E-commerce)
+
+@inproceedings{le_2022_social,
+  title     = {Handling Slang and Teencode in Vietnamese Sentiment Analysis},
+  author    = {Le, A. D. and Pham, H. X.},
+  booktitle = {2022 RIVF International Conference on Computing and Communication Technologies},
+  year      = {2022}
+} % used: Chapter 2 (Table 2.1 - Bi-GRU, Social Media)
+
+%% ============================================================
+%% INDUSTRY / MARKET REPORTS (Practical Application Context)
+%% ============================================================
+
+@techreport{vecom_2024,
+  title       = {Vietnam E-Business Index (EBI) 2024: Sustainable Development of E-commerce},
+  author      = {{Vietnam E-commerce Association (VECOM)}},
+  institution = {Vietnam E-commerce Association},
+  year        = {2024},
+  address     = {Hanoi, Vietnam},
+  note        = {Retrieved from \url{https://vecom.vn/}}
+} % used: Chapter 1 (Background - E-commerce Boom)
+
+@misc{reputa_2024,
+  title        = {Banking Industry Social Listening Report 2024},
+  author       = {{Reputa}},
+  howpublished = {Viettel Group AI Center},
+  year         = {2024},
+  note         = {Analysis of sentiment trends in the Vietnamese banking sector. Available at \url{https://reputa.vn/}}
+} % used: Chapter 1 (Background - Banking & Fintech)
+
+@misc{younet_2023,
+  title        = {Social Listening: Trends in the Education Sector in Vietnam},
+  author       = {{YouNet Media}},
+  year         = {2023},
+  howpublished = {YouNet Group},
+  note         = {Accessed: 2025-12-15}
+} % used: Chapter 1 (Background - Education Quality Assurance)
+
+@online{google_temasek_2025,
+  author = {{Google, Temasek, and Bain \& Company}},
+  title  = {e-Conomy SEA 2025: Vietnam's digital economy estimated at \$39 bln},
+  year   = {2025},
+  url    = {https://en.vneconomy.vn/vietnams-digital-economy-estimated-at-39-bln-in-2025.htm},
+  note   = {Accessed: 2025-12-13}
+} % reserved - not yet cited in Chapter 1/2
+
+@online{datareportal2024,
+  author    = {Simon Kemp},
+  title     = {Digital 2024: Vietnam},
+  year      = {2024},
+  publisher = {DataReportal},
+  url       = {https://datareportal.com/reports/digital-2024-vietnam}
+} % reserved - not yet cited in Chapter 1/2
+
+%% ============================================================
+%% ADDITIONAL / FUTURE-USE REFERENCES (not yet cited)
+%% ============================================================
+
+@incollection{nguyen2024,
+  author    = {Nguyen, Tram Thi Bich and Nguyen, Khang Dinh},
+  title     = {Elevating Customer Satisfaction: AI Sentiment Analysis in Vietnamese E-Retail Landscape},
+  booktitle = {Transforming Logistics in a Developing Nation},
+  publisher = {Springer},
+  year      = {2024},
+  pages     = {347--369},
+  doi       = {10.1007/978-981-97-7819-5_12}
+}
+
+@article{aljedaani2024,
+  author    = {Aljedaani, Wajdi and Rustam, Furqan and Aljedaani, Bander},
+  title     = {Sentiment Analysis on Banking Feedback and News Data using Synonyms and Antonyms},
+  journal   = {International Journal of Advanced Computer Science and Applications},
+  volume    = {14},
+  number    = {12},
+  year      = {2023},
+  publisher = {The Science and Information Organization}
+}
+
+@article{ieee2023challenges,
+  author    = {Wankhade, Mayur and Rao, A. C. S. and Kulkarni, Chaitanya},
+  title     = {A Survey on Sentiment Analysis Methods, Applications, and Challenges},
+  journal   = {Artificial Intelligence Review},
+  volume    = {55},
+  pages     = {5731--5780},
+  year      = {2022},
+  publisher = {Springer}
+}
+

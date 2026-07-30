@@ -1,0 +1,331 @@
+% --- Document Class ---
+\documentclass[12pt]{report} % Sử dụng class 'report' với cỡ chữ 12pt
+
+% --- Encoding and Font ---
+\usepackage[utf8]{inputenc} % Mã hóa ký tự đầu vào (hỗ trợ tiếng Việt)
+\usepackage[T1]{fontenc}    % Mã hóa font chữ (quan trọng cho copy-paste và hiển thị)
+\usepackage{newtxtext,newtxmath} % Sử dụng họ phông chữ Times New Roman (text và math)
+\usepackage{seqsplit}
+\usepackage{enumitem}
+
+% --- Layout and Spacing ---
+\usepackage[left=3cm, right=2.8cm, top=2.54cm, bottom=2.54cm]{geometry} % Thiết lập lề trang tùy chỉnh
+\usepackage{setspace}     % Gói để điều chỉnh khoảng cách dòng
+\usepackage{url}
+\doublespacing            % Áp dụng giãn dòng đôi cho toàn bộ tài liệu
+\usepackage{titlesec}
+\setlength{\parindent}{0pt} % Bỏ thụt đầu dòng cho tất cả các đoạn văn
+
+% --- Headers and Footers ---
+\usepackage{fancyhdr}     % Gói để tùy chỉnh header và footer
+\pagestyle{fancy}        % Áp dụng kiểu 'fancy' cho header/footer
+\fancyhf{}               % Xóa tất cả các trường header/footer hiện tại
+\fancyhead[R]{\thepage}  % Đặt số trang ở bên phải của header
+
+% --- Graphics and Tables ---
+\usepackage{graphicx}     % Gói để chèn hình ảnh (\includegraphics)
+\usepackage{booktabs}     % Gói để tạo đường kẻ bảng đẹp hơn (\toprule, \midrule, \bottomrule)
+\usepackage{array}        % Gói hỗ trợ định dạng cột nâng cao cho bảng (ví dụ: >{\centering})
+\usepackage{float}
+\usepackage{caption}
+% --- Các gói khác (Thêm nếu cần) ---
+% Ví dụ:
+ \usepackage[vietnamese,english]{babel} % Nếu cần hỗ trợ đa ngôn ngữ hoặc các quy tắc đặc thù ngôn ngữ
+% \usepackage{amsmath}       % Nếu cần các công thức toán học phức tạp
+% \usepackage{hyperref}      % Để tạo liên kết có thể click (thường nên đặt cuối cùng)
+
+% --- Thiết lập Bibliography (Thêm phương pháp bạn chọn vào đây) ---
+% Ví dụ dùng BibTeX với babel:
+\usepackage[english]{babel} % Đảm bảo babel được load
+\usepackage{comment}
+\addto\captionsenglish{\renewcommand{\bibname}{References}}
+%
+% Ví dụ dùng BibLaTeX:
+% \usepackage[backend=biber, style=numeric]{biblatex}
+% \addbibresource{references.bib} % Tên file .bib của bạn
+% \DefineBibliographyStrings{english}{bibliography = {References}, references = {References}}
+
+
+% Định nghĩa các lệnh để dễ thay đổi thông tin
+\newcommand{\thesistitle}{	
+A Comparative Study of BERT, LSTM, and Hybrid BERT-LSTM Models for Vietnamese Sentiment Analysis}
+\newcommand{\authorname}{Dao Van Phu}
+\newcommand{\supervisor}{Dr. Bui Cao Vu}
+\newcommand{\yearofconvocation}{2026}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\centering}
+  {\chaptertitlename\ \thechapter}
+  {20pt}
+  {\Huge}
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\huge\bfseries\centering}
+  {}
+  {0pt}
+  {\Huge}
+\begin{document}
+
+% Trang bìa
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+{\large MINISTRY OF EDUCATION AND TRAINING}\\
+{\large FPT UNIVERSITY}\\
+\vspace{2cm}
+{\LARGE \thesistitle}\\
+\vspace{1cm}
+by\\
+{\large \authorname}\\
+
+\vspace{1cm}
+Supervisor:\\
+\supervisor\\
+
+\vspace{2cm}
+(C) Copyright by \authorname\ \yearofconvocation\\
+\end{center}
+\end{titlepage}
+
+% Trang tóm tắt (Abstract)
+\cleardoublepage
+\pagenumbering{roman}
+\begin{center}
+{\large \thesistitle}\\
+{\large \authorname}\\
+Degree Master of Software Engineering\\
+FPT University\\
+\yearofconvocation\\
+\vspace{1cm}
+\textbf{Abstract}\\
+\end{center}
+
+
+% Lời cảm ơn (Acknowledgments)
+\chapter*{Acknowledgments}
+I express gratitude to my supervisors, \supervisor, for their guidance. I also thank FPT University for providing resources and my peers for their support in tackling Vietnamese NLP challenges.
+
+% Mục lục (Table of Contents)
+\tableofcontents
+
+% Danh sách bảng (List of Tables)
+\listoftables
+
+% Danh sách hình (List of Figures)
+\listoffigures
+
+% Phần chính của luận văn
+\cleardoublepage
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+
+\section{Background}
+
+Sentiment Analysis (SA), also known as opinion mining, has become a pivotal task in Natural Language Processing (NLP), enabling organizations to automatically gauge public opinion from vast amounts of textual data. While sentiment analysis for English has reached a certain level of maturity, \textbf{Vietnamese Sentiment Analysis (VSA)} remains a challenging research frontier due to the language's unique linguistic characteristics.
+
+\begin{itemize}
+    \item \textbf{Linguistic Challenges:}
+        \begin{itemize}
+            \item \textbf{Word Segmentation:} Unlike English, Vietnamese is a tonal language in which meaning relies heavily on diacritics. Furthermore, it is an analytic language where word boundaries are not explicitly defined by whitespace. For example, \foreignlanguage{vietnamese}{``đất nước''} is considered
+            a single word meaning ``country'', although it is composed of two tokens, \foreignlanguage{vietnamese}{``đất''} and \foreignlanguage{vietnamese}{``nước''}.
+
+            \item \textbf{Polysemy and Context:} The language possesses a flexible grammatical structure that relies heavily on context and diacritics (tones).
+
+            \item \textbf{Internet Slang and "Teencode":} The prevalence of slang, abbreviations, and emoticons in informal Vietnamese communication reduces the accuracy of traditional sentiment dictionaries.
+        \end{itemize}
+
+    \item \textbf{Technological Evolution: From Traditional to Modern Approaches}
+
+    The history of Sentiment Analysis research has witnessed a significant technological shift, particularly in the context of Vietnamese natural language processing, which presents unique challenges such as complex semantic structures, tonal diversity, and a relative scarcity of annotated linguistic resources compared to English \cite{nguyen2018vlsp, pham2020sentiment}:
+
+    \begin{itemize}
+        \item \textbf{Early Stage:} Lexicon-based methods and traditional machine learning algorithms such as \textbf{SVM} and \textbf{Naive Bayes} were widely adopted in early Vietnamese sentiment analysis research \cite{nguyen2018vlsp}. However, these approaches frequently struggled to capture deep semantics --- particularly negation structures, sarcasm, and idiomatic expressions characteristic of Vietnamese --- while relying heavily on manual feature engineering.
+
+        \item \textbf{Deep Learning Era:} The advent of recurrent neural networks, and specifically the \textbf{BiLSTM} (Bidirectional Long Short-Term Memory) architecture, significantly improved sequence processing capabilities by retaining long-term dependencies in both the left (preceding) and right (following) contextual directions. This bidirectional modeling is especially critical for Vietnamese, where word meaning is tightly conditioned on surrounding context \cite{pham2020sentiment}.
+
+        \item \textbf{Transformer Era:} More recently, the emergence of \textbf{PhoBERT} \cite{nguyen2020phobert} --- the first large-scale pre-trained language model specifically designed for Vietnamese, built upon the BERT (Bidirectional Encoder Representations from Transformers) architecture --- has marked a breakthrough in Vietnamese NLP. Pre-trained on large-scale Vietnamese corpora, PhoBERT enables deep bidirectional contextual understanding and has achieved State-of-the-Art (SOTA) performance across numerous Vietnamese NLP tasks, including sentiment analysis, named entity recognition (NER), and text classification.
+
+        \item \textbf{Hybrid Approach:} To leverage the complementary strengths of both architectures, recent studies have proposed the \textbf{Hybrid PhoBERT-BiLSTM} model, which integrates PhoBERT's deep semantic representation capability with the sequential bidirectional learning mechanism of BiLSTM. This hybrid architecture has demonstrated promising improvements in sentiment analysis performance on domain-specific Vietnamese datasets, including social media content and product reviews \cite{pham2020sentiment}.
+    \end{itemize}
+
+    \item \textbf{Practical Application Context in Vietnam:}
+    Besides linguistic complexity and technological shifts, the research is driven by an urgent demand from the Vietnamese industry. The rapid digitization of the economy has led to an explosion of user-generated content that requires automated analysis:
+    \begin{itemize}
+        \item \textit{E-commerce Boom:} According to the \textit{Vietnam E-Business Index (EBI) 2024} by VECOM, Vietnam's e-commerce sector has sustained a growth rate of over 25\%, reaching a market scale of \$25 billion \cite{vecom_2024}. This volume renders manual feedback processing obsolete.
+        \item \textit{Banking \& Fintech:} A 2024 report by Reputa (Viettel) indicates that leading banks such as Vietcombank and MBBank are aggressively deploying social listening to monitor brand health. The report highlights a significant surge in digital banking discussions, necessitating real-time sentiment detection to handle customer complaints \cite{reputa_2024}.
+        \item \textit{Education Quality Assurance:} In the educational sector (the domain of the UIT-VSFC dataset), institutions are increasingly adopting data-driven approaches to analyze student feedback for accreditation and quality improvement \cite{younet_2023}.
+    \end{itemize}
+This practical context validates the necessity of developing a high-performance model like the Hybrid PhoBERT-BiLSTM to solve real-world problems in Vietnam.
+\end{itemize}
+
+\section{Rationale}
+
+While PhoBERT has demonstrated superior representational power, it requires substantial computational resources and significant training time. Conversely, BiLSTM is more lightweight and specialized for sequential data but is less effective at representing complex contexts. A potential direction is to combine both: utilizing PhoBERT to generate high-quality contextual embeddings and BiLSTM to capture local sequential features (Hybrid PhoBERT-BiLSTM).
+
+However, the critical question remains: \textit{Does this combination truly yield superior efficacy compared to using PhoBERT or BiLSTM individually, specifically within the context of the Vietnamese language?} Currently, direct and detailed comparative studies of these three architectures on Vietnamese datasets are limited. Therefore, the topic \textbf{``A Comparative Study of BERT, LSTM, and Hybrid BERT-LSTM Models for Vietnamese Sentiment Analysis''} was chosen to provide a comprehensive, empirical, and scientifically grounded perspective, assisting in identifying the most suitable model architecture for Vietnamese sentiment analysis tasks.
+
+\section{Motivation}
+
+The motivation for this study stems from three critical observations in the current landscape of Vietnamese Natural Language Processing (NLP):
+
+\begin{itemize}
+    \item \textbf{The Gap Between Research and Practical Deployment:} While pre-trained Transformer-based language models such as PhoBERT have achieved state-of-the-art results, they are computationally expensive and memory-intensive. For many Small and Medium-sized Enterprises (SMEs) in Vietnam, deploying such heavy models for real-time sentiment analysis is often cost-prohibitive. There is a pressing need to determine whether lighter architectures (like BiLSTM) or hybrid approaches can offer a ``good enough'' performance with significantly lower resource consumption.
+
+    \item \textbf{Ambiguity in Hybrid Model Efficacy:} In recent literature, combining Convolutional Neural Networks (CNN) or LSTM-based layers with BERT-family embeddings is a popular trend. However, theoretical justification for these hybrid architectures often remains vague. It is unclear whether the performance gain (if any) comes from the architectural combination or simply from the powerful PhoBERT embeddings. A rigorous comparative study is required to validate whether the complexity of a Hybrid PhoBERT-BiLSTM model is justified by a statistically significant improvement in accuracy for the Vietnamese language.
+
+    \item \textbf{Linguistic Specificity:} Most comparative studies on Deep Learning vs. Transformers focus on English datasets (e.g., IMDB, SST-2). Due to the unique characteristics of Vietnamese grammar (word segmentation, tonal dependence), findings from English-based research cannot be blindly generalized to Vietnamese tasks. This study aims to fill this empirical gap by providing benchmarks specifically tailored to Vietnamese sentiment analysis.
+\end{itemize}
+
+\section{Research Problem}
+
+This research focuses on resolving the following core issues:
+\begin{enumerate}
+    \item The capability of feature extraction and semantic representation of a Deep Learning model (BiLSTM) compared to a Pre-trained Language Model (PhoBERT) in the Vietnamese environment.
+    \item The empirical effectiveness of the Hybrid architecture: Does stacking a BiLSTM layer after PhoBERT embeddings improve classification accuracy, or does it merely increase model complexity without significant benefits (diminishing returns)?
+    \item The trade-off between prediction performance and computational resources when deploying these models.
+\end{enumerate}
+
+\section{Research Objectives}
+The primary objective of this study is to conduct a rigorous comparative analysis of three distinct deep learning architectures to identify the optimal balance between performance and computational cost for VSA. Specifically, we aim to:
+\begin{enumerate}
+    \item \textbf{Evaluate Baseline Performance:} Assess the efficacy of a traditional sequential model (\textbf{BiLSTM}) versus a state-of-the-art pre-trained Transformer model (\textbf{PhoBERT}).
+    \item \textbf{Develop a Hybrid Architecture:} Propose and implement a \textbf{Hybrid PhoBERT-BiLSTM} model that combines the contextual embedding power of PhoBERT with the sequential feature extraction of BiLSTM.
+    \item \textbf{Trade-off Analysis:} Compare these models not only on accuracy/F1-score but also on training time and resource consumption.
+    \item \textbf{Addressing Real-world Practical Problems:}
+    The research specifically targets the critical pain points currently faced by Vietnamese enterprises (Banking, E-commerce, EdTech) identified in the background section:
+    \begin{itemize}
+        \item \textit{Scalability Solution:} Addressing the ``Data Deluge'' problem where manual analysis is impossible due to the exponential growth of feedback (growing 25\% annually). The model aims to automate the processing of thousands of comments in real-time.
+        \item \textit{Nuance Interpretation:} Overcoming the limitations of current keyword-based tools that fail to detect sarcasm, teencode, or negation in Vietnamese (e.g., \foreignlanguage{vietnamese}{``ngân hàng làm ăn chán thật''} vs. \foreignlanguage{vietnamese}{``chán chả buồn nói''}). The study aims to provide a tool capable of understanding deep semantic context for accurate brand reputation management.
+    \end{itemize}
+
+    \item \textbf{Research Questions (RQs):}
+    To guide the comparative analysis, this study formulates the following core research questions:
+    \begin{itemize}
+        \item \textbf{RQ1:} To what extent does the Hybrid PhoBERT-BiLSTM architecture outperform standalone models (BiLSTM and PhoBERT) in classifying Vietnamese sentiment?
+        \item \textbf{RQ2:} How effective is the combination of PhoBERT's contextual embedding and BiLSTM's sequential memory in handling Vietnamese linguistic complexities (e.g., word ambiguity, negation)?
+        \item \textbf{RQ3:} What is the trade-off between classification accuracy and computational latency when deploying these models in a real-world application context?
+    \end{itemize}
+\end{enumerate}
+
+\section{Dataset and Scope}
+To ensure the study is grounded in high-quality, standardized data, the project utilizes the following data sources:
+
+\subsection{Training Data (UIT-VSFC)}
+We train and validate our models using the \textbf{UIT-VSFC} (Vietnamese Students' Feedback Corpus).
+\begin{itemize}
+    \item \textbf{Size:} Approximately 16,000 sentences.
+    \item \textbf{Domain:} University student feedback on lecturers, facilities, and curriculum.
+    \item \textbf{Original Labels:} The corpus originally provides three sentiment classes: \textit{Positive}, \textit{Negative}, and \textit{Neutral}.
+    \item \textbf{Scope of This Study:} To focus the comparative analysis on clearly polarized sentiment and avoid the ambiguity and severe class imbalance associated with the Neutral category in this corpus, this study restricts the task to \textbf{binary classification (Positive/Negative)}. Samples labeled Neutral are excluded from training and evaluation across all three models.
+    \item \textbf{Rationale:} This dataset is widely recognized as a benchmark for VSA, ensuring our results are comparable to existing literature.
+\end{itemize}
+
+\subsection{Testing Data (AIVIVN-2019)}
+To assess cross-domain generalization beyond the academic setting of UIT-VSFC, we additionally evaluate our trained models on \textbf{AIVIVN-2019}, a Vietnamese e-commerce review dataset.
+\begin{itemize}
+    \item \textbf{Size:} Approximately 16,000 labeled reviews.
+    \item \textbf{Domain:} User reviews of products on e-commerce platforms.
+    \item \textbf{Labels:} Two sentiment classes: \textit{Positive} and \textit{Negative}, consistent with the binary scope adopted in this study.
+    \item \textbf{Source:} Originally released as part of the AIVIVN 2019 Sentiment Analysis Challenge, in which the official test-set labels were kept private by the competition organizers. For this study, a publicly available, labeled version of the test set --- shared by the community on Kaggle --- is used, allowing direct quantitative evaluation without the need for manual annotation.
+    \item \textbf{Rationale:} As a review dataset from a different domain (e-commerce) and register (informal customer reviews) than UIT-VSFC (semi-formal academic feedback), AIVIVN-2019 serves as an out-of-domain test bed to evaluate whether models trained on UIT-VSFC generalize to a practically relevant application context.
+\end{itemize}
+
+\subsection{Real-world Prediction (Data Crawling)}
+To further test the model's robustness in a fully ``wild'' environment, unlabeled comments are collected from a real-world social media source for prediction.
+\begin{itemize}
+    \item \textbf{Source:} Public comments collected from a selected YouTube video, retrieved via the official \textbf{YouTube Data API}.
+    \item \textbf{Tools:} Python-based data collection using the YouTube Data API v3.
+    \item \textbf{Goal:} This phase demonstrates the selected model's ability to generalize to informal, unstructured, slang-heavy text typically found in social media comments, which may differ substantially from both the clean academic feedback in UIT-VSFC and the structured product reviews in AIVIVN-2019.
+\end{itemize}
+
+\chapter{Literature Review}
+
+\section{Related Work}
+
+The landscape of Vietnamese Sentiment Analysis (VSA) has shifted from lexicon-based and traditional machine learning methods to advanced deep learning architectures, mirroring the broader trajectory of NLP research.
+
+\subsection{Recurrent Neural Networks (RNNs) in Vietnamese}
+
+Prior to the Transformer era, RNNs and Long Short-Term Memory (LSTM) networks \cite{hochreiter1997lstm} were the standard approach for handling the sequential nature of Vietnamese text.
+
+\begin{itemize}
+    \item \textbf{BiLSTM Efficiency:} Hoang and Dinh \cite{hoang2018} demonstrated that Bidirectional LSTMs (BiLSTM) significantly outperformed standard RNNs and Support Vector Machines (SVMs) on Vietnamese social media datasets by capturing context from both directions simultaneously.
+
+    \item \textbf{Embedding Limitations:} However, these models relied on static word embeddings such as Word2Vec \cite{mikolov2013word2vec}. Such embeddings assign a fixed vector to each word, failing to capture the polysemous nature of Vietnamese --- for example, distinguishing \foreignlanguage{vietnamese}{``chín''} as ``nine'' versus ``ripe'' depending on context.
+\end{itemize}
+
+\subsection{Transformer-Based Models}
+
+The introduction of the Transformer architecture revolutionized NLP by employing self-attention mechanisms to model context without relying on sequential recurrence.
+
+\begin{itemize}
+    \item \textbf{BERT:} Devlin et al. \cite{devlin2018bert} introduced BERT, which generates context-sensitive embeddings through deep bidirectional pretraining. While powerful, the multilingual version (mBERT) often struggled with Vietnamese word boundaries and diacritic-sensitive semantics.
+
+    \item \textbf{PhoBERT:} To address this limitation, Nguyen and Nguyen \cite{nguyen2020phobert} released PhoBERT, a monolingual model pretrained on 20GB of Vietnamese text. Experiments on the UIT-VSFC dataset \cite{nguyen2018uitvsfc} showed that PhoBERT achieves state-of-the-art accuracy, effectively handling Vietnamese diacritics and compound words.
+\end{itemize}
+
+\subsection{Hybrid Approaches}
+
+Recent studies have explored hybrid architectures that combine the deep contextual feature extraction of PhoBERT with the sequence modeling capability of BiLSTM \cite{pham2020sentiment}. While a standard PhoBERT classifier relies solely on the \texttt{[CLS]} token representation, hybrid models instead feed the full sequence of PhoBERT embeddings into a BiLSTM layer. This approach aims to capture long-range dependencies in complex feedback paragraphs that may be missed when relying on the \texttt{[CLS]} token alone.
+
+\subsection{Summary of Recent Studies}
+
+To provide a comprehensive view of the current research landscape, Table~\ref{tab:related-work} summarizes key studies in Vietnamese Sentiment Analysis over recent years. The comparison highlights the transition from traditional deep learning to Transformer-based approaches and identifies existing limitations that this study aims to address.
+
+\begin{table}[h]
+\centering
+\caption{Comparison of Recent Related Works in Vietnamese Sentiment Analysis}
+\label{tab:related-work}
+\begin{tabular}{|p{2.3cm}|p{2.2cm}|p{2.1cm}|p{1.7cm}|p{4cm}|}
+\hline
+\textbf{Study} & \textbf{Model} & \textbf{Dataset} & \textbf{Key Results} & \textbf{Limitations} \\
+\hline
+Nguyen and Nguyen (2018) \cite{nguyen_2018_dl} & BiLSTM + CNN & VLSP 2016 & Acc: 86.5\% & Struggles with polysemy and long-range dependencies; lacks contextual embeddings. \\
+\hline
+Nguyen and Nguyen (2020) \cite{nguyen2020phobert} & PhoBERT (Base) & UIT-VSFC & F1: 92.3\% & High computational cost and latency; requires heavy hardware resources for deployment. \\
+\hline
+Tran and Le (2023) \cite{tran_2023_hybrid} & BERT + CNN & Vietnamese E-commerce & Acc: 89.1\% & CNN is effective for local features but less effective than BiLSTM for sequential context in long reviews. \\
+\hline
+Le and Pham (2022) \cite{le_2022_social} & Bi-GRU & Social Media Comments & F1: 88.7\% & Performance drops significantly on slang/teencode; limited dictionary-based preprocessing. \\
+\hline
+\end{tabular}
+\end{table}
+
+As shown in Table~\ref{tab:related-work}, while PhoBERT achieves state-of-the-art results, its computational cost remains a barrier to deployment. Conversely, traditional BiLSTM-based models are lighter but lack the semantic depth of pretrained Transformer representations. This reinforces the motivation for a hybrid architecture that leverages the complementary strengths of both paradigms.
+
+\section{Research Gap}
+
+Despite the substantial progress achieved in Vietnamese Sentiment Analysis (VSA) over the past decade, a critical review of the recent literature reveals four specific limitations that remain insufficiently addressed by existing work.
+
+\subsection*{Gap 1: Lack of Direct Comparison on a Unified Pipeline}
+
+A large proportion of prior studies concentrate on optimizing a single architectural family in isolation --- either refining traditional deep learning models such as BiLSTM and its variants, or fine-tuning a single Transformer-based model such as PhoBERT --- rather than comparing multiple architectures under identical experimental conditions. Van Thin et al.\ \cite{thin2023vietnamese} explicitly note that, prior to their work, no study had evaluated multiple pretrained language models on the same set of Vietnamese sentiment datasets, since different models are typically trained with different architectures, pretraining corpora, and preprocessing steps, which makes their reported results difficult to compare fairly. While their study addresses this gap for pretrained Transformer models specifically, it does not extend the comparison to lightweight sequential architectures such as BiLSTM, nor to hybrid Transformer--RNN architectures. Consequently, there remains a scarcity of research that conducts a rigorous, side-by-side comparison of a traditional BiLSTM, a pretrained PhoBERT, and a Hybrid PhoBERT-BiLSTM model within a single, identical preprocessing and evaluation pipeline on the standard UIT-VSFC benchmark. This absence of a controlled experimental environment makes it difficult for practitioners and researchers to attribute observed performance differences strictly to architectural choice, rather than to incidental differences in preprocessing, tokenization, or evaluation protocol across studies.
+
+\subsection*{Gap 2: Absence of Performance Analysis by Sequence Length}
+
+Current benchmarking practice in Vietnamese sentiment analysis typically reports only aggregate, corpus-level metrics such as overall Accuracy or macro F1-score \cite{ieee2023challenges}, without disaggregating performance by input characteristics such as sentence length. This is a notable omission, since short, impulsive comments (e.g., single-clause student feedback) and long, detailed reviews place very different demands on a model's ability to retain context: a short sentence may be classified correctly from a few salient keywords alone, whereas a long passage may require tracking dependencies across multiple clauses, including negation and contrastive conjunctions that can reverse the overall polarity. Because existing studies do not report performance stratified by sequence length, it remains unclear whether the additional architectural complexity of a Hybrid PhoBERT-BiLSTM model yields a measurable advantage specifically on longer inputs where BiLSTM's sequential memory could complement PhoBERT's contextual embeddings, or whether such complexity is unnecessary overhead when applied uniformly across both short and long inputs.
+
+\subsection*{Gap 3: Limited Generalization Assessment}
+
+Most existing Vietnamese sentiment analysis models are trained and evaluated strictly within a single domain, typically using a train/test split drawn from the same corpus and register. Ha et al.\ \cite{ha2016lifelong} highlight that sentiment classifiers trained on one domain (e.g., product reviews) often degrade substantially when applied to review text from a different domain, since sentiment-bearing vocabulary and expression patterns can shift considerably across domains --- a challenge that becomes more pronounced for Vietnamese, given the added variability introduced by informal internet slang and teencode in social media text. However, this line of work primarily addresses domain adaptation for lexicon-based or shallow models, and does not evaluate how a modern Hybrid PhoBERT-BiLSTM architecture generalizes when transferred, without any retraining, from a semi-formal academic domain (UIT-VSFC) to a structured but stylistically distinct e-commerce review domain (AIVIVN-2019), or to fully unstructured, informal social media text of the kind collected via the YouTube Data API in this study (see Section~1.6.3). This dual-source, cross-domain evaluation design allows the present study to assess generalization along two distinct axes: domain shift with preserved label availability (AIVIVN-2019), and domain shift combined with the absence of ground-truth labels in an uncontrolled ``wild'' setting (YouTube comments).
+
+\subsection*{Gap 4: Neglect of Deployment Constraints (Latency \& Model Size)}
+
+While recent research continues to pursue incremental gains in state-of-the-art (SOTA) accuracy \cite{ieee2023challenges}, computational efficiency is frequently treated as a secondary concern rather than a primary evaluation criterion. Pretrained Transformer models such as PhoBERT, while highly accurate, carry substantially larger parameter counts and higher inference latency than lightweight recurrent architectures such as BiLSTM, which limits their suitability for real-time or resource-constrained deployment scenarios --- a concern that has motivated a broader body of work on model compression and knowledge distillation for BERT-family models in other application domains \cite{bert2dnn2020}. However, few studies on Vietnamese sentiment analysis provide a detailed, quantitative trade-off analysis relating model size, inference latency, and classification accuracy specifically for the BiLSTM, PhoBERT, and Hybrid PhoBERT-BiLSTM architectures. This represents a critical gap for practical deployment, where industrial applications in banking, e-commerce, and education (see Section~1.1) typically require a deliberate balance between response speed and predictive precision, rather than optimizing for the highest possible F1-score in isolation.
+
+\subsection*{Contribution of This Study}
+
+By addressing these four gaps, this thesis aims to provide not merely a high-performing sentiment classification model, but a comprehensive, empirical, and evidence-based guide for selecting the most appropriate architecture among BiLSTM, PhoBERT, and Hybrid PhoBERT-BiLSTM, conditioned on specific practical constraints of input sequence length, target domain, and available computational resources.
+
+% References
+\selectlanguage{english}
+\cleardoublepage
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{plain}
+\bibliography{references}
+
+% Appendices
+\cleardoublepage
+\appendix
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\end{document}
