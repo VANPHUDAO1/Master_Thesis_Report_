@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99e (TeX Live 2026)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: references.bib
+Warning--empty booktitle in bert2dnn2020
+You've used 18 entries,
+            2118 wiz_defined-function locations,
+            600 strings with 7475 characters,
+and the built_in function-call counts, 5757 in all, are:
+= -- 560
+> -- 276
+< -- 5
++ -- 109
+- -- 90
+* -- 349
+:= -- 964
+add.period$ -- 62
+call.type$ -- 18
+change.case$ -- 97
+chr.to.int$ -- 0
+cite$ -- 19
+duplicate$ -- 234
+empty$ -- 477
+format.name$ -- 90
+if$ -- 1226
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 15
+newline$ -- 97
+num.names$ -- 36
+pop$ -- 122
+preamble$ -- 1
+purify$ -- 78
+quote$ -- 0
+skip$ -- 161
+stack$ -- 0
+substring$ -- 249
+swap$ -- 51
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 72
+warning$ -- 1
+while$ -- 51
+width$ -- 20
+write$ -- 204
+(There was 1 warning)

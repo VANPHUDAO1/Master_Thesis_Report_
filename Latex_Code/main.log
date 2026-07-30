@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.26)  31 JUL 2026 00:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.26)  31 JUL 2026 01:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -904,24 +904,31 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 8.8pt on input line 3.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 6.6pt on input line 3.
-)
+ [3
+
+])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [3
 
-] (./main.lot)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4] (./main.lot)
 \tf@lot=\write5
 \openout5 = `main.lot'.
 
-
-[4
+ [5
 
 ] (./main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [5
+ [6
 
 ]
 Chapter 1.
@@ -951,26 +958,6 @@ Package babel Info: 'vietnamese' activates 'vietnamese' shorthands.
 
 {e:/texlive/2026/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
 
-LaTeX Warning: Citation `nguyen2018vlsp' on page 2 undefined on input line 138.
-
-
-
-LaTeX Warning: Citation `pham2020sentiment' on page 2 undefined on input line 1
-38.
-
-
-LaTeX Warning: Citation `nguyen2018vlsp' on page 2 undefined on input line 141.
-
-
-
-LaTeX Warning: Citation `pham2020sentiment' on page 2 undefined on input line 1
-43.
-
-
-LaTeX Warning: Citation `nguyen2020phobert' on page 2 undefined on input line 1
-45.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -978,20 +965,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [2]
-
-LaTeX Warning: Citation `pham2020sentiment' on page 3 undefined on input line 1
-47.
-
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 12.0pt on input line 153.
-
-LaTeX Warning: Citation `vecom_2024' on page 3 undefined on input line 153.
-
-
-LaTeX Warning: Citation `reputa_2024' on page 3 undefined on input line 154.
-
-
-LaTeX Warning: Citation `younet_2023' on page 3 undefined on input line 155.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1063,39 +1038,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [9]
 Chapter 2.
-
-LaTeX Warning: Citation `hochreiter1997lstm' on page 10 undefined on input line
- 248.
-
-
-LaTeX Warning: Citation `hoang2018' on page 10 undefined on input line 251.
-
-
-LaTeX Warning: Citation `mikolov2013word2vec' on page 10 undefined on input lin
-e 253.
-
 [10
 
 ]
-
-LaTeX Warning: Citation `devlin2018bert' on page 11 undefined on input line 261
-.
-
-
-LaTeX Warning: Citation `nguyen2020phobert' on page 11 undefined on input line 
-263.
-
-
-LaTeX Warning: Citation `nguyen2018uitvsfc' on page 11 undefined on input line 
-263.
-
-
-LaTeX Warning: Citation `pham2020sentiment' on page 11 undefined on input line 
-268.
-
 LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
 268.
-(e:/texlive/2026/texmf-dist/tex/latex/newtx/t1ntxtt.fd
+ (e:/texlive/2026/texmf-dist/tex/latex/newtx/t1ntxtt.fd
 File: t1ntxtt.fd 2012/04/20 v3.1
 )
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
@@ -1104,10 +1052,6 @@ LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 Underfull \hbox (badness 3118) in paragraph at lines 280--280
 []|\T1/ntxtlf/b/n/12 Key Re-
  []
-
-
-LaTeX Warning: Citation `nguyen_2018_dl' on page 11 undefined on input line 282
-.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 282--282
@@ -1145,10 +1089,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 282--283
  []
 
 
-LaTeX Warning: Citation `nguyen2020phobert' on page 11 undefined on input line 
-284.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 284--284
 []|\T1/ntxtlf/m/n/12 Nguyen
  []
@@ -1179,10 +1119,6 @@ Underfull \hbox (badness 2035) in paragraph at lines 284--285
  []
 
 
-LaTeX Warning: Citation `tran_2023_hybrid' on page 11 undefined on input line 2
-86.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 286--286
 []|\T1/ntxtlf/m/n/12 BERT +
  []
@@ -1206,10 +1142,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 286--286
 Underfull \hbox (badness 1360) in paragraph at lines 286--287
 []|\T1/ntxtlf/m/n/12 CNN is ef-fec-tive for
  []
-
-
-LaTeX Warning: Citation `le_2022_social' on page 11 undefined on input line 288
-.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 288--288
@@ -1250,10 +1182,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [11]
 
-LaTeX Warning: Citation `thin2023vietnamese' on page 12 undefined on input line
- 301.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1262,10 +1190,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12]
 
-LaTeX Warning: Citation `ieee2023challenges' on page 13 undefined on input line
- 305.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1273,17 +1197,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [13]
-
-LaTeX Warning: Citation `ha2016lifelong' on page 14 undefined on input line 309
-.
-
-
-LaTeX Warning: Citation `ieee2023challenges' on page 14 undefined on input line
- 313.
-
-
-LaTeX Warning: Citation `bert2dnn2020' on page 14 undefined on input line 313.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1299,9 +1212,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15]
-No file main.bbl.
-(./main.aux)
+[15] (./main.bbl [16
+
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1310,27 +1240,24 @@ L3 programming layer <2020/03/25>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 11917 strings out of 467524
- 181101 string characters out of 5423188
- 597392 words of memory out of 5000000
- 40628 multiletter control sequences out of 15000+600000
+ 11941 strings out of 467524
+ 181517 string characters out of 5423188
+ 597427 words of memory out of 5000000
+ 40649 multiletter control sequences out of 15000+600000
  671052 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,11n,117p,1563b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,11n,117p,1556b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <e:/texlive/2026/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb><e:/texlive/
 2026/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb><e:/texlive/2026/texmf-dis
 t/fonts/type1/vntex/vnr/vnr12.pfb><e:/texlive/2026/texmf-dist/fonts/type1/publi
 c/newtx/ztmb.pfb><e:/texlive/2026/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
 <e:/texlive/2026/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (21 pages, 166754 bytes).
+Output written on main.pdf (25 pages, 174906 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 117 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
