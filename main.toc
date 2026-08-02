@@ -15,6 +15,137 @@
 \contentsline {subsection}{\numberline {2.1.2}Transformer-Based Models}{11}{}%
 \contentsline {subsection}{\numberline {2.1.3}Hybrid Approaches}{11}{}%
 \contentsline {subsection}{\numberline {2.1.4}Summary of Recent Studies}{11}{}%
-\contentsline {section}{\numberline {2.2}Research Gap}{12}{}%
+\contentsline {section}{\numberline {2.2}Research Gap}{13}{}%
+\contentsline {chapter}{\numberline {3}Methodology}{17}{}%
+\contentsline {section}{\numberline {3.1}Research Framework}{17}{}%
+\contentsline {section}{\numberline {3.2}Research Datasets}{19}{}%
+\contentsline {subsection}{\numberline {3.2.1}UIT-VSFC (Training \& Validation)}{19}{}%
+\contentsline {subsection}{\numberline {3.2.2}AIVIVN-2019 (Cross-domain Evaluation)}{21}{}%
+\contentsline {subsection}{\numberline {3.2.3}YouTube Dataset (Real-world Prediction)}{22}{}%
+\contentsline {section}{\numberline {3.3}Data Preprocessing}{25}{}%
+\contentsline {subsection}{\numberline {3.3.1}Raw Text Preprocessing (YouTube Wild Test Set)}{25}{}%
+\contentsline {subsection}{\numberline {3.3.2}Preprocessing for Model Input}{27}{}%
+\contentsline {section}{\numberline {3.4}Proposed Models}{28}{}%
+\contentsline {subsection}{\numberline {3.4.1}BiLSTM Architecture}{28}{}%
+\contentsline {subsection}{\numberline {3.4.2}PhoBERT Architecture}{29}{}%
+\contentsline {subsection}{\numberline {3.4.3}Proposed Hybrid PhoBERT-BiLSTM Architecture}{31}{}%
+\contentsline {section}{\numberline {3.5}Model Training}{33}{}%
+\contentsline {subsection}{\numberline {3.5.1}Training Pipeline}{33}{}%
+\contentsline {subsection}{\numberline {3.5.2}Hyperparameters and Optimizer}{33}{}%
+\contentsline {subsection}{\numberline {3.5.3}Early Stopping}{34}{}%
+\contentsline {subsection}{\numberline {3.5.4}Multiple Random Seeds}{34}{}%
+\contentsline {section}{\numberline {3.6}Experimental Configuration}{35}{}%
+\contentsline {subsection}{\numberline {3.6.1}Hardware}{35}{}%
+\contentsline {subsection}{\numberline {3.6.2}Software}{35}{}%
+\contentsline {subsection}{\numberline {3.6.3}Development Environment}{35}{}%
+\contentsline {section}{\numberline {3.7}Evaluation Methodology}{36}{}%
+\contentsline {subsection}{\numberline {3.7.1}Predictive Performance Metrics}{36}{}%
+\contentsline {subsection}{\numberline {3.7.2}Computational Efficiency Metrics}{37}{}%
+\contentsline {section}{\numberline {3.8}Cross-domain Evaluation Strategy}{38}{}%
+\contentsline {subsection}{\numberline {3.8.1}Evaluation on UIT-VSFC (In-domain)}{38}{}%
+\contentsline {subsection}{\numberline {3.8.2}Evaluation on AIVIVN-2019 (Cross-domain)}{38}{}%
+\contentsline {subsection}{\numberline {3.8.3}Prediction on YouTube Comments (Real-world, Out-of-domain)}{39}{}%
+\contentsline {subsection}{\numberline {3.8.4}Comparative Analysis}{39}{}%
+\contentsline {section}{\numberline {3.9}Chapter Summary}{39}{}%
+\contentsline {chapter}{\numberline {4}Experimental Results}{41}{}%
+\contentsline {section}{\numberline {4.1}Experimental Setup}{41}{}%
+\contentsline {subsection}{\numberline {4.1.1}Experimental Environment}{41}{}%
+\contentsline {subsection}{\numberline {4.1.2}Dataset Splitting Strategy}{41}{}%
+\contentsline {subsection}{\numberline {4.1.3}Evaluation Protocol}{42}{}%
+\contentsline {subsection}{\numberline {4.1.4}Hyperparameter Settings}{42}{}%
+\contentsline {subsection}{\numberline {4.1.5}Random Seed Configuration}{42}{}%
+\contentsline {section}{\numberline {4.2}Performance Evaluation on UIT-VSFC}{43}{}%
+\contentsline {subsection}{\numberline {4.2.1}Overall Classification Results}{43}{}%
+\contentsline {subsection}{\numberline {4.2.2}Confusion Matrix}{43}{}%
+\contentsline {subsection}{\numberline {4.2.3}Comparison among BiLSTM, PhoBERT, and Hybrid PhoBERT-BiLSTM}{44}{}%
+\contentsline {section}{\numberline {4.3}Cross-domain Evaluation on AIVIVN-2019}{45}{}%
+\contentsline {subsection}{\numberline {4.3.1}Performance on Unseen Domain}{45}{}%
+\contentsline {subsection}{\numberline {4.3.2}Comparison with In-domain Results}{45}{}%
+\contentsline {subsection}{\numberline {4.3.3}Generalization Capability}{46}{}%
+\contentsline {subsection}{\numberline {4.3.4}Performance Degradation Analysis}{46}{}%
+\contentsline {section}{\numberline {4.4}Sequence Length Analysis}{47}{}%
+\contentsline {subsection}{\numberline {4.4.1}Sentence Length Distribution}{47}{}%
+\contentsline {subsection}{\numberline {4.4.2}Performance by Length Category}{47}{}%
+\contentsline {subsubsection}{Performance on Short Sentences}{48}{}%
+\contentsline {subsubsection}{Performance on Medium Sentences}{48}{}%
+\contentsline {subsubsection}{Performance on Long Sentences}{48}{}%
+\contentsline {subsection}{\numberline {4.4.3}Discussion of Sequence-length Sensitivity}{49}{}%
+\contentsline {section}{\numberline {4.5}Computational Performance Analysis}{49}{}%
+\contentsline {subsection}{\numberline {4.5.1}Inference Latency (CPU/GPU)}{49}{}%
+\contentsline {subsection}{\numberline {4.5.2}Trade-off between Efficiency and Accuracy}{50}{}%
+\contentsline {section}{\numberline {4.6}Real-world Prediction on YouTube Comments}{51}{}%
+\contentsline {subsection}{\numberline {4.6.1}Description of Collected Comments}{51}{}%
+\contentsline {subsection}{\numberline {4.6.2}Comparison of Model Predictions}{51}{}%
+\contentsline {section}{\numberline {4.7}Summary of Experimental Results}{52}{}%
+\contentsline {chapter}{\numberline {5}Web-based Sentiment Analysis Application}{54}{}%
+\contentsline {section}{\numberline {5.1}System Overview}{54}{}%
+\contentsline {subsection}{\numberline {5.1.1}Objectives of the Application}{54}{}%
+\contentsline {subsection}{\numberline {5.1.2}Main Functionalities}{55}{}%
+\contentsline {subsection}{\numberline {5.1.3}Target Users}{56}{}%
+\contentsline {subsection}{\numberline {5.1.4}Overall System Overview}{56}{}%
+\contentsline {section}{\numberline {5.2}System Architecture}{57}{}%
+\contentsline {subsection}{\numberline {5.2.1}Overall Architecture}{57}{}%
+\contentsline {subsection}{\numberline {5.2.2}Backend Components}{58}{}%
+\contentsline {subsection}{\numberline {5.2.3}Model Integration}{58}{}%
+\contentsline {subsection}{\numberline {5.2.4}Data Flow}{58}{}%
+\contentsline {subsection}{\numberline {5.2.5}Deployment Architecture}{59}{}%
+\contentsline {section}{\numberline {5.3}Application Workflow}{59}{}%
+\contentsline {section}{\numberline {5.4}User Interface Design}{61}{}%
+\contentsline {section}{\numberline {5.5}System Implementation}{63}{}%
+\contentsline {subsection}{\numberline {5.5.1}Technology Stack}{63}{}%
+\contentsline {subsection}{\numberline {5.5.2}Streamlit Implementation}{63}{}%
+\contentsline {subsection}{\numberline {5.5.3}Model Loading Strategy}{64}{}%
+\contentsline {subsection}{\numberline {5.5.4}Runtime Optimization}{64}{}%
+\contentsline {subsection}{\numberline {5.5.5}Project Structure}{64}{}%
+\contentsline {section}{\numberline {5.6}Case Study and Demonstration}{65}{}%
+\contentsline {subsection}{\numberline {5.6.1}Sample Prediction Cases}{65}{}%
+\contentsline {subsection}{\numberline {5.6.2}Comparison between the Three Models}{66}{}%
+\contentsline {subsection}{\numberline {5.6.3}Practical Usage Scenarios}{66}{}%
+\contentsline {section}{\numberline {5.7}Chapter Summary}{67}{}%
+\contentsline {chapter}{\numberline {6}Discussion}{68}{}%
+\contentsline {section}{\numberline {6.1}Discussion of Research Questions}{68}{}%
+\contentsline {subsection}{\numberline {6.1.1}Discussion of RQ1}{68}{}%
+\contentsline {subsection}{\numberline {6.1.2}Discussion of RQ2}{69}{}%
+\contentsline {subsection}{\numberline {6.1.3}Discussion of RQ3}{69}{}%
+\contentsline {section}{\numberline {6.2}Comparative Analysis of the Three Models}{70}{}%
+\contentsline {subsection}{\numberline {6.2.1}Strengths of BiLSTM}{70}{}%
+\contentsline {subsection}{\numberline {6.2.2}Strengths of PhoBERT}{71}{}%
+\contentsline {subsection}{\numberline {6.2.3}Strengths of Hybrid PhoBERT-BiLSTM}{71}{}%
+\contentsline {subsection}{\numberline {6.2.4}Performance versus Computational Cost}{72}{}%
+\contentsline {section}{\numberline {6.3}Practical Implications}{72}{}%
+\contentsline {subsection}{\numberline {6.3.1}Applications in E-commerce}{72}{}%
+\contentsline {subsection}{\numberline {6.3.2}Applications in Banking}{73}{}%
+\contentsline {subsection}{\numberline {6.3.3}Applications in Education}{73}{}%
+\contentsline {subsection}{\numberline {6.3.4}Applications in Social Listening}{74}{}%
+\contentsline {subsection}{\numberline {6.3.5}Recommendations for Real-world Deployment}{74}{}%
+\contentsline {section}{\numberline {6.4}Limitations of the Study}{75}{}%
+\contentsline {subsection}{\numberline {6.4.1}Dataset Limitations}{75}{}%
+\contentsline {subsection}{\numberline {6.4.2}Binary Sentiment Classification}{75}{}%
+\contentsline {subsection}{\numberline {6.4.3}Limited Evaluation Domains}{76}{}%
+\contentsline {subsection}{\numberline {6.4.4}Computational Constraints}{76}{}%
+\contentsline {section}{\numberline {6.5}Future Work}{76}{}%
+\contentsline {subsection}{\numberline {6.5.1}Qualitative Error Analysis}{77}{}%
+\contentsline {subsection}{\numberline {6.5.2}Multi-class Sentiment Classification}{77}{}%
+\contentsline {subsection}{\numberline {6.5.3}Aspect-based Sentiment Analysis}{77}{}%
+\contentsline {subsection}{\numberline {6.5.4}Larger Vietnamese Language Models}{78}{}%
+\contentsline {subsection}{\numberline {6.5.5}LLM-based Sentiment Analysis}{78}{}%
+\contentsline {subsection}{\numberline {6.5.6}More Diverse Real-world Datasets}{79}{}%
+\contentsline {chapter}{\numberline {7}Conclusion}{80}{}%
+\contentsline {section}{\numberline {7.1}Research Summary}{80}{}%
+\contentsline {subsection}{\numberline {7.1.1}Summary of Research Objectives}{80}{}%
+\contentsline {subsection}{\numberline {7.1.2}Summary of Methodology}{80}{}%
+\contentsline {subsection}{\numberline {7.1.3}Summary of Experimental Findings}{81}{}%
+\contentsline {section}{\numberline {7.2}Main Contributions}{81}{}%
+\contentsline {subsection}{\numberline {7.2.1}Academic Contributions}{81}{}%
+\contentsline {subsection}{\numberline {7.2.2}Technical Contributions}{82}{}%
+\contentsline {subsection}{\numberline {7.2.3}Practical Contributions}{82}{}%
+\contentsline {section}{\numberline {7.3}Conclusions}{83}{}%
+\contentsline {subsection}{\numberline {7.3.1}Answers to the Research Questions}{83}{}%
+\contentsline {subsection}{\numberline {7.3.2}Final Comparison of the Three Models}{83}{}%
+\contentsline {subsection}{\numberline {7.3.3}Overall Conclusions}{84}{}%
+\contentsline {section}{\numberline {7.4}Future Directions}{84}{}%
+\contentsline {subsection}{\numberline {7.4.1}Suggested Research Directions}{84}{}%
+\contentsline {subsection}{\numberline {7.4.2}Potential Improvements}{85}{}%
+\contentsline {subsection}{\numberline {7.4.3}Future Application Prospects}{85}{}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{References}{16}{}%
+\contentsline {chapter}{References}{87}{}%

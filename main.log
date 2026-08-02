@@ -1,9 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.26)  31 JUL 2026 01:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.26)  2 AUG 2026 16:25
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**e:/Documents/De_an_thac_si/Thesis_Report/main.tex
+(e:/Documents/De_an_thac_si/Thesis_Report/main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (e:/texlive/2026/texmf-dist/tex/latex/base/report.cls
@@ -23,492 +24,205 @@ File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
-)
-(e:/texlive/2026/texmf-dist/tex/latex/base/inputenc.sty
+) (e:/texlive/2026/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
-)
-(e:/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
+) (e:/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-)
-(e:/texlive/2026/texmf-dist/tex/latex/newtx/newtxtext.sty
-Package: newtxtext 2024/04/01 v1.744(Michael Sharpe) latex and unicode latex su
-pport for TeXGyreTermesX
-
-`newtxtext' v1.744, 2024/04/01 Text macros taking advantage of TeXGyre Termes a
-nd its extensions (msharpe)
-(e:/texlive/2026/texmf-dist/tex/latex/xpatch/xpatch.sty
-(e:/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2026-01-19 L3 programming layer (loader) 
-
-(e:/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count284
-))
-Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
-
-(e:/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2025-10-09 L3 Experimental document command parser
-)
-(e:/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count285
-))
-(e:/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
-
-(e:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 274.
-
-(e:/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
-)
-(e:/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1365.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-)
-(e:/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2024/12/12 v1.0g TeX engine tests
-)
-(e:/texlive/2026/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
-
-(e:/texlive/2026/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(e:/texlive/2026/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks19
-\XKV@tempa@toks=\toks20
-\XKV@tempb@toks=\toks21
-
-(e:/texlive/2026/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count286
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(e:/texlive/2026/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-)
-(e:/texlive/2026/texmf-dist/tex/generic/xstring/xstring.sty
-(e:/texlive/2026/texmf-dist/tex/generic/xstring/xstring.tex
-\xs_counta=\count287
-\xs_countb=\count288
-)
-Package: xstring 2023/08/22 v1.86 String manipulations (CT)
-)
-(e:/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-)
-(e:/texlive/2026/texmf-dist/tex/latex/carlisle/scalefnt.sty)
-LaTeX Font Info:    Setting ntxLF sub-encoding to TS1/0 on input line 24.
-LaTeX Font Info:    Setting ntxTLF sub-encoding to TS1/0 on input line 24.
-LaTeX Font Info:    Setting ntxOsF sub-encoding to TS1/0 on input line 24.
-LaTeX Font Info:    Setting ntxTOsF sub-encoding to TS1/0 on input line 24.
-
-(e:/texlive/2026/texmf-dist/tex/generic/kastrup/binhex.tex)
-\ntx@tmpcnta=\count289
-\ntx@cnt=\count290
-
-(e:/texlive/2026/texmf-dist/tex/latex/fontaxes/fontaxes.sty
-Package: fontaxes 2026-01-02 v2.0.2 Font selection axes (deprecated)
-Applying: [2024-11-01] Use figureversions if present on input line 74.
-
-(e:/texlive/2026/texmf-dist/tex/latex/figureversions/figureversions.sty
-Package: figureversions 2025-04-29 v1.0.1 Figure versions
-)
-Already applied: [0000-00-00] Fall back to v1 on input line 76.
-)
-\tx@sixem=\dimen149
-\tx@y=\dimen150
-\tx@x=\dimen151
-\tx@tmpdima=\dimen152
-\tx@tmpdimb=\dimen153
-\tx@tmpdimc=\dimen154
-\tx@tmpdimd=\dimen155
-\tx@tmpdime=\dimen156
-\tx@tmpdimf=\dimen157
-\tx@dimA=\dimen158
-\tx@dimAA=\dimen159
-\tx@dimB=\dimen160
-\tx@dimBB=\dimen161
-\tx@dimC=\dimen162
-LaTeX Info: Redefining \oldstylenums on input line 902.
-)
-(e:/texlive/2026/texmf-dist/tex/latex/newtx/newtxmath.sty
-Package: newtxmath 2024/09/22 v1.754
-
-`newtxmath' v1.754, 2024/09/22 Math macros based originally on txfonts (msharpe
-) (e:/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2025/07/09 v2.17z AMS math features
-\@mathmargin=\skip51
-
-For additional information on amsmath, use the `?' option.
-(e:/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2024/11/17 v2.01 AMS text
-
-(e:/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks22
-\ex@=\dimen163
-))
-(e:/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen164
-)
-(e:/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2022/04/08 v2.04 operator names
-)
-\inf@bad=\count291
-LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count292
-\leftroot@=\count293
-LaTeX Info: Redefining \overline on input line 398.
-LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count294
-\DOTSCASE@=\count295
-LaTeX Info: Redefining \ldots on input line 495.
-LaTeX Info: Redefining \dots on input line 498.
-LaTeX Info: Redefining \cdots on input line 619.
-\Mathstrutbox@=\box53
-\strutbox@=\box54
-LaTeX Info: Redefining \big on input line 721.
-LaTeX Info: Redefining \Big on input line 722.
-LaTeX Info: Redefining \bigg on input line 723.
-LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen165
-LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count296
-LaTeX Info: Redefining \bmod on input line 904.
-LaTeX Info: Redefining \pmod on input line 909.
-LaTeX Info: Redefining \smash on input line 939.
-LaTeX Info: Redefining \relbar on input line 969.
-LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count297
-\dotsspace@=\muskip17
-\c@parentequation=\count298
-\dspbrk@lvl=\count299
-\tag@help=\toks23
-\row@=\count300
-\column@=\count301
-\maxfields@=\count302
-\andhelp@=\toks24
-\eqnshift@=\dimen166
-\alignsep@=\dimen167
-\tagshift@=\dimen168
-\tagwidth@=\dimen169
-\totwidth@=\dimen170
-\lineht@=\dimen171
-\@envbody=\toks25
-\multlinegap=\skip52
-\multlinetaggap=\skip53
-\mathdisplay@stack=\toks26
-LaTeX Info: Redefining \[ on input line 2950.
-LaTeX Info: Redefining \] on input line 2951.
-)
-(e:/texlive/2026/texmf-dist/tex/latex/oberdiek/centernot.sty
-Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
-)
-\tx@cntz=\count303
-
-(e:/texlive/2026/texmf-dist/tex/generic/kastrup/binhex.tex)
-\tx@Isdigit=\count304
-\tx@IsAlNum=\count305
-\tx@tA=\toks27
-\tx@tB=\toks28
-\tx@su=\read2
-
-amsthm NOT loaded
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 402.
+) (e:/texlive/2026/texmf-dist/tex/latex/psnfss/mathptmx.sty
+Package: mathptmx 2020/03/25 PSNFSS-v9.3 Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/minntx/m/n on input line 402.
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/minntx/m/n on input line 402.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/minntx/m/n --> OT1/minntx/b/n on input line 403.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 410.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/qhv/m/n on input line 410.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/qhv/m/n on input line 410.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/qhv/m/n --> OT1/qhv/b/n on input line 412.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 419.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/minntx/m/it on input line 419.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/minntx/m/it on input line 419.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 420.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/n on input line 420.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/n on input line 420.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 422.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 422.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 422.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/minntx/m/it --> OT1/minntx/b/it on input line 423.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/ntxtt/m/n --> T1/ntxtt/b/n on input line 426.
-LaTeX Font Info:    Redeclaring symbol font `letters' on input line 534.
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/cmm/m/it --> OML/ntxmi/m/it on input line 534.
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/cmm/b/it --> OML/ntxmi/m/it on input line 534.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/ntxmi/m/it --> OML/ntxmi/b/it on input line 535.
-\symlettersA=\mathgroup4
-LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
-(Font)                  U/ntxmia/m/it --> U/ntxmia/b/it on input line 582.
-Now handling font encoding LMS ...
-... no UTF-8 mapping file for font encoding LMS
-LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 604.
-LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 604.
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> LMS/ntxsy/m/n on input line 604.
-LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 604.
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> LMS/ntxsy/m/n on input line 604.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  LMS/ntxsy/m/n --> LMS/ntxsy/b/n on input line 605.
-\symAMSm=\mathgroup5
-LaTeX Font Info:    Overwriting symbol font `AMSm' in version `bold'
-(Font)                  U/ntxsym/m/n --> U/ntxsym/b/n on input line 630.
-\symsymbolsC=\mathgroup6
-LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
-(Font)                  U/ntxsyc/m/n --> U/ntxsyc/b/n on input line 651.
-Now handling font encoding LMX ...
-... no UTF-8 mapping file for font encoding LMX
-LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 664.
-LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 6
-64.
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 664.
-LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 664
-.
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 664.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  LMX/ntxexx/m/n --> LMX/ntxexx/b/n on input line 665.
-\symlargesymbolsTXA=\mathgroup7
-LaTeX Font Info:    Overwriting symbol font `largesymbolsTXA' in version `bold'
-
-(Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 679.
-\tx@sbptoks=\toks29
-LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 902.
-LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 903.
-LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 904.
-LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 905.
-LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 910.
-LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 911.
-LaTeX Font Info:    Redeclaring math delimiter \langle on input line 913.
-LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 915.
-LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 919.
-LaTeX Font Info:    Redeclaring math delimiter \vert on input line 920.
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 966.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 991.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 992.
-LaTeX Font Info:    Redeclaring math accent \vec on input line 2057.
-LaTeX Info: Redefining \Bbbk on input line 2847.
-LaTeX Info: Redefining \not on input line 2995.
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
 ) (e:/texlive/2026/texmf-dist/tex/latex/seqsplit/seqsplit.sty
-Package: seqsplit 2006/08/07 v0.1 Splitting long sequences (DNA, RNA, proteins,
- etc.) 
-)
-(e:/texlive/2026/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: seqsplit 2006/08/07 v0.1 Splitting long sequences (DNA, RNA, proteins, etc.) 
+) (e:/texlive/2026/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
-\enitkv@toks@=\toks30
-\labelindent=\skip54
-\enit@outerparindent=\dimen172
-\enit@toks=\toks31
-\enit@inbox=\box55
-\enit@count@id=\count306
-\enitdp@description=\count307
-)
-(e:/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty
+\enitkv@toks@=\toks19
+\labelindent=\skip51
+\enit@outerparindent=\dimen149
+\enit@toks=\toks20
+\enit@inbox=\box53
+\enit@count@id=\count284
+\enitdp@description=\count285
+) (e:/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(e:/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty
+ (e:/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+) (e:/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-)
-\Gm@cnth=\count308
-\Gm@cntv=\count309
-\c@Gm@tempcnt=\count310
-\Gm@bindingoffset=\dimen173
-\Gm@wd@mp=\dimen174
-\Gm@odd@mp=\dimen175
-\Gm@even@mp=\dimen176
-\Gm@layoutwidth=\dimen177
-\Gm@layoutheight=\dimen178
-\Gm@layouthoffset=\dimen179
-\Gm@layoutvoffset=\dimen180
-\Gm@dimlist=\toks32
-)
-(e:/texlive/2026/texmf-dist/tex/latex/setspace/setspace.sty
+ (e:/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count286
+\Gm@cntv=\count287
+\c@Gm@tempcnt=\count288
+\Gm@bindingoffset=\dimen150
+\Gm@wd@mp=\dimen151
+\Gm@odd@mp=\dimen152
+\Gm@even@mp=\dimen153
+\Gm@layoutwidth=\dimen154
+\Gm@layoutheight=\dimen155
+\Gm@layouthoffset=\dimen156
+\Gm@layoutvoffset=\dimen157
+\Gm@dimlist=\toks22
+) (e:/texlive/2026/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-)
-(e:/texlive/2026/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip18
+) (e:/texlive/2026/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-(e:/texlive/2026/texmf-dist/tex/latex/titlesec/titlesec.sty
+) (e:/texlive/2026/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
-\ttl@box=\box56
-\beforetitleunit=\skip55
-\aftertitleunit=\skip56
-\ttl@plus=\dimen181
-\ttl@minus=\dimen182
-\ttl@toksa=\toks33
-\titlewidth=\dimen183
-\titlewidthlast=\dimen184
-\titlewidthfirst=\dimen185
-)
-(e:/texlive/2026/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\ttl@box=\box54
+\beforetitleunit=\skip52
+\aftertitleunit=\skip53
+\ttl@plus=\dimen158
+\ttl@minus=\dimen159
+\ttl@toksa=\toks23
+\titlewidth=\dimen160
+\titlewidthlast=\dimen161
+\titlewidthfirst=\dimen162
+) (e:/texlive/2026/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
-
-\f@nch@headwidth=\skip57
-\f@nch@offset@elh=\skip58
-\f@nch@offset@erh=\skip59
-\f@nch@offset@olh=\skip60
-\f@nch@offset@orh=\skip61
-\f@nch@offset@elf=\skip62
-\f@nch@offset@erf=\skip63
-\f@nch@offset@olf=\skip64
-\f@nch@offset@orf=\skip65
-\f@nch@height=\skip66
-\f@nch@footalignment=\skip67
-\f@nch@widthL=\skip68
-\f@nch@widthC=\skip69
-\f@nch@widthR=\skip70
-\@temptokenb=\toks34
-)
-(e:/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+\f@nch@headwidth=\skip54
+\f@nch@offset@elh=\skip55
+\f@nch@offset@erh=\skip56
+\f@nch@offset@olh=\skip57
+\f@nch@offset@orh=\skip58
+\f@nch@offset@elf=\skip59
+\f@nch@offset@erf=\skip60
+\f@nch@offset@olf=\skip61
+\f@nch@offset@orf=\skip62
+\f@nch@height=\skip63
+\f@nch@footalignment=\skip64
+\f@nch@widthL=\skip65
+\f@nch@widthC=\skip66
+\f@nch@widthR=\skip67
+\@temptokenb=\toks24
+) (e:/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
-
-(e:/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+ (e:/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
-
-(e:/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
+ (e:/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-)
-(e:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (e:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
-)
-\Gin@req@height=\dimen186
-\Gin@req@width=\dimen187
-)
-(e:/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty
+ (e:/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen163
+\Gin@req@width=\dimen164
+) (e:/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen188
-\lightrulewidth=\dimen189
-\cmidrulewidth=\dimen190
-\belowrulesep=\dimen191
-\belowbottomsep=\dimen192
-\aboverulesep=\dimen193
-\abovetopsep=\dimen194
-\cmidrulesep=\dimen195
-\cmidrulekern=\dimen196
-\defaultaddspace=\dimen197
-\@cmidla=\count311
-\@cmidlb=\count312
-\@aboverulesep=\dimen198
-\@belowrulesep=\dimen199
-\@thisruleclass=\count313
-\@lastruleclass=\count314
-\@thisrulewidth=\dimen256
-)
-(e:/texlive/2026/texmf-dist/tex/latex/tools/array.sty
+\heavyrulewidth=\dimen165
+\lightrulewidth=\dimen166
+\cmidrulewidth=\dimen167
+\belowrulesep=\dimen168
+\belowbottomsep=\dimen169
+\aboverulesep=\dimen170
+\abovetopsep=\dimen171
+\cmidrulesep=\dimen172
+\cmidrulekern=\dimen173
+\defaultaddspace=\dimen174
+\@cmidla=\count289
+\@cmidlb=\count290
+\@aboverulesep=\dimen175
+\@belowrulesep=\dimen176
+\@thisruleclass=\count291
+\@lastruleclass=\count292
+\@thisrulewidth=\dimen177
+) (e:/texlive/2026/texmf-dist/tex/latex/tools/array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
-\col@sep=\dimen257
-\ar@mcellbox=\box57
-\extrarowheight=\dimen258
-\NC@list=\toks35
-\extratabsurround=\skip71
-\backup@length=\skip72
-\ar@cellbox=\box58
-)
-(e:/texlive/2026/texmf-dist/tex/latex/float/float.sty
+\col@sep=\dimen178
+\ar@mcellbox=\box55
+\extrarowheight=\dimen179
+\NC@list=\toks25
+\extratabsurround=\skip68
+\backup@length=\skip69
+\ar@cellbox=\box56
+) (e:/texlive/2026/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count315
-\float@exts=\toks36
-\float@box=\box59
-\@float@everytoks=\toks37
-\@floatcapt=\box60
-)
-(e:/texlive/2026/texmf-dist/tex/latex/caption/caption.sty
+\c@float@type=\count293
+\float@exts=\toks26
+\float@box=\box57
+\@float@everytoks=\toks27
+\@floatcapt=\box58
+) (e:/texlive/2026/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-
-(e:/texlive/2026/texmf-dist/tex/latex/caption/caption3.sty
+ (e:/texlive/2026/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen259
-\captionmargin=\dimen260
-\caption@leftmargin=\dimen261
-\caption@rightmargin=\dimen262
-\caption@width=\dimen263
-\caption@indent=\dimen264
-\caption@parindent=\dimen265
-\caption@hangindent=\dimen266
+\caption@tempdima=\dimen180
+\captionmargin=\dimen181
+\caption@leftmargin=\dimen182
+\caption@rightmargin=\dimen183
+\caption@width=\dimen184
+\caption@indent=\dimen185
+\caption@parindent=\dimen186
+\caption@hangindent=\dimen187
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count316
-\c@continuedfloat=\count317
+\c@caption@flags=\count294
+\c@continuedfloat=\count295
 Package caption Info: float package is loaded.
-)
-(e:/texlive/2026/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaT
-eX and XeLaTeX
-\babel@savecnt=\count318
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
-ne 2078.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
-ne 2080.
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
-e 2082.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
-e 2083.
-LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
-on input line 2084.
-LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
-on input line 2086.
-LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
-on input line 2111.
-\U@D=\dimen267
+) (e:/texlive/2026/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
+\babel@savecnt=\count296
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
+\U@D=\dimen188
 \l@unhyphenated=\language91
-
-(e:/texlive/2026/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@readstream=\read3
-\bbl@dirlevel=\count319
-
-(e:/texlive/2026/texmf-dist/tex/generic/babel/locale/vi/babel-vietnamese.tex)
-(e:/texlive/2026/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
+ (e:/texlive/2026/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count297
+ (e:/texlive/2026/texmf-dist/tex/generic/babel/locale/vi/babel-vietnamese.tex) (e:/texlive/2026/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
 Package babel Info: Importing font and identification data for vietnamese
 (babel)             from babel-vi.ini. Reported on input line 4330.
-
-(e:/texlive/2026/texmf-dist/tex/generic/babel-vietnamese/vietnamese.ldf
+ (e:/texlive/2026/texmf-dist/tex/generic/babel-vietnamese/vietnamese.ldf
 Language: vietnamese 
-
-Loading definitions for the Vietnamese font encoding
-(e:/texlive/2026/texmf-dist/tex/latex/vntex/t5enc.def
+ Loading definitions for the Vietnamese font encoding (e:/texlive/2026/texmf-dist/tex/latex/vntex/t5enc.def
 File: t5enc.def 2006/11/21 v1.4 Vietnamese T5 encoding
 Now handling font encoding T5 ...
 ... processing UTF-8 mapping file for font encoding T5
-
-(e:/texlive/2026/texmf-dist/tex/latex/vntex/t5enc.dfu
+ (e:/texlive/2026/texmf-dist/tex/latex/vntex/t5enc.dfu
 File: t5enc.dfu 2006/08/19 v1.1 UTF8 support for Vietnamese
    defining Unicode char U+00AB (decimal 171)
    defining Unicode char U+00BB (decimal 187)
@@ -666,8 +380,7 @@ Package babel Info: Making " an active character on input line 147.
 )
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 4330.
-
-(e:/texlive/2026/texmf-dist/tex/generic/babel-english/english.ldf
+ (e:/texlive/2026/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
@@ -675,99 +388,470 @@ Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
 (babel)             (\language22). Reported on input line 105.
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 (babel)             (\language22). Reported on input line 108.
-))
-(e:/texlive/2026/texmf-dist/tex/latex/comment/comment.sty
+)) (e:/texlive/2026/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write3
-
-Excluding comment 'comment')
-LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line
- 65.
-
-(e:/texlive/2026/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
-File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
+ Excluding comment 'comment') (e:/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T5+ptm on input line 116.
+ (e:/texlive/2026/texmf-dist/tex/latex/vntex/t5ptm.fd
+File: t5utm.fd 2005/08/24 Fontinst v1.929 font definitions for T5/ptm.
+)) (e:/texlive/2026/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (e:/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (e:/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (e:/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks28
+\pgfutil@tempdima=\dimen189
+\pgfutil@tempdimb=\dimen190
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box59
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (e:/texlive/2026/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+ (e:/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (e:/texlive/2026/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (e:/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
+ (e:/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
+ (e:/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks31
+))
+\pgf@x=\dimen191
+\pgf@y=\dimen192
+\pgf@xa=\dimen193
+\pgf@ya=\dimen194
+\pgf@xb=\dimen195
+\pgf@yb=\dimen196
+\pgf@xc=\dimen197
+\pgf@yc=\dimen198
+\pgf@xd=\dimen199
+\pgf@yd=\dimen256
+\w@pgf@writea=\write4
+\r@pgf@reada=\read3
+\c@pgf@counta=\count298
+\c@pgf@countb=\count299
+\c@pgf@countc=\count300
+\c@pgf@countd=\count301
+\t@pgf@toka=\toks32
+\t@pgf@tokb=\toks33
+\t@pgf@tokc=\toks34
+\pgf@sys@id@count=\count302
+ (e:/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 65.
- (./main.aux)
+Driver file for pgf: pgfsys-pdftex.def
+ (e:/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
+ (e:/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+))) (e:/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count303
+\pgfsyssoftpath@bigbuffer@items=\count304
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (e:/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (e:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (e:/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
+ (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen257
+\pgfmath@count=\count305
+\pgfmath@box=\box60
+\pgfmath@toks=\toks35
+\pgfmath@stack@operand=\toks36
+\pgfmath@stack@operation=\toks37
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count306
+)) (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen258
+\pgf@picmaxx=\dimen259
+\pgf@picminy=\dimen260
+\pgf@picmaxy=\dimen261
+\pgf@pathminx=\dimen262
+\pgf@pathmaxx=\dimen263
+\pgf@pathminy=\dimen264
+\pgf@pathmaxy=\dimen265
+\pgf@xx=\dimen266
+\pgf@xy=\dimen267
+\pgf@yx=\dimen268
+\pgf@yy=\dimen269
+\pgf@zx=\dimen270
+\pgf@zy=\dimen271
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen272
+\pgf@path@lasty=\dimen273
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen274
+\pgf@shorten@start@additional=\dimen275
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfpic=\box61
+\pgf@hbox=\box62
+\pgf@layerbox@main=\box63
+\pgf@picture@serial@count=\count307
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen276
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen277
+\pgf@pt@y=\dimen278
+\pgf@pt@temp=\dimen279
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen280
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen281
+\pgf@sys@shading@range@num=\count308
+\pgf@shadingcount=\count309
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfexternal@startupbox=\box64
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (e:/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box65
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (e:/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen282
+\pgf@nodesepend=\dimen283
+) (e:/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
+)) (e:/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (e:/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (e:/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (e:/texlive/2026/texmf-dist/tex/latex/pgf/math/pgfmath.sty (e:/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (e:/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen284
+\pgffor@skip=\dimen285
+\pgffor@stack=\toks38
+\pgffor@toks=\toks39
+)) (e:/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
+ (e:/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count310
+\pgfplotmarksize=\dimen286
+)
+\tikz@lastx=\dimen287
+\tikz@lasty=\dimen288
+\tikz@lastxsaved=\dimen289
+\tikz@lastysaved=\dimen290
+\tikz@lastmovetox=\dimen291
+\tikz@lastmovetoy=\dimen292
+\tikzleveldistance=\dimen293
+\tikzsiblingdistance=\dimen294
+\tikz@figbox=\box66
+\tikz@figbox@bg=\box67
+\tikz@tempbox=\box68
+\tikz@tempbox@bg=\box69
+\tikztreelevel=\count311
+\tikznumberofchildren=\count312
+\tikznumberofcurrentchild=\count313
+\tikz@fig@count=\count314
+ (e:/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count315
+\pgfmatrixcurrentcolumn=\count316
+\pgf@matrix@numberofcolumns=\count317
+)
+\tikz@expandcount=\count318
+ (e:/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (e:/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowinset=\dimen295
+\pgfarrowlength=\dimen296
+\pgfarrowwidth=\dimen297
+\pgfarrowlinewidth=\dimen298
+) (e:/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (e:/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip70
+
+For additional information on amsmath, use the `?' option.
+(e:/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+ (e:/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks40
+\ex@=\dimen299
+)) (e:/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen300
+) (e:/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count319
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count320
+\leftroot@=\count321
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count322
+\DOTSCASE@=\count323
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box70
+\strutbox@=\box71
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen301
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count324
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count325
+\dotsspace@=\muskip18
+\c@parentequation=\count326
+\dspbrk@lvl=\count327
+\tag@help=\toks41
+\row@=\count328
+\column@=\count329
+\maxfields@=\count330
+\andhelp@=\toks42
+\eqnshift@=\dimen302
+\alignsep@=\dimen303
+\tagshift@=\dimen304
+\tagwidth@=\dimen305
+\totwidth@=\dimen306
+\lineht@=\dimen307
+\@envbody=\toks43
+\multlinegap=\skip71
+\multlinetaggap=\skip72
+\mathdisplay@stack=\toks44
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+) (e:/texlive/2026/texmf-dist/tex/latex/pmboxdraw/pmboxdraw.sty
+Package: pmboxdraw 2019/12/05 v1.4 Poor man's box drawing characters (HO)
+ (e:/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (e:/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (e:/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (e:/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Now handling font encoding pmboxdraw ...
+... processing UTF-8 mapping file for font encoding pmboxdraw
+ (e:/texlive/2026/texmf-dist/tex/latex/pmboxdraw/pmboxdrawenc.dfu
+File: pmboxdrawenc.dfu 2019/12/05 v1.4 UTF-8 support for box drawing characters
+   defining Unicode char U+2500 (decimal 9472)
+   defining Unicode char U+2501 (decimal 9473)
+   defining Unicode char U+2502 (decimal 9474)
+   defining Unicode char U+2503 (decimal 9475)
+   defining Unicode char U+250C (decimal 9484)
+   defining Unicode char U+250D (decimal 9485)
+   defining Unicode char U+250E (decimal 9486)
+   defining Unicode char U+250F (decimal 9487)
+   defining Unicode char U+2510 (decimal 9488)
+   defining Unicode char U+2511 (decimal 9489)
+   defining Unicode char U+2512 (decimal 9490)
+   defining Unicode char U+2513 (decimal 9491)
+   defining Unicode char U+2514 (decimal 9492)
+   defining Unicode char U+2515 (decimal 9493)
+   defining Unicode char U+2516 (decimal 9494)
+   defining Unicode char U+2517 (decimal 9495)
+   defining Unicode char U+2518 (decimal 9496)
+   defining Unicode char U+2519 (decimal 9497)
+   defining Unicode char U+251A (decimal 9498)
+   defining Unicode char U+251B (decimal 9499)
+   defining Unicode char U+251C (decimal 9500)
+   defining Unicode char U+251D (decimal 9501)
+   defining Unicode char U+251E (decimal 9502)
+   defining Unicode char U+251F (decimal 9503)
+   defining Unicode char U+2520 (decimal 9504)
+   defining Unicode char U+2521 (decimal 9505)
+   defining Unicode char U+2522 (decimal 9506)
+   defining Unicode char U+2523 (decimal 9507)
+   defining Unicode char U+2524 (decimal 9508)
+   defining Unicode char U+252C (decimal 9516)
+   defining Unicode char U+252D (decimal 9517)
+   defining Unicode char U+252E (decimal 9518)
+   defining Unicode char U+252F (decimal 9519)
+   defining Unicode char U+2530 (decimal 9520)
+   defining Unicode char U+2531 (decimal 9521)
+   defining Unicode char U+2532 (decimal 9522)
+   defining Unicode char U+2533 (decimal 9523)
+   defining Unicode char U+2534 (decimal 9524)
+   defining Unicode char U+2535 (decimal 9525)
+   defining Unicode char U+2536 (decimal 9526)
+   defining Unicode char U+2537 (decimal 9527)
+   defining Unicode char U+2538 (decimal 9528)
+   defining Unicode char U+2539 (decimal 9529)
+   defining Unicode char U+253A (decimal 9530)
+   defining Unicode char U+253B (decimal 9531)
+   defining Unicode char U+253C (decimal 9532)
+   defining Unicode char U+253D (decimal 9533)
+   defining Unicode char U+253E (decimal 9534)
+   defining Unicode char U+253F (decimal 9535)
+   defining Unicode char U+2540 (decimal 9536)
+   defining Unicode char U+2541 (decimal 9537)
+   defining Unicode char U+2542 (decimal 9538)
+   defining Unicode char U+2543 (decimal 9539)
+   defining Unicode char U+2544 (decimal 9540)
+   defining Unicode char U+2545 (decimal 9541)
+   defining Unicode char U+2546 (decimal 9542)
+   defining Unicode char U+2547 (decimal 9543)
+   defining Unicode char U+2548 (decimal 9544)
+   defining Unicode char U+2549 (decimal 9545)
+   defining Unicode char U+254A (decimal 9546)
+   defining Unicode char U+254B (decimal 9547)
+   defining Unicode char U+2550 (decimal 9552)
+   defining Unicode char U+2551 (decimal 9553)
+   defining Unicode char U+2552 (decimal 9554)
+   defining Unicode char U+2553 (decimal 9555)
+   defining Unicode char U+2554 (decimal 9556)
+   defining Unicode char U+2555 (decimal 9557)
+   defining Unicode char U+2556 (decimal 9558)
+   defining Unicode char U+2557 (decimal 9559)
+   defining Unicode char U+2558 (decimal 9560)
+   defining Unicode char U+2559 (decimal 9561)
+   defining Unicode char U+255A (decimal 9562)
+   defining Unicode char U+255B (decimal 9563)
+   defining Unicode char U+255C (decimal 9564)
+   defining Unicode char U+255D (decimal 9565)
+   defining Unicode char U+255E (decimal 9566)
+   defining Unicode char U+255F (decimal 9567)
+   defining Unicode char U+2560 (decimal 9568)
+   defining Unicode char U+2561 (decimal 9569)
+   defining Unicode char U+2562 (decimal 9570)
+   defining Unicode char U+2563 (decimal 9571)
+   defining Unicode char U+2564 (decimal 9572)
+   defining Unicode char U+2565 (decimal 9573)
+   defining Unicode char U+2566 (decimal 9574)
+   defining Unicode char U+2567 (decimal 9575)
+   defining Unicode char U+2568 (decimal 9576)
+   defining Unicode char U+2569 (decimal 9577)
+   defining Unicode char U+256A (decimal 9578)
+   defining Unicode char U+256B (decimal 9579)
+   defining Unicode char U+256C (decimal 9580)
+   defining Unicode char U+2574 (decimal 9588)
+   defining Unicode char U+2575 (decimal 9589)
+   defining Unicode char U+2576 (decimal 9590)
+   defining Unicode char U+2577 (decimal 9591)
+   defining Unicode char U+2578 (decimal 9592)
+   defining Unicode char U+2579 (decimal 9593)
+   defining Unicode char U+257A (decimal 9594)
+   defining Unicode char U+257B (decimal 9595)
+   defining Unicode char U+257C (decimal 9596)
+   defining Unicode char U+257D (decimal 9597)
+   defining Unicode char U+257E (decimal 9598)
+   defining Unicode char U+257F (decimal 9599)
+   defining Unicode char U+2580 (decimal 9600)
+   defining Unicode char U+2581 (decimal 9601)
+   defining Unicode char U+2582 (decimal 9602)
+   defining Unicode char U+2583 (decimal 9603)
+   defining Unicode char U+2584 (decimal 9604)
+   defining Unicode char U+2585 (decimal 9605)
+   defining Unicode char U+2586 (decimal 9606)
+   defining Unicode char U+2587 (decimal 9607)
+   defining Unicode char U+2588 (decimal 9608)
+   defining Unicode char U+2589 (decimal 9609)
+   defining Unicode char U+258A (decimal 9610)
+   defining Unicode char U+258B (decimal 9611)
+   defining Unicode char U+258C (decimal 9612)
+   defining Unicode char U+258D (decimal 9613)
+   defining Unicode char U+258E (decimal 9614)
+   defining Unicode char U+258F (decimal 9615)
+   defining Unicode char U+2590 (decimal 9616)
+   defining Unicode char U+2591 (decimal 9617)
+   defining Unicode char U+2592 (decimal 9618)
+   defining Unicode char U+2593 (decimal 9619)
+   defining Unicode char U+2594 (decimal 9620)
+   defining Unicode char U+2595 (decimal 9621)
+   defining Unicode char U+2596 (decimal 9622)
+   defining Unicode char U+2597 (decimal 9623)
+   defining Unicode char U+2598 (decimal 9624)
+   defining Unicode char U+2599 (decimal 9625)
+   defining Unicode char U+259A (decimal 9626)
+   defining Unicode char U+259B (decimal 9627)
+   defining Unicode char U+259C (decimal 9628)
+   defining Unicode char U+259D (decimal 9629)
+   defining Unicode char U+259E (decimal 9630)
+   defining Unicode char U+259F (decimal 9631)
+) (e:/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+)
+\pmbd@W=\dimen308
+\pmbd@H=\dimen309
+\pmbd@L=\dimen310
+\pmbd@Thin=\dimen311
+\pmbd@Thick=\dimen312
+\pmbd@Sep=\dimen313
+) (e:/texlive/2026/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip73
+\multirow@cntb=\count331
+\multirow@dima=\skip74
+\bigstrutjot=\dimen314
+) (e:/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count332
+) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 65.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
- 65.
-
-(e:/texlive/2026/texmf-dist/tex/latex/newtx/omlntxmi.fd
-File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
-)
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
-65.
-
-(e:/texlive/2026/texmf-dist/tex/latex/newtx/untxexa.fd
-File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
-)
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
- 65.
-
-(e:/texlive/2026/texmf-dist/tex/latex/newtx/lmsntxsy.fd
-File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
-)
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
-e 65.
-
-(e:/texlive/2026/texmf-dist/tex/latex/newtx/lmxntxexx.fd
-File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
-)
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for T5+cmr on input line 65
-.
-
-(e:/texlive/2026/texmf-dist/tex/latex/vntex/t5cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 81.
+LaTeX Font Info:    Trying to load font information for T5+cmr on input line 81.
+ (e:/texlive/2026/texmf-dist/tex/latex/vntex/t5cmr.fd
 File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 65.
-
-(e:/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count320
-\scratchdimen=\dimen268
-\scratchbox=\box61
-\nofMPsegments=\count321
-\nofMParguments=\count322
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count323
-\MPscratchDim=\dimen269
-\MPnumerator=\count324
-\makeMPintoPDFobject=\count325
-\everyMPtoPDFconversion=\toks39
-) (e:/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(e:/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-\c@mv@tabular=\count326
-\c@mv@boldtabular=\count327
-LaTeX Info: Command `\dddot' is already robust on input line 65.
-LaTeX Info: Command `\ddddot' is already robust on input line 65.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for pmboxdraw/pmboxdraw/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -803,19 +887,30 @@ LaTeX Info: Command `\ddddot' is already robust on input line 65.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+(e:/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count333
+\scratchdimen=\dimen315
+\scratchbox=\box72
+\nofMPsegments=\count334
+\nofMParguments=\count335
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count336
+\MPscratchDim=\dimen316
+\MPnumerator=\count337
+\makeMPintoPDFobject=\count338
+\everyMPtoPDFconversion=\toks46
+) (e:/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (e:/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 71.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 20.74pt on input line 74.
-[1
+ [1
 
-{e:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{e:/texlive/2026/
-texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}]
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 98.
-
+{e:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{e:/texlive/2026/texmf-dist/fonts/enc/dvips/vntex/t5.enc}]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -825,90 +920,76 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1
 
-]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 24.88pt on input line 103.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 24.88pt on input line 103.
- [2
+] [2
 
 ] (./main.toc
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input lin
-e 3.
- (e:/texlive/2026/texmf-dist/tex/latex/newtx/ot1minntx.fd
-File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 3.
+ (e:/texlive/2026/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 12.0pt on input line 3.
-LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 8.8pt on input line 3.
-LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 3.
-LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 12.0pt on input line 3.
-LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 8.8pt on input line 3.
-LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 6.6pt on input line 3.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 12.0pt on input line 3.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.8pt on input line 3.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.6pt on input line 3.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 12.0pt on input line 3.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.8pt on input line 3.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 3.
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
-3.
-
-(e:/texlive/2026/texmf-dist/tex/latex/newtx/untxmia.fd
-File: untxmia.fd 2024/04/09 Fontinst v1.933 font definitions for U/ntxmia.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 3.
+ (e:/texlive/2026/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 12.0pt on input line 3.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.8pt on input line 3.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.6pt on input line 3.
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
-3.
-
-(e:/texlive/2026/texmf-dist/tex/latex/newtx/untxsym.fd
-File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 3.
+ (e:/texlive/2026/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 12.0pt on input line 3.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.8pt on input line 3.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.6pt on input line 3.
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
-3.
-
-(e:/texlive/2026/texmf-dist/tex/latex/newtx/untxsyc.fd
-File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 3.
+ (e:/texlive/2026/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 12.0pt on input line 3.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.8pt on input line 3.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.6pt on input line 3.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 12.0pt on input line 3.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.8pt on input line 3.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.6pt on input line 3.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3.
+ (e:/texlive/2026/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
  [3
 
-])
-\tf@toc=\write4
-\openout4 = `main.toc'.
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4]
+Overfull \hbox (2.48303pt too wide) in paragraph at lines 60--60
+ [][] []\T5/ptm/m/n/12 Comparison among BiL-STM, PhoBERT, and Hy-brid PhoBERT-BiLSTM [][]  
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[5]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[7])
+\tf@toc=\write5
+\openout5 = `main.toc'.
 
 
 
@@ -918,45 +999,64 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4] (./main.lot)
-\tf@lot=\write5
-\openout5 = `main.lot'.
+[8] (./main.lot
+Overfull \hbox (11.96306pt too wide) in paragraph at lines 11--11
+ [][] []\T5/ptm/m/n/12 Training hy-per-pa-ram-e-ters for BiL-STM, PhoBERT, and Hy-brid PhoBERT-BiLSTM. [][]  
+ []
 
- [5
 
-] (./main.lof)
-\tf@lof=\write6
-\openout6 = `main.lof'.
+Overfull \hbox (1.6784pt too wide) in paragraph at lines 13--13
+ [][] []\T5/ptm/m/n/12 Overall clas-si-fi-ca-tion per-for-mance on the UIT-VSFC test set (in-domain), mean 
+ []
 
- [6
+[9
 
-]
+])
+\tf@lot=\write6
+\openout6 = `main.lot'.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[10] (./main.lof
+LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 12.
+ (e:/texlive/2026/texmf-dist/tex/latex/vntex/t5cmtt.fd
+File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [11
+
+])
+\tf@lof=\write7
+\openout7 = `main.lof'.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12]
 Chapter 1.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 121.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 121.
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
-e 126.
-(e:/texlive/2026/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
-File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 142.
+(e:/texlive/2026/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 126.
-LaTeX Font Info:    Trying to load font information for T5+ntxtlf on input line
- 128.
-LaTeX Font Info:    No file T5ntxtlf.fd. on input line 128.
-
-
-LaTeX Font Warning: Font shape `T5/ntxtlf/m/n' undefined
-(Font)              using `T5/cmr/m/n' instead on input line 128.
-
 Package babel Info: 'vietnamese' activates 'vietnamese' shorthands.
-(babel)             Reported on input line 128.
-[1
+(babel)             Reported on input line 144.
+ [1
 
 
-{e:/texlive/2026/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
+{e:/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+Overfull \hbox (9.34578pt too wide) in paragraph at lines 154--155
+\T5/ptm/m/n/12 shift, par-tic-u-larly in the con-text of Viet-namese nat-u-ral lan-guage pro-cess-ing, which presents
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -965,8 +1065,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [2]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 153.
+Overfull \hbox (4.54633pt too wide) in paragraph at lines 178--179
+\T5/ptm/m/n/12 com-pu-ta-tional re-sources and sig-nif-i-cant train-ing time. Con-versely, BiL-STM is more lightweight
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -976,9 +1077,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3]
-Overfull \hbox (4.96512pt too wide) in paragraph at lines 171--172
-[]\T1/ntxtlf/b/n/12 The Gap Be-tween Re-search and Prac-ti-cal De-ploy-ment: \T
-1/ntxtlf/m/n/12 While pre-trained Transformer-
+Overfull \hbox (8.58974pt too wide) in paragraph at lines 187--188
+[]\T5/ptm/b/n/12 The Gap Be-tween Re-search and Prac-ti-cal De-ploy-ment: \T5/ptm/m/n/12 While pre-trained Transformer-
  []
 
 
@@ -997,9 +1097,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5]
-Overfull \hbox (1.5931pt too wide) in paragraph at lines 191--192
-[]\T1/ntxtlf/b/n/12 Develop a Hy-brid Ar-chi-tec-ture: \T1/ntxtlf/m/n/12 Pro-po
-se and im-ple-ment a \T1/ntxtlf/b/n/12 Hy-brid PhoBERT-BiLSTM
+Overfull \hbox (5.0377pt too wide) in paragraph at lines 207--208
+[]\T5/ptm/b/n/12 Develop a Hy-brid Ar-chi-tec-ture: \T5/ptm/m/n/12 Pro-pose and im-ple-ment a \T5/ptm/b/n/12 Hy-brid PhoBERT-BiLSTM
+ []
+
+
+Overfull \hbox (8.82979pt too wide) in paragraph at lines 209--212
+\T5/ptm/m/n/12 cal pain points cur-rently faced by Viet-namese en-ter-prises (Bank-ing, E-commerce, EdTech)
  []
 
 
@@ -1010,9 +1114,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6]
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 212.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1041,136 +1142,8 @@ Chapter 2.
 [10
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
-268.
- (e:/texlive/2026/texmf-dist/tex/latex/newtx/t1ntxtt.fd
-File: t1ntxtt.fd 2012/04/20 v3.1
-)
-LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 268.
-
-Underfull \hbox (badness 3118) in paragraph at lines 280--280
-[]|\T1/ntxtlf/b/n/12 Key Re-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 282--282
-[]|\T1/ntxtlf/m/n/12 Nguyen
- []
-
-
-Underfull \hbox (badness 3098) in paragraph at lines 282--282
-\T1/ntxtlf/m/n/12 and Nguyen
- []
-
-
-Underfull \hbox (badness 6658) in paragraph at lines 282--282
-[]|\T1/ntxtlf/m/n/12 BiLSTM +
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 282--282
-[]|\T1/ntxtlf/m/n/12 Acc:
- []
-
-
-Underfull \hbox (badness 3989) in paragraph at lines 282--283
-[]|\T1/ntxtlf/m/n/12 Struggles with pol-y-
- []
-
-
-Underfull \hbox (badness 2384) in paragraph at lines 282--283
-\T1/ntxtlf/m/n/12 semy and long-range
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 282--283
-\T1/ntxtlf/m/n/12 de-pen-den-cies; lacks
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 284--284
-[]|\T1/ntxtlf/m/n/12 Nguyen
- []
-
-
-Underfull \hbox (badness 3098) in paragraph at lines 284--284
-\T1/ntxtlf/m/n/12 and Nguyen
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 284--284
-[]|\T1/ntxtlf/m/n/12 PhoBERT
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 284--284
-[]|\T1/ntxtlf/m/n/12 F1:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
-[]|\T1/ntxtlf/m/n/12 High com-pu-ta-tional
- []
-
-
-Underfull \hbox (badness 2035) in paragraph at lines 284--285
-\T1/ntxtlf/m/n/12 re-sources for de-ploy-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 286--286
-[]|\T1/ntxtlf/m/n/12 BERT +
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 286--286
-[]|\T1/ntxtlf/m/n/12 Vietnamese
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 286--286
-\T1/ntxtlf/m/n/12 E-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 286--286
-[]|\T1/ntxtlf/m/n/12 Acc:
- []
-
-
-Underfull \hbox (badness 1360) in paragraph at lines 286--287
-[]|\T1/ntxtlf/m/n/12 CNN is ef-fec-tive for
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--288
-[]|\T1/ntxtlf/m/n/12 Social
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--288
-\T1/ntxtlf/m/n/12 Me-dia
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--288
-[]|\T1/ntxtlf/m/n/12 F1:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
-[]|\T1/ntxtlf/m/n/12 Performance drops
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
-\T1/ntxtlf/m/n/12 sig-nif-i-cantly on
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
-\T1/ntxtlf/m/n/12 dictionary-based pre-
+Overfull \hbox (8.13434pt too wide) in paragraph at lines 274--275
+\T5/ptm/m/n/12 The in-tro-duc-tion of the Trans-former ar-chi-tec-ture rev-o-lu-tion-ized NLP by em-ploy-ing self-attention
  []
 
 
@@ -1181,6 +1154,235 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
+Underfull \hbox (badness 7397) in paragraph at lines 296--296
+[]|\T5/ptm/b/n/12 Key Re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--298
+[]|\T5/ptm/m/n/12 BiLSTM
+ []
+
+
+Underfull \hbox (badness 1584) in paragraph at lines 298--298
+\T5/ptm/m/n/12 (vs. Naive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--298
+[]|\T5/ptm/m/n/12 F1:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
+\T5/ptm/m/n/12 tra-di-tional ML/DL
+ []
+
+
+Underfull \hbox (badness 3492) in paragraph at lines 298--299
+\T5/ptm/m/n/12 base-lines; lacks con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
+\T5/ptm/m/n/12 tex-tual (pre-trained)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--300
+[]|\T5/ptm/m/n/12 Nguyen
+ []
+
+
+Underfull \hbox (badness 7344) in paragraph at lines 300--300
+\T5/ptm/m/n/12 and Nguyen
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--300
+[]|\T5/ptm/m/n/12 PhoBERT
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--300
+[]|\T5/ptm/m/n/12 F1:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
+[]|\T5/ptm/m/n/12 High com-pu-ta-tional
+ []
+
+
+Underfull \hbox (badness 2065) in paragraph at lines 300--301
+\T5/ptm/m/n/12 cost and la-tency; re-
+ []
+
+
+Underfull \hbox (badness 4832) in paragraph at lines 300--301
+\T5/ptm/m/n/12 re-sources for de-ploy-
+ []
+
+
+Underfull \hbox (badness 4832) in paragraph at lines 302--302
+[]|\T5/ptm/m/n/12 Dang et al.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+[]|\T5/ptm/m/n/12 Hybrid
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+\T5/ptm/m/n/12 CNN-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+\T5/ptm/m/n/12 LSTM(-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+[]|\T5/ptm/m/n/12 USAL-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+\T5/ptm/m/n/12 UTH
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 302--302
+\T5/ptm/m/n/12 (Shopee) &
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+[]|\T5/ptm/m/n/12 Acc:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+\T5/ptm/m/n/12 93.94%
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+\T5/ptm/m/n/12 (USAL-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+\T5/ptm/m/n/12 UTH),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+\T5/ptm/m/n/12 93.53%
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
+\T5/ptm/m/n/12 (UIT-
+ []
+
+
+Underfull \hbox (badness 3746) in paragraph at lines 302--303
+[]|\T5/ptm/m/n/12 Modest gain (~0.6%)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
+\T5/ptm/m/n/12 over stan-dalone
+ []
+
+
+Underfull \hbox (badness 3826) in paragraph at lines 302--303
+\T5/ptm/m/n/12 DNN/SVM; does not
+ []
+
+
+Underfull \hbox (badness 6428) in paragraph at lines 302--303
+\T5/ptm/m/n/12 in-cor-po-rate pre-trained
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+[]|\T5/ptm/m/n/12 Le et al.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+[]|\T5/ptm/m/n/12 BiLSTM +
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+[]|\T5/ptm/m/n/12 UIT-ViSFD
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+\T5/ptm/m/n/12 (Smart-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+\T5/ptm/m/n/12 phone e-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+\T5/ptm/m/n/12 commerce,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+[]|\T5/ptm/m/n/12 F1:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+\T5/ptm/m/n/12 84.48%
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+\T5/ptm/m/n/12 (as-pect),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+\T5/ptm/m/n/12 63.06%
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
+\T5/ptm/m/n/12 (sen-ti-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
+[]|\T5/ptm/m/n/12 Sentiment-level F1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
+\T5/ptm/m/n/12 markedly lower than
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
+\T5/ptm/m/n/12 set-ting, so not di-
+ []
+
+
+Underfull \hbox (badness 7925) in paragraph at lines 304--305
+\T5/ptm/m/n/12 rectly com-pa-ra-ble to
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1212,7 +1414,674 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15] (./main.bbl [16
+[15]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16]
+Chapter 3.
+<figures/workflow_diagram.png, id=103, 642.60075pt x 182.48175pt>
+File: figures/workflow_diagram.png Graphic file (type png)
+<use figures/workflow_diagram.png>
+Package pdftex.def Info: figures/workflow_diagram.png  used on input line 343.
+(pdftex.def)             Requested size: 404.3393pt x 114.8221pt.
+[17
+
+ <./figures/workflow_diagram.PNG>]
+Overfull \hbox (3.16501pt too wide) in paragraph at lines 352--353
+[]\T5/ptm/b/n/12 Model Train-ing: \T5/ptm/m/n/12 All mod-els are trained on the UIT-VSFC train-ing set us-ing architecture-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 374.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 374.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 374.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22]
+<figures/wild_data_process.png, id=129, 589.0005pt x 531.1845pt>
+File: figures/wild_data_process.png Graphic file (type png)
+<use figures/wild_data_process.png>
+Package pdftex.def Info: figures/wild_data_process.png  used on input line 468.
+(pdftex.def)             Requested size: 314.48688pt x 283.62569pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24 <./figures/wild_data_process.PNG>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25]
+Overfull \hbox (16.35905pt too wide) in paragraph at lines 522--523
+[]\T5/ptm/b/n/12 Vietnamese text nor-mal-iza-tion: \T5/ptm/m/n/12 Ap-plied via the \T5/cmtt/m/n/12 underthesea \T5/ptm/m/n/12 li-brary's \T5/cmtt/m/n/12 text_normalize
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26]
+LaTeX Font Info:    Font shape `T5/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T5/cmtt/m/n' tried instead on input line 539.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 584.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 584.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[29]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[30]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[31]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[32]
+Overfull \hbox (69.01619pt too wide) in paragraph at lines 697--698
+\T5/ptm/m/n/12 im-prove by at least $\OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 001$ \T5/ptm/m/n/12 over a win-dow of 3 con-sec-u-tive eval-u-a-tion epochs (\T5/cmtt/m/n/12 early_stopping_patience=3\T5/ptm/m/n/12 ,
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[33]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[34]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[35]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[36]
+Overfull \hbox (56.63985pt too wide) in paragraph at lines 737--738
+\T5/ptm/m/n/12 (\T5/cmtt/m/n/12 sum(p.numel() for p in model.parameters())\T5/ptm/m/n/12 , with an ad-di-tional fil-ter on \T5/cmtt/m/n/12 requires_grad
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[37]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[38]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[39]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[40]
+Chapter 4.
+[41
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[42]
+Overfull \hbox (49.03108pt too wide) in paragraph at lines 812--826
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[43]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[44]
+Overfull \hbox (30.8151pt too wide) in paragraph at lines 861--870
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[45]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[46]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[47]
+Overfull \hbox (0.28703pt too wide) in paragraph at lines 955--956
+\T5/ptm/m/n/12 On UIT-VSFC, Long sen-tences are the most chal-leng-ing cat-e-gory for ev-ery model, with Macro-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[48]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[49]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[50]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[51]
+Overfull \hbox (1.89508pt too wide) in paragraph at lines 1016--1017
+\T5/ptm/m/n/12 from 3.02 per-cent-age points in-domain to 13.30 per-cent-age points cross-domain, and PhoBERT
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[52]
+Overfull \hbox (7.53502pt too wide) in paragraph at lines 1022--1023
+[]\T5/ptm/b/n/12 Real-world pre-dic-tion. \T5/ptm/m/n/12 On the YouTube wild test set, the same over-all rank-ing holds (PhoBERT
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[53]
+Chapter 5.
+[54
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[55]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[56]
+<figures/System_architecture.png, id=241, 608.2725pt x 481.19775pt>
+File: figures/System_architecture.png Graphic file (type png)
+<use figures/System_architecture.png>
+Package pdftex.def Info: figures/System_architecture.png  used on input line 1086.
+(pdftex.def)             Requested size: 426.80411pt x 337.65114pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[57 <./figures/System_architecture.PNG>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[58]
+<figures/app_workflow.png, id=249, 355.3275pt x 508.90125pt>
+File: figures/app_workflow.png Graphic file (type png)
+<use figures/app_workflow.png>
+Package pdftex.def Info: figures/app_workflow.png  used on input line 1137.
+(pdftex.def)             Requested size: 381.88133pt x 546.94948pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[59]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[60 <./figures/app_workflow.PNG>]
+<figures/ui_home.png, id=258, 1131.0255pt x 536.60475pt>
+File: figures/ui_home.png Graphic file (type png)
+<use figures/ui_home.png>
+Package pdftex.def Info: figures/ui_home.png  used on input line 1162.
+(pdftex.def)             Requested size: 426.80411pt x 202.4954pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[61]
+<figures/ui_prediction.png, id=262, 1148.49075pt x 537.80925pt>
+File: figures/ui_prediction.png Graphic file (type png)
+<use figures/ui_prediction.png>
+Package pdftex.def Info: figures/ui_prediction.png  used on input line 1169.
+(pdftex.def)             Requested size: 426.80411pt x 199.86436pt.
+
+Overfull \hbox (11.96336pt too wide) in paragraph at lines 1178--1179
+[]\T5/ptm/m/n/12 Radio but-tons for model se-lec-tion (BiL-STM, PhoBERT, Hy-brid PhoBERT-BiLSTM). 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[62 <./figures/ui_home.PNG> <./figures/ui_prediction.PNG>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[63]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[64]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[65]
+Overfull \hbox (0.39374pt too wide) in paragraph at lines 1298--1299
+[]\T5/ptm/m/n/12 Preliminary test-ing of real-world social-media com-ments be-fore larger-scale of-fline eval-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[66]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[67]
+Chapter 6.
+[68
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[69]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[70]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[71]
+Overfull \hbox (14.43512pt too wide) in paragraph at lines 1348--1357
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[72]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[73]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[74]
+Overfull \hbox (2.56628pt too wide) in paragraph at lines 1393--1394
+\T5/ptm/m/n/12 in the orig-i-nal UIT-VSFC cor-pus, fram-ing sen-ti-ment clas-si-fi-ca-tion as a bi-nary Pos-i-tive/Negative
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[75]
+Overfull \hbox (26.21901pt too wide) in paragraph at lines 1406--1407
+\T5/ptm/m/n/12 While this study's eval-u-a-tion is thor-ough at the ag-gre-gate level --- span-ning over-all Accuracy/Macro-
+ []
+
+
+Overfull \hbox (3.04712pt too wide) in paragraph at lines 1406--1407
+\T5/ptm/m/n/12 and teen-code, long or syn-tac-ti-cally com-plex sen-tences, and domain-specific vo-cab-u-lary), would
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[76]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[77]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[78]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[79]
+Chapter 7.
+[80
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[81]
+Overfull \hbox (10.0191pt too wide) in paragraph at lines 1445--1446
+\T5/ptm/m/n/12 bank-ing, ed-u-ca-tion, and so-cial lis-ten-ing con-texts (Sec-tion 6.3), di-rectly grounded in the accuracy-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[82]
+Overfull \hbox (3.4671pt too wide) in paragraph at lines 1453--1454
+\T5/ptm/m/n/12 and real-world gen-er-al-iza-tion, sequence-length sen-si-tiv-ity, and com-pu-ta-tional ef-fi-ciency (Chap-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[83]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[84]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[85]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[86] (./main.bbl [87
 
 
 ]
@@ -1223,7 +2092,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17])
+[88]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1231,33 +2100,41 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18] (./main.aux)
+[89]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[90])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[91] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
-L3 programming layer <2020/03/25>
+L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
  ) 
 Here is how much of TeX's memory you used:
- 11941 strings out of 467524
- 181517 string characters out of 5423188
- 597427 words of memory out of 5000000
- 40649 multiletter control sequences out of 15000+600000
- 671052 words of font info for 79 fonts, out of 8000000 for 9000
+ 19547 strings out of 467524
+ 377211 string characters out of 5423188
+ 781852 words of memory out of 5000000
+ 48064 multiletter control sequences out of 15000+600000
+ 701077 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,11n,117p,1556b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<e:/texlive/2026/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb><e:/texlive/
-2026/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb><e:/texlive/2026/texmf-dis
-t/fonts/type1/vntex/vnr/vnr12.pfb><e:/texlive/2026/texmf-dist/fonts/type1/publi
-c/newtx/ztmb.pfb><e:/texlive/2026/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-<e:/texlive/2026/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (25 pages, 174906 bytes).
+ 84i,12n,104p,1926b,836s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<e:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><e:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><e:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><e:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><e:/texlive/2026/texmf-dist/fonts/type1/vntex/urwvn/utmb8v.pfb><e:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><e:/texlive/2026/texmf-dist/fonts/type1/vntex/urwvn/utmr8v.pfb><e:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb><e:/texlive/2026/texmf-dist/fonts/type1/vntex/urwvn/utmri8v.pfb><e:/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vntt10.pfb><e:/texlive/2026/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
+Output written on main.pdf (104 pages, 775979 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 413 PDF objects out of 1000 (max. 8388607)
+ 270 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
