@@ -1,0 +1,35 @@
+# Ignore LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.brf
+*.log
+*.out
+*.toc
+*.lot
+*.lof
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex
+*.nav
+*.snm
+*.vrb
+*.pdf
+*.gz
+*.idx
+*.ilg
+*.ind
+*.mlf
+*~
+# Ignore temporary editor files
+*.swp
+*.swo
+*.tmp
+*.DS_Store
+
+# Keep source and figures
+!main.tex
+!references.bib
+!README.md
+!figures/
