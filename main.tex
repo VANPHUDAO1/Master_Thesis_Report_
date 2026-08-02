@@ -111,13 +111,26 @@
     FPT University\\
     \yearofconvocation\\
     \vspace{1cm}
-    \textbf{Abstract}\\
 \end{center}
 
+% Abstract
+\section*{Abstract}
+Vietnamese sentiment analysis is a challenging task due to the linguistic characteristics of the language and the need for robust automated classification in practical applications. This thesis investigates three deep learning architectures for Vietnamese binary sentiment classification: BiLSTM, fully fine-tuned PhoBERT, and a proposed Hybrid PhoBERT-BiLSTM model that combines a frozen, layer-truncated PhoBERT encoder with a trainable bidirectional LSTM layer. All models are trained under the same experimental pipeline and evaluated on the UIT-VSFC in-domain test set, the AIVIVN-2019 cross-domain e-commerce dataset, and a real-world YouTube comment dataset without retraining.
+
+Experimental results show that PhoBERT achieves the highest overall performance and generalization, reaching 98.19\% Macro-F1 on the in-domain test set and 83.63--87.91\% on out-of-domain datasets. The proposed Hybrid PhoBERT-BiLSTM model retains most of this performance, achieving 97.58\% Macro-F1 in-domain while reducing inference latency by 20--29\% compared with PhoBERT. BiLSTM is the fastest model, but it generalizes less effectively across domains. These findings demonstrate a clear trade-off between predictive performance and inference efficiency in Vietnamese sentiment classification.
+
+\noindent\textbf{Keywords:} Vietnamese sentiment analysis, sentiment classification, BiLSTM, PhoBERT, hybrid model
 
 % Lời cảm ơn (Acknowledgments)
 \chapter*{Acknowledgments}
-I express gratitude to my supervisors, \supervisor, for their guidance. I also thank FPT University for providing resources and my peers for their support in tackling Vietnamese NLP challenges.
+
+First and foremost, I would like to express my deepest and most heartfelt gratitude to my academic supervisor, \supervisor. His meticulous guidance, insightful professional feedback have served as a compass that guided me from nascent ideas to the completion of this thesis.
+
+I also wish to extend my sincere thanks to FPT University --- especially the Master of Software Engineering program --- for cultivating an inspiring academic environment and providing the resources necessary for my research.
+
+Finally, I owe my profound appreciation to my family and loved ones. Their unwavering support has been my steadfast foundation throughout this demanding journey of study and research.
+
+This research, titled ``\thesistitle,'' could not have been completed without these invaluable contributions.
 
 % Mục lục (Table of Contents)
 \tableofcontents
@@ -405,7 +418,7 @@ The \textbf{UIT-VSFC} (Vietnamese Students' Feedback Corpus) \cite{nguyen2018uit
     \end{tabular}
 \end{table}
 
-As established in Section~1.3.1, Neutral-labeled sentences are excluded from this study. After this removal, the training set used to fit all three models consists of 10,968 sentences, with a close-to-balanced distribution of 51.45\% Positive and 48.55\% Negative (Table~\ref{tab:uitvsfc-train-binary-dist}), indicating that class imbalance is not a significant concern for the binary classification task adopted in this study.
+As established in Section~1.3.1, Neutral-labeled sentences are excluded from this study. After this removal, all three splits (training, validation, and test) retain only Positive and Negative samples. The binary training set used to fit all three models consists of 10,968 sentences, with a close-to-balanced distribution of 51.45\% Positive and 48.55\% Negative (Table~\ref{tab:uitvsfc-train-binary-dist}), indicating that class imbalance is not a significant concern for the binary classification task adopted in this study. The same Neutral-removal procedure is applied consistently to the validation and test splits.
 
 \begin{table}[htbp]
     \centering
@@ -427,7 +440,7 @@ As established in Section~1.3.1, Neutral-labeled sentences are excluded from thi
 
 The AIVIVN-2019 dataset used for cross-domain evaluation in this study is a community-labeled test set of \textbf{3,217} Vietnamese e-commerce product reviews, derived from the original AIVIVN 2019 Sentiment Analysis Challenge and obtained from a publicly available, community-annotated version shared on Kaggle \cite{aivivn2019kaggle}. Each review is labeled as either Positive or Negative, consistent with the binary scope adopted throughout this study.
 
-\textbf{Sampling for Fair Comparison.} To ensure a fair, size-matched comparison against the in-domain UIT-VSFC test set (Section~3.2.1), rather than evaluating on the full 3,217-review file, a random subsample of size $n = |\text{UIT-VSFC test set}| = 1{,}583$ is drawn from AIVIVN-2019 for each random seed (Section~3.5.4), using that seed to control the sampling. This design choice ensures that observed performance differences between UIT-VSFC and AIVIVN-2019 reflect genuine domain shift rather than differing test-set sizes.
+\textbf{Sampling for Fair Comparison.} To ensure a fair, size-matched comparison against the in-domain UIT-VSFC test set (Section~3.2.1), rather than evaluating on the full 3,217-review file, a random subsample of size $n = 1{,}583$ is drawn from AIVIVN-2019 for each random seed (Section~3.5.4), using that seed to control the sampling. This design choice ensures that observed performance differences between UIT-VSFC and AIVIVN-2019 reflect genuine domain shift rather than differing test-set sizes.
 
 \textbf{Class Distribution.} Table~\ref{tab:aivivn-dist} shows the sentiment class distribution of the full 3,217-review source file (prior to sampling). Positive reviews account for 57.69\%, while Negative reviews account for 42.31\% --- a mild imbalance in the opposite direction compared to UIT-VSFC, but still well within a range that does not require class-balancing techniques.
 
@@ -456,7 +469,7 @@ The AIVIVN-2019 dataset used for cross-domain evaluation in this study is a comm
 
 To evaluate model performance under fully unconstrained, real-world conditions, this study additionally collects and evaluates on a dataset of \textbf{320} Vietnamese comments retrieved via the official YouTube Data API v3 from a single video, ``Những thước phim quý về đại tá, Anh hùng phi công Nguyễn Văn Bảy'' (ANTV), a documentary tribute to a decorated Vietnamese Air Force pilot\footnote{\texttt{https://youtu.be/oFVyyTvHGUo}}. Unlike UIT-VSFC and AIVIVN-2019, this dataset originates from an unmoderated social media context and is expected to exhibit substantially more informal language, including slang, teencode, and inconsistent spelling.
 
-\textbf{Labeling Procedure.} Since YouTube comments carry no ground-truth sentiment label, a hybrid LLM-assisted, human-verified labeling procedure was adopted as a practical alternative to full manual dual-annotation. Figure~\ref{fig:youtube-labeling} illustrates the complete pipeline. Two independently configured Large Language Models (LLMs), accessed via the Groq API, were used as two annotators:
+\textbf{Labeling Procedure.} Since YouTube comments carry no ground-truth sentiment label, a hybrid LLM-assisted, human-verified labeling procedure was adopted as a practical alternative to full manual dual-annotation. Figure~\ref{fig:youtube-labeling} illustrates the complete pipeline. Two independently configured Large Language Models (LLMs), accessed via the Groq API \cite{groq_platform}, were used as two annotators:
 \begin{itemize}
     \item \textbf{Annotator 1:} \texttt{qwen/qwen3-32b}, prompted in English using a system/user role structure with a strict JSON output schema.
     \item \textbf{Annotator 2:} \texttt{LLaMA 3.3 70B}, prompted in Vietnamese using few-shot examples and explicit labeling instructions.
@@ -770,7 +783,7 @@ This chapter presents the complete experimental results and quantitative evaluat
 All experiments were conducted on \textbf{Google Colab} (free tier), using a single \textbf{NVIDIA Tesla T4} GPU (16GB VRAM), as detailed in Section~3.6. Models were implemented in \textbf{PyTorch} \cite{paszke2019pytorch}, with PhoBERT and Hybrid PhoBERT-BiLSTM additionally relying on the HuggingFace \texttt{transformers} library \cite{wolf2020transformers}.
 
 \subsection{Dataset Splitting Strategy}
-Models are trained on the UIT-VSFC training split (10,968 sentences after Neutral removal, Section~3.2.1) and validated on the UIT-VSFC validation split, both used exactly as officially distributed, without re-partitioning. Final evaluation is conducted on three test sets of increasing distributional distance from the training domain: the officially distributed UIT-VSFC test split (1,583 sentences, in-domain), a size-matched random subsample of AIVIVN-2019 ($n = 1{,}583$, cross-domain, resampled per seed as described in Section~3.2.2), and the full YouTube wild test set (320 comments, real-world out-of-domain), as described in Sections~3.2.1--3.2.3.
+Models are trained on the UIT-VSFC training split (10,968 sentences after Neutral removal, Section~3.2.1) and validated on the UIT-VSFC validation split (after Neutral removal), both used exactly as officially distributed, without re-partitioning. Final evaluation is conducted on three test sets of increasing distributional distance from the training domain: the officially distributed UIT-VSFC test split (binary, after Neutral removal), a size-matched random subsample of AIVIVN-2019 ($n = 1{,}583$, cross-domain, resampled per seed as described in Section~3.2.2), and the full YouTube wild test set (320 comments, real-world out-of-domain), as described in Sections~3.2.1--3.2.3.
 \subsection{Evaluation Protocol}
 Consistent with Section~3.8, each trained model is evaluated on all three test sets \textit{without any retraining or fine-tuning} between test sets. For every (model, seed, test set) combination, Accuracy and Macro-F1 are computed overall, as well as broken down by sentence-length category (Short/Medium/Long, Section~3.3.2). Domain generalization is quantified via the relative drop in Accuracy and Macro-F1 from the in-domain UIT-VSFC result to each out-of-domain result.
 
@@ -803,30 +816,25 @@ Table~\ref{tab:uitvsfc-results} reports Accuracy and Macro-F1 for all three mode
 PhoBERT achieves the highest in-domain performance, with the lowest variance across seeds (std $= 0.30$), indicating both superior accuracy and greater training stability compared to the other two architectures. The Hybrid PhoBERT-BiLSTM model, despite using only a truncated, frozen 8-layer PhoBERT encoder, closely approaches full PhoBERT's performance (within 0.6 percentage points of Accuracy), while BiLSTM trails both pretrained-based models by approximately 2.4--3.0 percentage points, consistent with its reliance on randomly initialized embeddings rather than pretrained contextual representations (Section~3.4.1).
 
 \subsection{Confusion Matrix}
-Table~\ref{tab:confmat-uitvsfc} presents the confusion matrix for each model's \textbf{best-performing seed} (by UIT-VSFC Macro-F1: BiLSTM seed 2026, PhoBERT seed 2026, Hybrid PhoBERT-BiLSTM seed 123), evaluated on the corresponding 300-sample subset of the UIT-VSFC test set, reconstructed from the classification report precision/recall/support values.
 
-\begin{table}[htbp]
-    \centering
-    \caption{Confusion matrix on the UIT-VSFC test set (300-sample subset, best seed per model).}
-    \label{tab:confmat-uitvsfc}
-    \begin{tabular}{llcc}
-        \hline
-        \textbf{Model}                                    &                 & \textbf{Predicted Negative} & \textbf{Predicted Positive} \\
-        \hline
-        \multirow{2}{*}{BiLSTM (seed 2026)}               & Actual Negative & 132                         & 5                           \\
-                                                          & Actual Positive & 7                           & 156                         \\
-        \hline
-        \multirow{2}{*}{PhoBERT (seed 2026)}              & Actual Negative & 135                         & 2                           \\
-                                                          & Actual Positive & 2                           & 161                         \\
-        \hline
-        \multirow{2}{*}{Hybrid PhoBERT-BiLSTM (seed 123)} & Actual Negative & 141                         & 3                           \\
-                                                          & Actual Positive & 2                           & 154                         \\
-        \hline
-    \end{tabular}
-\end{table}
+To enable a fair visual comparison of error patterns under a consistent sample size, Table~\ref{tab:confmat-uitvsfc} presents the confusion matrix for each model on a fixed 300-sample subset of the UIT-VSFC test set. The subset size was chosen to match the sample size used for the detailed classification reports on AIVIVN-2019 and the YouTube wild test set (approximately 320 comments). The subset was randomly drawn once and kept identical across models. All three models are evaluated under the same random seed (42).
 
-At their respective best seeds, PhoBERT achieves the most balanced error distribution (2 false positives, 2 false negatives out of 300), while Hybrid PhoBERT-BiLSTM makes slightly more false positives (3) but fewer false negatives (2), and BiLSTM makes the most errors overall (12 total misclassifications, versus 4 for PhoBERT and 5 for Hybrid). This is consistent with the overall Macro-F1 ranking established in Table~\ref{tab:uitvsfc-results}, and further confirms that the pretrained-representation models (PhoBERT and Hybrid) generalize more reliably than the from-scratch BiLSTM even under favorable random initialization.
+\begin{tabular}{llcc}
+    \hline
+    \textbf{Model}                                   &                 & \textbf{Predicted Negative} & \textbf{Predicted Positive} \\
+    \hline
+    \multirow{2}{*}{BiLSTM (seed 42)}                & Actual Negative & 122                         & 9                           \\
+                                                     & Actual Positive & 5                           & 164                         \\
+    \hline
+    \multirow{2}{*}{PhoBERT (seed 42)}               & Actual Negative & 130                         & 1                           \\
+                                                     & Actual Positive & 5                           & 164                         \\
+    \hline
+    \multirow{2}{*}{Hybrid PhoBERT-BiLSTM (seed 42)} & Actual Negative & 128                         & 3                           \\
+                                                     & Actual Positive & 6                           & 163                         \\
+    \hline
+\end{tabular}
 
+Under the same seed (42), PhoBERT achieves the lowest number of total errors (6 misclassifications), followed by Hybrid PhoBERT-BiLSTM (9 errors) and BiLSTM (14 errors). PhoBERT also shows the most balanced error distribution. These patterns are consistent with the overall Macro-F1 ranking in Table~\ref{tab:uitvsfc-results}.
 \subsection{Comparison among BiLSTM, PhoBERT, and Hybrid PhoBERT-BiLSTM}
 Ranking all three models by in-domain Macro-F1 yields: PhoBERT (98.19\%) $>$ Hybrid PhoBERT-BiLSTM (97.58\%) $>$ BiLSTM (95.17\%). This ordering confirms that pretrained contextual representations (PhoBERT, Hybrid) provide a measurable advantage over embeddings learned from scratch (BiLSTM) on the in-domain task, even when, as in the Hybrid model, the pretrained encoder is truncated to 8 layers and entirely frozen (Section~3.4.3). The relatively small gap between PhoBERT and Hybrid (0.61 percentage points in Macro-F1) suggests that most of PhoBERT's in-domain representational benefit is retained even under this reduced-computation configuration --- a trade-off examined further in terms of computational cost in Section~4.5.
 
@@ -897,11 +905,11 @@ Beyond having the lowest mean degradation, PhoBERT also exhibits the lowest vari
 \section{Sequence Length Analysis}
 
 \subsection{Sentence Length Distribution}
-Following the fixed Short/Medium/Long thresholds established in Section~3.3.2 (derived from the 33rd/66th percentiles of the UIT-VSFC training set), Table~\ref{tab:length-dist} reports the resulting length-category distribution on each test set. The UIT-VSFC test set distribution is fixed (identical across all seeds, since it is evaluated in full), while the AIVIVN-2019 distribution varies slightly per seed due to the fixed-size random sampling procedure described in Section~3.2.2 (values shown are representative, from seed 42); the YouTube wild test set distribution is fixed, as its 320 comments are evaluated in full for every seed.
+Following the fixed Short/Medium/Long thresholds established in Section~3.3.2 (derived from the 33rd/66th percentiles of the UIT-VSFC training set), Table~\ref{tab:length-dist} reports the resulting length-category distribution on each test set. The UIT-VSFC test set distribution is fixed (identical across all seeds, since it is evaluated in full after Neutral removal), while the AIVIVN-2019 distribution varies slightly per seed due to the fixed-size random sampling procedure described in Section~3.2.2 (values shown are representative, from seed 42); the YouTube wild test set distribution is fixed, as its 320 comments are evaluated in full for every seed.
 
 \begin{table}[htbp]
     \centering
-    \caption{Sentence-length category distribution across the three test sets.}
+    \caption{Sentence-length category distribution across the three test sets (UIT-VSFC counts are after Neutral removal).}
     \label{tab:length-dist}
     \begin{tabular}{lccc}
         \hline
@@ -913,7 +921,6 @@ Following the fixed Short/Medium/Long thresholds established in Section~3.3.2 (d
         \hline
     \end{tabular}
 \end{table}
-
 Notably, the length composition shifts substantially across domains: UIT-VSFC is dominated by Short and Medium sentences (consistent with the corpus-wide characteristic established in Section~3.2.1), whereas both AIVIVN-2019 and the YouTube wild test set are dominated by Long sentences, reflecting the more elaborate, multi-sentence style of product reviews and social media comments compared to concise course feedback.
 
 \subsection{Performance by Length Category}
@@ -1011,7 +1018,7 @@ The performance ranking mirrors that observed on AIVIVN-2019 (Section~4.3): PhoB
 
 This chapter has presented the complete experimental evaluation of BiLSTM, PhoBERT, and the proposed Hybrid PhoBERT-BiLSTM model, following the methodology established in Chapter~3. Several key findings emerge.
 
-\textbf{In-domain performance.} On the UIT-VSFC test set, PhoBERT achieves the highest Accuracy and Macro-F1 (98.20\% and 98.19\%, respectively), followed closely by Hybrid PhoBERT-BiLSTM (97.60\%, 97.58\%), with BiLSTM trailing both by 2.4--3.0 percentage points (Section~4.2). Confusion matrix analysis confirms that both pretrained-representation models make substantially fewer classification errors than BiLSTM, even at their respective best-performing seeds.
+\textbf{In-domain performance.} On the UIT-VSFC test set, PhoBERT achieves the highest Accuracy and Macro-F1 (98.20\% and 98.19\%, respectively), followed closely by Hybrid PhoBERT-BiLSTM (97.60\%, 97.58\%), with BiLSTM trailing both by 2.4--3.0 percentage points (Section~4.2). Confusion matrix analysis on the 300-sample subsets (seed 42) confirms that both pretrained-representation models make substantially fewer classification errors than BiLSTM.
 
 \textbf{Cross-domain generalization.} The performance gap between models widens considerably once evaluated out-of-domain. On AIVIVN-2019, PhoBERT's advantage over BiLSTM grows from 3.02 percentage points in-domain to 13.30 percentage points cross-domain, and PhoBERT exhibits the smallest and most stable Macro-F1 degradation (14.56\% $\pm$ 1.18) of the three models (Section~4.3). This demonstrates that pretrained contextual representations, even when frozen and truncated as in the Hybrid model, transfer substantially better across domains than embeddings learned entirely from the training distribution.
 
@@ -1338,6 +1345,8 @@ PhoBERT's principal strength is \textbf{accuracy and generalization}: it achieve
 \subsection{Strengths of Hybrid PhoBERT-BiLSTM}
 Hybrid PhoBERT-BiLSTM's principal strength is \textbf{balancing accuracy against computational cost}. By freezing and truncating the PhoBERT encoder to its first 8 of 12 layers (Section~3.4.3), it reduces inference latency relative to full PhoBERT by approximately 29\% (CPU) and 20\% (GPU), while sacrificing only 0.61 percentage points of in-domain Macro-F1 and retaining a meaningful share of PhoBERT's cross-domain robustness (Section~4.3, 4.5). Unlike BiLSTM, it still benefits from pretrained contextual representations, and unlike PhoBERT, it requires no gradient updates to the (large majority of the) Transformer encoder during training, reducing training-time computational demand as well. Its strength is therefore not outright superiority on any single metric, but rather occupying a favorable middle position on the accuracy-latency spectrum established under RQ3 (Section~6.1).
 
+
+
 \subsection{Performance versus Computational Cost}
 Table~\ref{tab:tradeoff-summary} consolidates the core accuracy-cost trade-off across all three models, combining in-domain Macro-F1 (Table~\ref{tab:uitvsfc-results}) with CPU/GPU latency (Table~\ref{tab:latency}).
 
@@ -1388,6 +1397,8 @@ While this study provides a controlled, multi-dimensional comparison of three Vi
 
 \subsection{Dataset Limitations}
 The primary training resource, UIT-VSFC, consists of academic course-feedback sentences collected over three academic years at a single Vietnamese university (Section~3.2.1), and is predominantly composed of short sentences (over 83\% under 15 words, Section~3.2.1). All three models are therefore trained exclusively on this relatively narrow linguistic distribution, and their in-domain performance (Section~4.2) reflects proficiency on this specific style of text rather than Vietnamese sentiment expression in general. Additionally, the AIVIVN-2019 cross-domain test set is evaluated via a fixed-size random subsample per seed (Section~3.2.2, Section~3.8) rather than its full 3,217-review extent, and the YouTube wild test set is limited to comments from a single video (Section~3.2.3), whose specific topic (a patriotic tribute video) plausibly shaped both its class distribution (62.5\% Positive) and its linguistic characteristics in ways that may not generalize to YouTube comments on other topics.
+
+Furthermore, the YouTube wild test set's labeling procedure (Section~3.2.3) discarded all comments on which the two LLM annotators disagreed, retaining only cases where both independently converged on the same label prior to human verification. Because inter-annotator disagreement is itself often correlated with genuine linguistic ambiguity --- sarcasm, mixed sentiment, or ambiguous phrasing being precisely the cases most likely to produce disagreement between two independent annotators --- the resulting 320-comment evaluation set should be understood as a \textbf{high-confidence subset} of YouTube comments rather than a representative sample of the full comment population on the source video. Consequently, the real-world performance figures reported in Section~4.6 likely represent an optimistic upper bound, and may not fully reflect model performance on the more ambiguous or contested portion of real-world social media sentiment that this filtering procedure excluded.
 
 \subsection{Binary Sentiment Classification}
 Following the scope established in Section~1.3.1, this study excludes the Neutral class present in the original UIT-VSFC corpus, framing sentiment classification as a binary Positive/Negative task. While this decision was motivated by the Neutral class's small proportion (4.01\% of the training set, Section~3.2.1) and its comparatively poor baseline classifiability in prior work \cite{nguyen2018uitvsfc}, it necessarily limits the applicability of this study's findings to real-world scenarios where Neutral or mixed-sentiment content is common and cannot simply be discarded --- for instance, purely factual customer service inquiries or ambiguous social media comments that express no clear polarity.
