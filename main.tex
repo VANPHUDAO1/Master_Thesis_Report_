@@ -581,7 +581,7 @@ The BiLSTM model serves as a lightweight, non-pretrained baseline. As illustrate
 \end{itemize}
 Because this model relies entirely on randomly initialized embeddings, without any pretrained linguistic knowledge, it represents the performance achievable by a standard recurrent architecture trained \textit{from scratch} on UIT-VSFC alone.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}[
         box/.style={rectangle, draw, rounded corners, minimum width=4.2cm, minimum height=0.9cm, align=center, font=\small},
@@ -612,7 +612,7 @@ Because this model relies entirely on randomly initialized embeddings, without a
 
 The PhoBERT baseline uses \texttt{vinai/phobert-base} \cite{nguyen2020phobert}, a monolingual Transformer encoder pretrained on 20GB of Vietnamese text, fine-tuned end-to-end (all parameters trainable) via HuggingFace's \texttt{AutoModelForSequenceClassification}. As shown in Figure~\ref{fig:phobert-arch}, input text is tokenized using PhoBERT's native Byte-Pair Encoding (BPE) tokenizer, encoded through all 12 Transformer layers, and the final-layer representation of the special \texttt{[CLS]} token is passed through a classification head to produce the Positive/Negative prediction. Unlike the BiLSTM and Hybrid models, PhoBERT is fully fine-tuned rather than frozen, allowing all pretrained weights to be updated during training.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}[
         box/.style={rectangle, draw, rounded corners, minimum width=4.6cm, minimum height=0.9cm, align=center, font=\small},
@@ -645,7 +645,7 @@ The Hybrid model is designed to combine PhoBERT's contextual embedding power wit
 
 The full forward pass proceeds as follows: token sequences are encoded by the truncated, frozen PhoBERT encoder; the resulting sequence of hidden states passes through a Dropout layer (rate 0.1); a single bidirectional LSTM layer (hidden size = 256) processes the sequence; the final forward and backward hidden states are concatenated (dimension 512); and a fully connected layer (512 $\rightarrow$ 2) produces the final classification logits.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}[
         box/.style={rectangle, draw, rounded corners, minimum width=5.2cm, minimum height=0.9cm, align=center, font=\small},
