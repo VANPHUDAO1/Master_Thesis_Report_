@@ -28,8 +28,9 @@
 *.tmp
 *.DS_Store
 
-# Keep source and figures
+# Keep source, output PDF for readers, and figures
 !main.tex
+!main.pdf
 !references.bib
 !README.md
 !figures/
