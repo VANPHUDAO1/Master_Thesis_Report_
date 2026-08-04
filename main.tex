@@ -842,25 +842,34 @@ PhoBERT achieves the highest in-domain performance, with the lowest variance acr
 
 To enable a fair visual comparison of error patterns under a consistent sample size, Table~\ref{tab:confmat-uitvsfc} presents the confusion matrix for each model on a fixed 300-sample subset of the UIT-VSFC test set. The subset size was chosen to match the sample size used for the detailed classification reports on AIVIVN-2019 and the YouTube wild test set (approximately 320 comments). The subset was randomly drawn once and kept identical across models. All three models are evaluated under the same random seed (42).
 
-\begin{tabular}{llcc}
-    \hline
-    \textbf{Model}                                   &                 & \textbf{Predicted Negative} & \textbf{Predicted Positive} \\
-    \hline
-    \multirow{2}{*}{BiLSTM (seed 42)}                & Actual Negative & 122                         & 9                           \\
-                                                     & Actual Positive & 5                           & 164                         \\
-    \hline
-    \multirow{2}{*}{PhoBERT (seed 42)}               & Actual Negative & 130                         & 1                           \\
-                                                     & Actual Positive & 5                           & 164                         \\
-    \hline
-    \multirow{2}{*}{Hybrid PhoBERT-BiLSTM (seed 42)} & Actual Negative & 128                         & 3                           \\
-                                                     & Actual Positive & 6                           & 163                         \\
-    \hline
-\end{tabular}
+\begin{table}[!htbp]
+    \centering
+    \caption{Confusion matrices on the 300-sample UIT-VSFC test subset (seed 42).}
+    \label{tab:confmat-uitvsfc}
+    \begin{tabular}{llcc}
+        \hline
+        \textbf{Model} &                 & \textbf{Predicted Negative} & \textbf{Predicted Positive} \\
+        \hline
+        \multirow{2}{*}{BiLSTM (seed 42)}
+                       & Actual Negative & 122                         & 9                           \\
+                       & Actual Positive & 5                           & 164                         \\
+        \hline
+        \multirow{2}{*}{PhoBERT (seed 42)}
+                       & Actual Negative & 130                         & 1                           \\
+                       & Actual Positive & 5                           & 164                         \\
+        \hline
+        \multirow{2}{*}{Hybrid PhoBERT-BiLSTM (seed 42)}
+                       & Actual Negative & 128                         & 3                           \\
+                       & Actual Positive & 6                           & 163                         \\
+        \hline
+    \end{tabular}
+\end{table}
 
 Under the same seed (42), PhoBERT achieves the lowest number of total errors (6 misclassifications), followed by Hybrid PhoBERT-BiLSTM (9 errors) and BiLSTM (14 errors). PhoBERT also shows the most balanced error distribution. These patterns are consistent with the overall Macro-F1 ranking in Table~\ref{tab:uitvsfc-results}.
-\subsection{Comparison among BiLSTM, PhoBERT, and Hybrid PhoBERT-BiLSTM}
-Ranking all three models by in-domain Macro-F1 yields: PhoBERT (98.19\%) $>$ Hybrid PhoBERT-BiLSTM (97.58\%) $>$ BiLSTM (95.17\%). This ordering confirms that pretrained contextual representations (PhoBERT, Hybrid) provide a measurable advantage over embeddings learned from scratch (BiLSTM) on the in-domain task, even when, as in the Hybrid model, the pretrained encoder is truncated to 8 layers and entirely frozen (Section~3.4.3). The relatively small gap between PhoBERT and Hybrid (0.61 percentage points in Macro-F1) suggests that most of PhoBERT's in-domain representational benefit is retained even under this reduced-computation configuration --- a trade-off examined further in terms of computational cost in Section~4.5.
 
+\subsection{Comparison among BiLSTM, PhoBERT, and Hybrid PhoBERT-BiLSTM}
+
+Ranking all three models by in-domain Macro-F1 yields: PhoBERT (98.19\%) $>$ Hybrid PhoBERT-BiLSTM (97.58\%) $>$ BiLSTM (95.17\%). This ordering confirms that pretrained contextual representations (PhoBERT, Hybrid) provide a measurable advantage over embeddings learned from scratch (BiLSTM) on the in-domain task, even when, as in the Hybrid model, the pretrained encoder is truncated to 8 layers and entirely frozen (Section~3.4.3). The relatively small gap between PhoBERT and Hybrid (0.61 percentage points in Macro-F1) suggests that most of PhoBERT's in-domain representational benefit is retained even under this reduced-computation configuration---a trade-off examined further in terms of computational cost in Section~4.5.
 
 \section{Cross-domain Evaluation on AIVIVN-2019}
 
