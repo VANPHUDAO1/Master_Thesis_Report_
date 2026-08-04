@@ -2,45 +2,54 @@
 %% CORE MODEL / ARCHITECTURE REFERENCES
 %% ============================================================
 
-@article{devlin2018bert,
-  title   = {{BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding}},
-  author  = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
-  journal = {arXiv preprint arXiv:1810.04805},
-  year    = {2018}
+@misc{devlin2019bertpretrainingdeepbidirectional,
+  title         = {BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding},
+  author        = {Jacob Devlin and Ming-Wei Chang and Kenton Lee and Kristina Toutanova},
+  year          = {2019},
+  eprint        = {1810.04805},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL},
+  url           = {https://arxiv.org/abs/1810.04805}
 } % used: Chapter 2 (Related Work)
 
-@inproceedings{nguyen2020phobert,
-  title     = {{PhoBERT: Pre-trained language models for Vietnamese}},
-  author    = {Nguyen, Dat Quoc and Nguyen, Anh Tuan},
-  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2020},
-  pages     = {1037--1042},
-  year      = {2020},
-  publisher = {Association for Computational Linguistics},
-  url       = {https://aclanthology.org/2020.findings-emnlp.92}
+@misc{nguyen2020phobertpretrainedlanguagemodels,
+  title         = {PhoBERT: Pre-trained language models for Vietnamese},
+  author        = {Dat Quoc Nguyen and Anh Tuan Nguyen},
+  year          = {2020},
+  eprint        = {2003.00744},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2003.00744}
 } % used: Chapter 1 (Background), Chapter 2 (Related Work + Table 2.1)
 
 @article{hochreiter1997lstm,
-  title     = {{Long Short-Term Memory}},
-  author    = {Hochreiter, Sepp and Schmidhuber, J{\"u}rgen},
-  journal   = {Neural Computation},
-  volume    = {9},
-  number    = {8},
-  pages     = {1735--1780},
-  year      = {1997},
-  publisher = {MIT Press}
-} % used: Chapter 2 (Related Work, foundational LSTM citation)
+  author   = {Hochreiter, Sepp and Schmidhuber, Jürgen},
+  title    = {Long Short-Term Memory},
+  journal  = {Neural Computation},
+  volume   = {9},
+  number   = {8},
+  pages    = {1735-1780},
+  year     = {1997},
+  month    = {11},
+  abstract = {Learning to store information over extended time intervals by recurrent backpropagation takes a very long time, mostly because of insufficient, decaying error backflow. We briefly review Hochreiter's (1991) analysis of this problem, then address it by introducing a novel, efficient, gradient based method called long short-term memory (LSTM). Truncating the gradient where this does not do harm, LSTM can learn to bridge minimal time lags in excess of 1000 discrete-time steps by enforcing constant error flow through constant error carousels within special units. Multiplicative gate units learn to open and close access to the constant error flow. LSTM is local in space and time; its computational complexity per time step and weight is O. 1. Our experiments with artificial data involve local, distributed, real-valued, and noisy pattern representations. In comparisons with real-time recurrent learning, back propagation through time, recurrent cascade correlation, Elman nets, and neural sequence chunking, LSTM leads to many more successful runs, and learns much faster. LSTM also solves complex, artificial long-time-lag tasks that have never been solved by previous recurrent network algorithms.},
+  issn     = {0899-7667},
+  doi      = {10.1162/neco.1997.9.8.1735}
+}
+ % used: Chapter 2 (Related Work, foundational LSTM citation)
 
 @inproceedings{mikolov2013word2vec,
-  title     = {{Distributed Representations of Words and Phrases and their Compositionality}},
-  author    = {Mikolov, Tomas and Sutskever, Ilya and Chen, Kai and Corrado, Greg S and Dean, Jeff},
+  title     = {Distributed Representations of Words and Phrases and their Compositionality},
+  author    = {Mikolov, Tomas and Sutskever, Ilya and Chen, Kai and Corrado, Greg S. and Dean, Jeffrey},
   booktitle = {Advances in Neural Information Processing Systems},
   volume    = {26},
-  year      = {2013}
+  pages     = {3111--3119},
+  year      = {2013},
+  doi       = {10.48550/arXiv.1310.4546}
 } % used: Chapter 2 (Related Work)
 
 @article{thin2023vietnamese,
   title   = {Vietnamese Sentiment Analysis: An Overview and Comparative Study of Fine-tuning Pretrained Language Models},
-  author  = {Van Thin, Dang and Hao, Duong Ngoc and Nguyen, Ngan Luu-Thuy},
+  author  = {Dang Van Thin and Duong Ngoc Hao and Ngan Luu-Thuy Nguyen},
   journal = {ACM Transactions on Asian and Low-Resource Language Information Processing},
   volume  = {22},
   number  = {6},
@@ -50,24 +59,27 @@
 } % used: Chapter 2 (Research Gap 1)
 
 @inproceedings{ha2016lifelong,
-  title     = {Lifelong Learning for Cross-Domain {V}ietnamese Sentiment Classification},
-  author    = {Ha, Quang-Vinh and Nguyen-Hoang, Bao-Dai and Nghiem, Minh-Quoc},
-  booktitle = {Computational Social Networks (CSoNet 2016)},
+  title     = {Lifelong Learning for Cross-Domain Vietnamese Sentiment Classification},
+  author    = {Quang-Vinh Ha and Bao-Dai Nguyen-Hoang and Minh-Quoc Nghiem},
+  booktitle = {Computational Social Networks - 5th International Conference, {CSoNet} 2016},
   series    = {Lecture Notes in Computer Science},
   volume    = {9795},
+  pages     = {298--308},
   publisher = {Springer},
   year      = {2016},
   doi       = {10.1007/978-3-319-42345-6_26}
 } % used: Chapter 2 (Research Gap 3)
 
 @inproceedings{bert2dnn2020,
-  title        = {{BERT2DNN}: {BERT} Distillation with Massive Unlabeled Data for Online E-Commerce Search},
-  author       = {Jiang, Yunjiang and Shang, Yue and Liu, Ziyang and Shen, Hongwei and Xiao, Yun and Xiong, Wei and Xu, Sulong and Yan, Weipeng and Jin, Di},
-  booktitle    = {2020 IEEE International Conference on Data Mining (ICDM)},
-  pages        = {212--221},
-  year         = {2020},
-  organization = {IEEE},
-  note         = {arXiv:2010.10442}
+  title         = {{BERT2DNN}: {BERT} Distillation with Massive Unlabeled Data for Online E-Commerce Search},
+  author        = {Jiang, Yunjiang and Shang, Yue and Liu, Ziyang and Shen, Hongwei and Xiao, Yun and Xiong, Wei and Xu, Sulong and Yan, Weipeng and Jin, Di},
+  booktitle     = {2020 IEEE International Conference on Data Mining (ICDM)},
+  pages         = {212--221},
+  year          = {2020},
+  publisher     = {IEEE},
+  doi           = {10.1109/ICDM50108.2020.00030},
+  eprint        = {2010.10442},
+  archiveprefix = {arXiv}
 } % used: Chapter 2 (Research Gap 4 - general BERT deployment/latency motivation)
 
 %% ============================================================
@@ -81,124 +93,138 @@
   volume  = {34},
   number  = {4},
   pages   = {295--310},
-  year    = {2018}
+  year    = {2018},
+  doi     = {10.15625/1813-9663/34/4/13160}
 } % used: Chapter 1 (Background)
 
 @inproceedings{nguyen2018variants,
-  title        = {Variants of Long Short-Term Memory for Sentiment Analysis on {V}ietnamese Students' Feedback Corpus},
-  author       = {Nguyen, Vu Duc and Nguyen, Kiet Van and Nguyen, Ngan Luu-Thuy},
-  booktitle    = {2018 10th International Conference on Knowledge and Systems Engineering (KSE)},
-  pages        = {306--311},
-  year         = {2018},
-  organization = {IEEE}
+  title     = {Variants of Long Short-Term Memory for Sentiment Analysis on {V}ietnamese Students' Feedback Corpus},
+  author    = {Nguyen, Duc-Vu and Nguyen, Kiet Van and Nguyen, Ngan Luu-Thuy},
+  booktitle = {2018 10th International Conference on Knowledge and Systems Engineering (KSE)},
+  pages     = {306--311},
+  year      = {2018},
+  publisher = {IEEE},
+  doi       = {10.1109/KSE.2018.8573351}
 } % used: Chapter 1 (Background), Chapter 2 -- replaces fabricated "pham2020sentiment"
 
-@article{nguyen2018ensemble,
-  title   = {An Ensemble of Shallow and Deep Learning Algorithms for {V}ietnamese Sentiment Analysis},
-  author  = {Nguyen, Hoang-Quan and others},
-  journal = {ResearchGate Preprint},
-  year    = {2018},
-  note    = {Evaluates Bi-LSTM, Bi-LSTM+Attention, Bi-GRU, RCNN, Transformer, and PhoBERT on AIVIVN 2019 and a self-collected e-commerce dataset}
+@inproceedings{nguyen2018ensemble,
+  title     = {An Ensemble of Shallow and Deep Learning Algorithms for {V}ietnamese Sentiment Analysis},
+  author    = {Nguyen, Hoang-Quan and Nguyen, Quang-Uy},
+  booktitle = {2018 5th NAFOSTED Conference on Information and Computer Science (NICS)},
+  pages     = {165--170},
+  year      = {2018},
+  publisher = {IEEE},
+  doi       = {10.1109/NICS.2018.8606880}
 } % used: Chapter 2 (Related Work - BiLSTM Efficiency) -- replaces fabricated "hoang2018"
 
 @inproceedings{nguyen2018uitvsfc,
-  title        = {{UIT-VSFC: Vietnamese Students' Feedback Corpus for Sentiment Analysis}},
-  author       = {Nguyen, Kiet Van and Nguyen, Duc-Vu and Nguyen, Phu X. V. and Truong, Tham T. H. and Nguyen, Ngan Luu-Thuy},
-  booktitle    = {2018 10th International Conference on Knowledge and Systems Engineering (KSE)},
-  pages        = {19--24},
-  year         = {2018},
-  organization = {IEEE},
-  doi          = {10.1109/KSE.2018.8573337}
+  title     = {{UIT-VSFC}: {V}ietnamese Students' Feedback Corpus for Sentiment Analysis},
+  author    = {Nguyen, Kiet Van and Nguyen, Duc-Vu and Nguyen, Phu X. V. and Truong, Tham T. H. and Nguyen, Ngan Luu-Thuy},
+  booktitle = {2018 10th International Conference on Knowledge and Systems Engineering (KSE)},
+  pages     = {19--24},
+  year      = {2018},
+  publisher = {IEEE},
+  doi       = {10.1109/KSE.2018.8573337}
 } % used: Chapter 2 (Related Work - PhoBERT on UIT-VSFC)
 
 @inproceedings{nguyen2018nics,
-  title        = {Deep Learning versus Traditional Classifiers on {V}ietnamese Students' Feedback Corpus},
-  author       = {Nguyen, Phu X. V. and Truong, Tham T. H. and Nguyen, Kiet Van and Nguyen, Ngan Luu-Thuy},
-  booktitle    = {2018 5th NAFOSTED Conference on Information and Computer Science (NICS)},
-  pages        = {75--80},
-  year         = {2018},
-  organization = {IEEE},
-  doi          = {10.1109/NICS.2018.8606837}
+  title     = {Deep Learning versus Traditional Classifiers on {V}ietnamese Students' Feedback Corpus},
+  author    = {Nguyen, Phu X. V. and Truong, Tham T. H. and Nguyen, Kiet Van and Nguyen, Ngan Luu-Thuy},
+  booktitle = {2018 5th NAFOSTED Conference on Information and Computer Science (NICS)},
+  pages     = {75--80},
+  year      = {2018},
+  publisher = {IEEE},
+  doi       = {10.1109/NICS.2018.8606837}
 } % used: Chapter 2 (Table 2.1) -- replaces fabricated "nguyen_2018_dl"; reports F1=92.0% (sentiment) on UIT-VSFC
 
 @inproceedings{dang2023hybrid,
   title     = {Sentiment Analysis for {V}ietnamese -- Based Hybrid Deep Learning Models},
   author    = {Dang, Cach N. and Moreno-Garc{\'i}a, Mar{\'i}a N. and De la Prieta, Fernando and Nguyen, Kien V. and Ngo, Vuong M.},
-  booktitle = {International Conference on Hybrid Artificial Intelligence Systems (HAIS 2023)},
+  booktitle = {Hybrid Artificial Intelligent Systems},
   series    = {Lecture Notes in Computer Science},
   volume    = {14001},
-  publisher = {Springer},
   pages     = {293--303},
+  publisher = {Springer},
   year      = {2023},
   doi       = {10.1007/978-3-031-40725-3_25}
 } % used: Chapter 2 (Table 2.1, Hybrid Approaches) -- replaces fabricated "tran_2023_hybrid"; reports Acc=93.94% (USAL-UTH/Shopee), 93.53% (UIT-VSFC)
 
 @inproceedings{le2022kse,
-  title        = {A New Approach for {V}ietnamese Aspect-based Sentiment Analysis},
-  author       = {Le, Bao Hoang and Nguyen, Hoang Minh and Nguyen, Nhi Kieu-Phuong and Nguyen, Binh T.},
-  booktitle    = {2022 14th International Conference on Knowledge and Systems Engineering (KSE)},
-  pages        = {1--6},
-  year         = {2022},
-  organization = {IEEE},
-  doi          = {10.1109/KSE56063.2022.9953759}
-} % used: Chapter 2 (Table 2.1) -- replaces fabricated "le_2022_social"; reports F1=84.48% (aspect), 63.06% (sentiment) on UIT-ViSFD
+  title     = {A New Approach for {V}ietnamese Aspect-Based Sentiment Analysis},
+  author    = {Le, Bao Hoang and Nguyen, Hoang Minh and Nguyen, Nhi Kieu-Phuong and Nguyen, Binh T.},
+  booktitle = {2022 14th International Conference on Knowledge and Systems Engineering (KSE)},
+  pages     = {1--6},
+  year      = {2022},
+  publisher = {IEEE},
+  doi       = {10.1109/KSE56063.2022.9953759}
+}% used: Chapter 2 (Table 2.1) -- replaces fabricated "le_2022_social"; reports F1=84.48% (aspect), 63.06% (sentiment) on UIT-ViSFD
 
 %% ============================================================
 %% INDUSTRY / MARKET REPORTS (Practical Application Context)
 %% ============================================================
 
 @techreport{vecom_2024,
-  title       = {Vietnam E-Business Index (EBI) 2024: Sustainable Development of E-commerce},
+  title       = {Vietnam E-Commerce Business Index Report (EBI) 2024},
   author      = {{Vietnam E-commerce Association (VECOM)}},
   institution = {Vietnam E-commerce Association},
   year        = {2024},
   address     = {Hanoi, Vietnam},
-  note        = {Industry report (not peer-reviewed). Retrieved from \url{https://vecom.vn/}}
+  url         = {https://vecom.vn/},
+  note        = {Industry report (not peer-reviewed)}
 } % used: Chapter 1 (Background - E-commerce Boom)
 
 @misc{reputa_2024,
-  title        = {Banking Industry Social Listening Report 2024},
+  title        = {Bản tin Social Listening ngành Ngân hàng / Tài chính 2024},
   author       = {{Reputa}},
-  howpublished = {Viettel Group AI Center},
+  howpublished = {Trung tâm Dịch vụ dữ liệu và Trí tuệ nhân tạo Viettel},
   year         = {2024},
-  note         = {Industry report (not peer-reviewed). Analysis of sentiment trends in the Vietnamese banking sector. Available at \url{https://reputa.vn/}}
+  url          = {https://reputa.vn/},
+  note         = {Industry reports / monthly social listening bulletins (not peer-reviewed)}
 } % used: Chapter 1 (Background - Banking & Fintech)
 
 @misc{younet_2023,
-  title        = {Social Listening: Trends in the Education Sector in Vietnam},
+  title        = {Social Listening Insights on the Education Sector in Vietnam},
   author       = {{YouNet Media}},
   year         = {2023},
-  howpublished = {Industry report, YouNet Group},
-  note         = {Industry/market research report (not peer-reviewed); cited for practical context on social listening adoption in Vietnam, consistent with YouNet Media's published sector-specific reports}
+  howpublished = {YouNet Group},
+  url          = {https://younetmedia.com/},
+  note         = {Industry/market research insights (not peer-reviewed); cited for practical context on social listening in Vietnam's education sector}
 } % used: Chapter 1 (Background - Education Quality Assurance)
+
+
+
 
 %% ============================================================
 %% ADDITIONAL / FUTURE-USE REFERENCES (not yet cited)
 %% ============================================================
 
-@article{ieee2023challenges,
+@article{wankhade2022survey,
   author    = {Wankhade, Mayur and Rao, A. C. S. and Kulkarni, Chaitanya},
   title     = {A Survey on Sentiment Analysis Methods, Applications, and Challenges},
   journal   = {Artificial Intelligence Review},
   volume    = {55},
   pages     = {5731--5780},
   year      = {2022},
-  publisher = {Springer}
+  publisher = {Springer},
+  doi       = {10.1007/s10462-022-10144-1}
 }
 
 @misc{aivivn2019kaggle,
-  title        = {{AIVIVN} 2019},
+  title        = {{AIVIVN} 2019 Sentiment Analysis Dataset},
   author       = {{mcocoz}},
   year         = {2019},
-  howpublished = {Kaggle Dataset},
-  note         = {Community-labeled version of the AIVIVN 2019 Sentiment Analysis Challenge test set. Available at \url{https://www.kaggle.com/datasets/mcocoz/aivivn-2019}}
+  howpublished = {Kaggle},
+  url          = {https://www.kaggle.com/datasets/mcocoz/aivivn-2019},
+  note         = {Community-uploaded version of the AIVIVN 2019 Sentiment Analysis Challenge data (not the official competition release)}
 } % used: Chapter 3 (Research Datasets - AIVIVN-2019)
 
 @misc{groq_platform,
-  title        = {Groq: Fast AI Inference},
-  author       = {{Groq Inc.}},
+  title        = {GroqCloud: Fast AI Inference Platform},
+  author       = {{Groq, Inc.}},
+  year         = {2024},
   howpublished = {API platform},
-  note         = {Used to access \texttt{qwen/qwen3-32b} and \texttt{LLaMA 3.3 70B} for LLM-assisted annotation. Available at \url{https://groq.com/}}
+  url          = {https://groq.com/},
+  note         = {Used to access models such as \texttt{qwen/qwen3-32b} and \texttt{llama-3.3-70b-versatile} for LLM-assisted annotation}
 } % used: Chapter 3 (YouTube Dataset - Labeling Procedure)
 
 @inproceedings{vu2018vncorenlp,
@@ -209,14 +235,18 @@
   year      = {2018},
   address   = {New Orleans, Louisiana},
   publisher = {Association for Computational Linguistics},
-  url       = {https://aclanthology.org/N18-5012/}
+  url       = {https://aclanthology.org/N18-5012/},
+  doi       = {10.18653/v1/N18-5012}
 } % used: Chapter 3 (Data Preprocessing - Word Segmentation)
 
-@article{kingma2014adam,
-  title   = {{Adam: A Method for Stochastic Optimization}},
-  author  = {Kingma, Diederik P. and Ba, Jimmy},
-  journal = {arXiv preprint arXiv:1412.6980},
-  year    = {2014}
+@inproceedings{kingma2015adam,
+  title     = {{Adam: A Method for Stochastic Optimization}},
+  author    = {Kingma, Diederik P. and Ba, Jimmy},
+  booktitle = {3rd International Conference on Learning Representations (ICLR)},
+  address   = {San Diego, CA, USA},
+  year      = {2015},
+  doi       = {10.48550/arXiv.1412.6980},
+  url       = {https://arxiv.org/abs/1412.6980}
 } % used: Chapter 3 (Model Training - BiLSTM Optimizer)
 
 @inproceedings{loshchilov2019adamw,
@@ -224,6 +254,7 @@
   author    = {Loshchilov, Ilya and Hutter, Frank},
   booktitle = {International Conference on Learning Representations (ICLR)},
   year      = {2019},
+  doi       = {10.48550/arXiv.1711.05101},
   note      = {arXiv:1711.05101}
 } % used: Chapter 3 (Model Training - PhoBERT/Hybrid Optimizer, AdamW)
 
@@ -233,24 +264,28 @@
   booktitle = {Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations},
   pages     = {38--45},
   year      = {2020},
+  month     = oct,
   publisher = {Association for Computational Linguistics},
   address   = {Online},
+  doi       = {10.18653/v1/2020.emnlp-demos.6},
   url       = {https://aclanthology.org/2020.emnlp-demos.6}
 } % used: Chapter 3 (Model Training - HuggingFace Trainer API)
 
 @misc{wandb,
-  title        = {Weights \& Biases},
-  author       = {{Biewald, Lukas}},
-  year         = {2020},
-  howpublished = {Software tool},
-  note         = {Used for experiment tracking and logging during model training. Available at \url{https://wandb.ai/}}
+  title  = {Experiment Tracking with Weights and Biases},
+  author = {Biewald, Lukas},
+  year   = {2020},
+  note   = {Software available from wandb.com},
+  url    = {https://www.wandb.com/}
 } % used: Chapter 3 (Model Training - Experiment Logging)
 
 @inproceedings{paszke2019pytorch,
   title     = {{PyTorch}: An Imperative Style, High-Performance Deep Learning Library},
-  author    = {Paszke, Adam and Gross, Sam and Massa, Francisco and Lerer, Adam and Bradbury, James and Chanan, Gregory and Killeen, Trevor and Lin, Zeming and Gimelshein, Natalia and Antiga, Luca and Desmaison, Alban and Kopf, Andreas and Yang, Edward and DeVito, Zachary and Raison, Martin and Tejani, Alykhan and Chilamkurthy, Sasank and Steiner, Benoit and Fang, Lu and Bai, Junjie and Chintala, Soumith},
+  author    = {Paszke, Adam and Gross, Sam and Massa, Francisco and Lerer, Adam and Bradbury, James and Chanan, Gregory and Killeen, Trevor and Lin, Zeming and Gimelshein, Natalia and Antiga, Luca and Desmaison, Alban and K{\"o}pf, Andreas and Yang, Edward Z. and DeVito, Zachary and Raison, Martin and Tejani, Alykhan and Chilamkurthy, Sasank and Steiner, Benoit and Fang, Lu and Bai, Junjie and Chintala, Soumith},
   booktitle = {Advances in Neural Information Processing Systems 32 (NeurIPS 2019)},
+  editor    = {Wallach, Hanna M. and Larochelle, Hugo and Beygelzimer, Alina and d'Alch{\'e}-Buc, Florence and Fox, Emily B. and Garnett, Roman},
   pages     = {8024--8035},
+  publisher = {Curran Associates, Inc.},
   year      = {2019}
 } % used: Chapter 3 (Experimental Configuration - Software)
 
@@ -267,30 +302,33 @@
 
 @misc{streamlit2024,
   title        = {Streamlit: A faster way to build and share data apps},
-  author       = {Streamlit Inc.},
+  author       = {{Streamlit Inc.}},
   year         = {2024},
-  howpublished = {\url{https://streamlit.io/}}
+  howpublished = {\url{https://github.com/streamlit/streamlit}}
 }
 
 @article{nguyen2023phogpt,
   title   = {{PhoGPT}: Generative Pre-training for {V}ietnamese},
   author  = {Nguyen, Dat Quoc and Nguyen, Linh The and Tran, Chi and Nguyen, Dung Ngoc and Phung, Dinh and Bui, Hung},
   journal = {arXiv preprint arXiv:2311.02945},
-  year    = {2023}
+  year    = {2023},
+  doi     = {10.48550/arXiv.2311.02945}
 } % used: Chapter 7 (Future Directions - Larger Vietnamese Language Models)
 
 @techreport{nguyen2023vinallama,
   title       = {{VinaLLaMA}: {LLaMA}-based {V}ietnamese Foundation Model},
   author      = {Nguyen, Quan and Pham, Huy and Dao, Dung},
   year        = {2023},
-  institution = {VILM (Virtual Interactive)},
-  note        = {arXiv preprint arXiv:2312.11011}
+  institution = {VILM (Virtual Interactive Language Model)},
+  note        = {arXiv preprint arXiv:2312.11011},
+  doi         = {10.48550/arXiv.2312.11011}
 } % used: Chapter 7 (Future Directions - Larger Vietnamese Language Models)
 
 @misc{nguyen2023vistral,
-  title  = {Vistral-7{B}-Chat: Towards a State-of-the-Art Large Language Model for {V}ietnamese},
-  author = {Nguyen, Chien Van and Nguyen, Thuat and Nguyen, Quan and Nguyen, Huy and Pl{\"u}ster, Bj{\"o}rn and Pham, Nam and Nguyen, Huu and Schramowski, Patrick and Nguyen, Thien},
-  year   = {2023}
+  title        = {Vistral-7{B}-Chat: Towards a State-of-the-Art Large Language Model for {V}ietnamese},
+  author       = {Nguyen, Chien Van and Nguyen, Thuat and Nguyen, Quan and Nguyen, Huy and Pl{\"u}ster, Bj{\"o}rn and Pham, Nam and Nguyen, Huu and Schramowski, Patrick and Nguyen, Thien},
+  year         = {2023},
+  howpublished = {\url{https://huggingface.co/Viet-Mistral/Vistral-7B-Chat}}
 } % used: Chapter 7 (Future Directions - Larger Vietnamese Language Models)
 
 @article{viabsqa2024,
