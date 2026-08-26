@@ -64,7 +64,8 @@
 
 % Định nghĩa các lệnh để dễ thay đổi thông tin
 \newcommand{\thesistitle}{	
-\textbf{A Comparative Study of BERT, LSTM, and Hybrid BERT-LSTM Models for Vietnamese Sentiment Analysis}}
+\textbf{A Comparative Study of PhoBERT, BiLSTM, and Hybrid PhoBERT-BiLSTM Models for Vietnamese Sentiment Analysis}}
+
 \newcommand{\authorname}{Dao Van Phu}
 \newcommand{\supervisor}{Dr. Bui Cao Vu}
 \newcommand{\yearofconvocation}{2026}
@@ -114,13 +115,16 @@
 \end{center}
 
 % Abstract
+% Abstract
+% Abstract
 \section*{Abstract}
-Vietnamese sentiment analysis is a challenging task due to the linguistic characteristics of the language and the need for robust automated classification in practical applications. This thesis investigates three deep learning architectures for Vietnamese binary sentiment classification: BiLSTM, fully fine-tuned PhoBERT, and a proposed Hybrid PhoBERT-BiLSTM model that combines a frozen, layer-truncated PhoBERT encoder with a trainable bidirectional LSTM layer. All models are trained under the same experimental pipeline and evaluated on the UIT-VSFC in-domain test set, the AIVIVN-2019 cross-domain e-commerce dataset, and a real-world YouTube comment dataset without retraining.
+Vietnamese sentiment analysis is a challenging task due to the linguistic characteristics of the language and the need for robust automated classification in practical applications. Rather than proposing a new architecture, this thesis conducts a controlled comparative study of three established approaches for Vietnamese binary sentiment classification --- BiLSTM, fully fine-tuned PhoBERT, and a Hybrid PhoBERT-BiLSTM model combining a frozen, layer-truncated PhoBERT encoder with a trainable BiLSTM --- evaluated under an identical pipeline on an in-domain test set (UIT-VSFC), a cross-domain e-commerce dataset (AIVIVN-2019), and a real-world YouTube comment dataset, without retraining.
 
-Experimental results show that PhoBERT achieves the highest overall performance and generalization, reaching 98.19\% Macro-F1 on the in-domain test set and 83.63--87.91\% on out-of-domain datasets. The proposed Hybrid PhoBERT-BiLSTM model retains most of this performance, achieving 97.58\% Macro-F1 in-domain while reducing inference latency by 20--29\% compared with PhoBERT. BiLSTM is the fastest model, but it generalizes less effectively across domains. These findings demonstrate a clear trade-off between predictive performance and inference efficiency in Vietnamese sentiment classification.
+PhoBERT achieves the highest performance and generalization (98.19\% Macro-F1 in-domain; 83.63--87.91\% out-of-domain). The Hybrid model retains most of this performance (97.58\% Macro-F1 in-domain, a gap that is not statistically significant on two of the three test sets) while reducing CPU/GPU inference latency by 29\%/20\% relative to PhoBERT. An ablation study shows the BiLSTM component drives most of Hybrid's accuracy and that the frozen, truncated encoder (only 1.9\% trainable parameters) gives the fastest training with little accuracy loss. BiLSTM is fastest overall but generalizes less well across domains, revealing a clear performance–efficiency trade-off.
 
-\noindent\textbf{Keywords:} Vietnamese sentiment analysis, sentiment classification, BiLSTM, PhoBERT, hybrid model
+To demonstrate practical applicability, the models are integrated into a locally deployable Streamlit demonstration application, built with an explicit requirements-engineering process and validated through a pilot usability study (SUS score 78.5, ``Good''). All results pertain to binary (Positive/Negative) classification, and study limitations --- including the small-scale YouTube evaluation --- are discussed.
 
+\noindent\textbf{Keywords:} Vietnamese sentiment analysis, sentiment classification, BiLSTM, PhoBERT, hybrid model, ablation study, cross-domain evaluation
 % Lời cảm ơn (Acknowledgments)
 \chapter*{Acknowledgments}
 
@@ -190,7 +194,7 @@ Sentiment Analysis (SA), also known as opinion mining, has become a pivotal task
 
 While PhoBERT has demonstrated superior representational power, it requires substantial computational resources and significant training time. Conversely, BiLSTM is more lightweight and specialized for sequential data but is less effective at representing complex contexts. A potential direction is to combine both: utilizing PhoBERT to generate high-quality contextual embeddings and BiLSTM to capture local sequential features (Hybrid PhoBERT-BiLSTM).
 
-However, the critical question remains: \textit{Does this combination truly yield superior efficacy compared to using PhoBERT or BiLSTM individually, specifically within the context of the Vietnamese language?} Currently, direct and detailed comparative studies of these three architectures on Vietnamese datasets are limited. Therefore, the topic \textbf{``A Comparative Study of BERT, LSTM, and Hybrid BERT-LSTM Models for Vietnamese Sentiment Analysis''} was chosen to provide a comprehensive, empirical, and scientifically grounded perspective, assisting in identifying the most suitable model architecture for Vietnamese sentiment analysis tasks.
+However, the critical question remains: \textit{Does this combination truly yield superior efficacy compared to using PhoBERT or BiLSTM individually, specifically within the context of the Vietnamese language?} Currently, direct and detailed comparative studies of these three architectures on Vietnamese datasets are limited. Therefore, the topic \textbf{``A Comparative Study of PhoBERT, BiLSTM, and Hybrid PhoBERT-BiLSTM Models for Vietnamese Sentiment Analysis''} was chosen to provide a comprehensive, empirical, and scientifically grounded perspective, assisting in identifying the most suitable model architecture for Vietnamese sentiment analysis tasks.
 
 \section{Motivation}
 
@@ -234,6 +238,8 @@ The primary objective of this study is to conduct a rigorous comparative analysi
               \item \textbf{RQ3:} What is the trade-off between classification accuracy and computational latency when deploying these models in a real-world application context?
           \end{itemize}
 \end{enumerate}
+
+It is important to clarify the scope of this thesis's novelty. This work does not propose a fundamentally new neural architecture; the individual components --- BiLSTM, PhoBERT, and the combination of a pretrained Transformer encoder with a recurrent layer --- are all established techniques in the literature. Instead, the primary contribution of this thesis lies in the controlled, identical-pipeline comparative study of these three architectures under a unified experimental protocol, and in the cross-domain, deployment-oriented evaluation that quantifies generalization gaps and computational trade-offs largely unaddressed in prior Vietnamese sentiment analysis work (Section~2.2).
 
 \section{Dataset and Scope}
 To ensure the study is grounded in high-quality, standardized data, the project utilizes the following data sources:
@@ -440,7 +446,12 @@ As established in Section~1.3.1, Neutral-labeled sentences are excluded from thi
 
 The AIVIVN-2019 dataset used for cross-domain evaluation in this study is a community-labeled test set of \textbf{3,217} Vietnamese e-commerce product reviews, derived from the original AIVIVN 2019 Sentiment Analysis Challenge. \textbf{It is important to note that this is not the official AIVIVN test set}, since the competition organizers never publicly released the true labels for the test split; instead, the version used here was independently labeled and uploaded to Kaggle by user \textit{mcocoz} \cite{aivivn2019kaggle}. Each review is labeled as either Positive or Negative, consistent with the binary scope adopted throughout this study.
 
-\textbf{Sampling for Fair Comparison.} To ensure a fair, size-matched comparison against the in-domain UIT-VSFC test set (Section~3.2.1), rather than evaluating on the full 3,217-review file, a random subsample of size $n = 1{,}583$ is drawn from AIVIVN-2019 for each random seed (Section~3.5.4), using that seed to control the sampling. This design choice ensures that observed performance differences between UIT-VSFC and AIVIVN-2019 reflect genuine domain shift rather than differing test-set sizes.
+\textbf{Sampling for Fair Comparison.}
+To enable a fair, size-matched comparison with the UIT-VSFC binary test set, a random subsample of size $n = 1{,}510$ is first drawn from the full 3,217-review AIVIVN-2019 file for each random seed (Section~3.5.4), using that seed to control the sampling. This intermediate subsample matches the size of the UIT-VSFC binary test set after Neutral removal (1,510 sentences).
+
+For the main overall performance metrics reported in Section~4.3, models are evaluated on this full 1,510-sample AIVIVN subset. For confusion-matrix analysis, ablation studies, and other size-controlled comparisons that require identical sample counts across all three test sets, a further random subsample of $n = 300$ is drawn from each of the three evaluation sets (the UIT-VSFC binary test set of 1,510, the AIVIVN 1,510-sample subset, and the YouTube set of 314), using seed 42 to ensure the same 300 samples are used for every model.
+
+Evaluating on the full 3,217-sample corpus is identified as a future extension (Section~6.5.6) but is not required to establish the relative ranking among the three architectures under the size-controlled setting adopted in this study.
 
 \textbf{Class Distribution.} Table~\ref{tab:aivivn-dist} shows the sentiment class distribution of the full 3,217-review source file (prior to sampling). Positive reviews account for 57.69\%, while Negative reviews account for 42.31\% --- a mild imbalance in the opposite direction compared to UIT-VSFC, but still well within a range that does not require class-balancing techniques.
 
@@ -467,7 +478,7 @@ The AIVIVN-2019 dataset used for cross-domain evaluation in this study is a comm
 \subsection{YouTube Dataset (Real-world Prediction)}
 
 
-To evaluate model performance under fully unconstrained, real-world conditions, this study additionally collects and evaluates on a dataset of \textbf{320} Vietnamese comments retrieved via the official YouTube Data API v3 from a single video, ``Những thước phim quý về đại tá, Anh hùng phi công Nguyễn Văn Bảy'' (ANTV), a documentary tribute to a decorated Vietnamese Air Force pilot\footnote{\texttt{https://youtu.be/oFVyyTvHGUo}}. Unlike UIT-VSFC and AIVIVN-2019, this dataset originates from an unmoderated social media context and is expected to exhibit substantially more informal language, including slang, teencode, and inconsistent spelling.
+To evaluate model performance under fully unconstrained, real-world conditions, this study additionally collects and evaluates on a dataset of Vietnamese comments retrieved via the official YouTube Data API v3 from a single video, ``Những thước phim quý về đại tá, Anh hùng phi công Nguyễn Văn Bảy'' (ANTV), a documentary tribute to a decorated Vietnamese Air Force pilot\footnote{\texttt{https://youtu.be/oFVyyTvHGUo}}. A total of \textbf{2,537} raw comments were initially collected. After applying the raw text preprocessing pipeline (Section~3.3.1) --- which removed null/whitespace-only entries, duplicates, URLs, comments shorter than 5 words, and applied text normalization --- \textbf{2,488} comments remained for the labeling procedure. Following the LLM-assisted labeling and filtering process described below, the final evaluation set consists of \textbf{314} high-confidence, human-verified comments. Unlike UIT-VSFC and AIVIVN-2019, this dataset originates from an unmoderated social media context and is expected to exhibit substantially more informal language, including slang, teencode, and inconsistent spelling.
 
 \textbf{Labeling Procedure.} Since YouTube comments carry no ground-truth sentiment label, a hybrid LLM-assisted, human-verified labeling procedure was adopted as a practical alternative to full manual dual-annotation. Figure~\ref{fig:youtube-labeling} illustrates the complete pipeline. Two independently configured Large Language Models (LLMs), accessed via the Groq API \cite{groq_platform}, were used as two annotators:
 \begin{itemize}
@@ -483,20 +494,19 @@ Raw comments were first preprocessed (Section~3.3) and then labeled in batches o
     \label{fig:youtube-labeling}
 \end{figure}
 
-\textbf{Class Distribution.} Table~\ref{tab:youtube-dist} shows the resulting sentiment class distribution. Positive comments account for 62.5\%, while Negative comments account for 37.5\% --- the most imbalanced of the three datasets used in this study. This skew is plausibly attributable to the tribute/documentary nature of the source video, which tends to elicit patriotic and appreciative comments, rather than reflecting a general property of YouTube comments.
-
+\textbf{Class Distribution.} Table~\ref{tab:youtube-dist} shows the resulting sentiment class distribution of the final 314-comment test set. Negative comments account for 63.69\%, while Positive comments account for 36.31\%. This imbalance is notably opposite to the class distribution previously expected from the tribute/documentary nature of the source video, which was assumed to elicit predominantly positive comments. This suggests that the filtering and labeling process --- particularly the exclusion of LLM-disagreed cases --- may have substantially altered the class distribution of the final test set relative to the raw comment population. The 314-comment subset should therefore be understood as a high-confidence, filtered subset rather than a representative sample of the source video's comment distribution.
 \begin{table}[htbp]
     \centering
-    \caption{Sentiment class distribution on the YouTube wild test set (320 comments).}
+    \caption{Sentiment class distribution on the YouTube wild test set (314 comments after LLM-assisted labeling and filtering).}
     \label{tab:youtube-dist}
     \begin{tabular}{lcc}
         \hline
         \textbf{Class} & \textbf{Count} & \textbf{Proportion (\%)} \\
         \hline
-        Positive       & 200            & 62.50                    \\
-        Negative       & 120            & 37.50                    \\
+        Negative       & 200            & 63.69                    \\
+        Positive       & 114            & 36.31                    \\
         \hline
-        \textbf{Total} & \textbf{320}   & \textbf{100.00}          \\
+        \textbf{Total} & \textbf{314}   & \textbf{100.00}          \\
         \hline
     \end{tabular}
 \end{table}
@@ -761,7 +771,7 @@ For the binary classification setting adopted in this study, predictions are eva
     F_1              & = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
 \end{align}
 
-Since predictions must be interpretable for both Positive and Negative classes, \textbf{Macro-F1} --- the unweighted average of the per-class $F_1$ scores --- is used as the primary metric for model selection (early stopping and checkpoint selection, Section~3.5) and for cross-model comparison in Chapter~4, as it treats both classes equally regardless of their relative frequency in each dataset (Section~3.2). Precision, Recall, and per-class $F_1$ are additionally reported to support finer-grained error analysis. A \textbf{confusion matrix} is generated for each model on a fixed 300-sample subset of each test set (size-matched for comparability across UIT-VSFC, AIVIVN-2019, and the YouTube wild test set), enabling inspection of the specific distribution of correct predictions, false positives, and false negatives.
+Since predictions must be interpretable for both Positive and Negative classes, \textbf{Macro-F1} --- the unweighted average of the per-class $F_1$ scores --- is used as the primary metric for model selection (early stopping and checkpoint selection, Section~3.5) and for cross-model comparison in Chapter~4, as it treats both classes equally regardless of their relative frequency in each dataset (Section~3.2). Precision, Recall, and per-class $F_1$ are additionally reported to support finer-grained error analysis. A \textbf{confusion matrix} is generated for each model on a fixed \textbf{300-sample subset} of each test set. This fixed subset is drawn once from each of the three test sets (UIT-VSFC, AIVIVN-2019, and the YouTube wild test set) using the same random seed (42), ensuring that the sample size is identical across all models and all datasets (size-matched for comparability across all three test sets). The confusion matrices enable inspection of the specific distribution of correct predictions, false positives, and false negatives.
 
 \subsection{Computational Efficiency Metrics}
 
@@ -786,10 +796,10 @@ Each model is first evaluated on the official UIT-VSFC test set (Section~3.2.1, 
 Each model is then evaluated, without retraining, on the AIVIVN-2019 test set (Section~3.2.2): 3,217 Vietnamese e-commerce product reviews, labeled Positive/Negative. This dataset differs from UIT-VSFC along two dimensions simultaneously --- \textit{domain} (educational feedback vs.\ product reviews) and \textit{register} (short, semi-formal remarks vs.\ longer, more elaborate consumer language, as established in Section~3.2.2) --- providing a controlled test of cross-domain generalization under a labeled, verifiable ground truth.
 
 \subsection{Prediction on YouTube Comments (Real-world, Out-of-domain)}
-Finally, each model is applied, without retraining, to the 320-comment YouTube wild test set (Section~3.2.3), constructed via the LLM-assisted, human-verified labeling procedure described in Section~3.2.3. This dataset represents the most challenging generalization scenario examined in this study: fully unmoderated, informal social media text, potentially containing slang, teencode, and irregular spelling not represented in either training domain.
+Finally, each model is applied, without retraining, to the 314-comment YouTube wild test set (Section~3.2.3), constructed via the LLM-assisted, human-verified labeling procedure described in Section~3.2.3. This dataset represents the most challenging generalization scenario examined in this study: fully unmoderated, informal social media text, potentially containing slang, teencode, and irregular spelling not represented in either training domain.
 
 \subsection{Comparative Analysis}
-For each of the three test sets, Accuracy, Precision, Recall, and Macro-F1 (Section~3.7) are computed for every model, together with a confusion matrix on a fixed 300-sample subset (size-matched for comparability across UIT-VSFC, AIVIVN-2019, and the YouTube wild test set) and a breakdown by sentence-length category (Short/Medium/Long, using the fixed thresholds established in Section~3.3.2). Comparing performance across the three test sets --- rather than reporting a single aggregate score --- allows this study to directly quantify each architecture's \textit{domain generalization gap}: the drop in Macro-F1 from the in-domain UIT-VSFC test set to each out-of-domain test set. This comparative analysis, presented in full in Chapter~4, is designed to reveal whether architectural complexity (e.g., PhoBERT's pretrained contextual representations) translates into more robust cross-domain generalization, or whether all three models degrade similarly when applied outside their training distribution.
+For each of the three test sets, Accuracy, Precision, Recall, and Macro-F1 (Section~3.7) are computed for every model, together with a confusion matrix on a fixed \textbf{300-sample subset} (drawn identically from each of the three test sets using seed 42 to ensure size-matched comparability across UIT-VSFC, AIVIVN-2019, and the YouTube wild test set) and a breakdown by sentence-length category (Short/Medium/Long, using the fixed thresholds established in Section~3.3.2). Comparing performance across the three test sets --- rather than reporting a single aggregate score --- allows this study to directly quantify each architecture's \textit{domain generalization gap}: the drop in Macro-F1 from the in-domain UIT-VSFC test set to each out-of-domain test set. This comparative analysis, presented in full in Chapter~4, is designed to reveal whether architectural complexity (e.g., PhoBERT's pretrained contextual representations) translates into more robust cross-domain generalization, or whether all three models degrade similarly when applied outside their training distribution.
 \section{Chapter Summary}
 
 This chapter has presented the complete research methodology underlying this thesis. Section~3.1 outlined the overall five-stage research pipeline, from data acquisition through cross-domain evaluation. Section~3.2 described the three datasets used --- UIT-VSFC for training and in-domain evaluation, AIVIVN-2019 for labeled cross-domain evaluation, and a YouTube wild test set, LLM-labeled and human-verified, for real-world evaluation --- together with their class distributions and sentence-length characteristics. Section~3.3 detailed the two-stage preprocessing pipeline: dataset-specific raw text cleaning for the noisy YouTube data, followed by a unified normalization, word-segmentation, and tokenization pipeline applied identically across all three datasets and all three models. Section~3.4 presented the three model architectures compared in this study --- BiLSTM, PhoBERT, and the proposed Hybrid PhoBERT-BiLSTM, the latter using a truncated (8-of-12-layer), frozen PhoBERT encoder combined with a trainable bidirectional LSTM. Section~3.5 described the model-specific training procedures, including optimizers, learning rates, early stopping, and repeated training across five random seeds to ensure statistically reliable results. Section~3.6 documented the hardware, software, and development environment used throughout. Section~3.7 defined the evaluation metrics employed, spanning both predictive performance (Accuracy, Precision, Recall, Macro-F1) and computational efficiency (training time, inference latency, model size). Finally, Section~3.8 described the cross-domain evaluation strategy, under which all three trained models are applied, without retraining, to the in-domain UIT-VSFC test set and to two out-of-domain test sets of increasing distributional distance, in order to directly measure domain generalization capability.
@@ -806,7 +816,10 @@ This chapter presents the complete experimental results and quantitative evaluat
 All experiments were conducted on \textbf{Google Colab} (free tier), using a single \textbf{NVIDIA Tesla T4} GPU (16GB VRAM), as detailed in Section~3.6. Models were implemented in \textbf{PyTorch} \cite{paszke2019pytorch}, with PhoBERT and Hybrid PhoBERT-BiLSTM additionally relying on the HuggingFace \texttt{transformers} library \cite{wolf2020transformers}.
 
 \subsection{Dataset Splitting Strategy}
-Models are trained on the UIT-VSFC training split (10,968 sentences after Neutral removal, Section~3.2.1) and validated on the UIT-VSFC validation split (after Neutral removal), both used exactly as officially distributed, without re-partitioning. Final evaluation is conducted on three test sets of increasing distributional distance from the training domain: the officially distributed UIT-VSFC test split (binary, after Neutral removal), a size-matched random subsample of AIVIVN-2019 ($n = 1{,}583$, cross-domain, resampled per seed as described in Section~3.2.2), and the full YouTube wild test set (320 comments, real-world out-of-domain), as described in Sections~3.2.1--3.2.3.
+Models are trained on the UIT-VSFC training split (10,968 sentences after Neutral removal, Section~3.2.1) and validated on the UIT-VSFC validation split (after Neutral removal), both used exactly as officially distributed, without re-partitioning. Final evaluation is conducted on three test sets of increasing distributional distance from the training domain: the officially distributed UIT-VSFC test split (binary, after Neutral removal; 1,510 sentences),
+the size-matched AIVIVN-2019 subset ($n = 1{,}510$, cross-domain, resampled per seed as described in Section~3.2.2),
+and the full YouTube wild test set (314 comments, real-world out-of-domain).
+For confusion-matrix analysis and ablation studies, a further fixed 300-sample subset is drawn from each of the three test sets (using seed 42) to ensure identical sample size across domains, as described in Sections~3.2.1--3.2.3.
 \subsection{Evaluation Protocol}
 Consistent with Section~3.8, each trained model is evaluated on all three test sets \textit{without any retraining or fine-tuning} between test sets. For every (model, seed, test set) combination, Accuracy and Macro-F1 are computed overall, as well as broken down by sentence-length category (Short/Medium/Long, Section~3.3.2). Domain generalization is quantified via the relative drop in Accuracy and Macro-F1 from the in-domain UIT-VSFC result to each out-of-domain result.
 
@@ -836,11 +849,11 @@ Table~\ref{tab:uitvsfc-results} reports Accuracy and Macro-F1 for all three mode
     \end{tabular}
 \end{table}
 
-PhoBERT achieves the highest in-domain performance, with the lowest variance across seeds (std $= 0.30$), indicating both superior accuracy and greater training stability compared to the other two architectures. The Hybrid PhoBERT-BiLSTM model, despite using only a truncated, frozen 8-layer PhoBERT encoder, closely approaches full PhoBERT's performance (within 0.6 percentage points of Accuracy), while BiLSTM trails both pretrained-based models by approximately 2.4--3.0 percentage points, consistent with its reliance on randomly initialized embeddings rather than pretrained contextual representations (Section~3.4.1).
+PhoBERT achieves the highest in-domain performance, with the lowest variance across seeds (std $= 0.30$), indicating both superior accuracy and greater training stability compared to the other two architectures. The Hybrid PhoBERT-BiLSTM model, despite using only a truncated, frozen 8-layer PhoBERT encoder, closely approaches full PhoBERT's performance (within 0.6 percentage points of Accuracy), while BiLSTM trails both pretrained-based models by approximately 2.4--3.0 percentage points, consistent with its reliance on randomly initialized embeddings rather than pretrained contextual representations (Section~3.4.1). \textbf{All reported figures in this section are for the binary classification setting (Positive/Negative) adopted in this study; the implications of excluding the Neutral class are discussed in Section~6.4.2.}
 
 \subsection{Confusion Matrix}
 
-To enable a fair visual comparison of error patterns under a consistent sample size, Table~\ref{tab:confmat-uitvsfc} presents the confusion matrix for each model on a fixed 300-sample subset of the UIT-VSFC test set. The subset size was chosen to match the sample size used for the detailed classification reports on AIVIVN-2019 and the YouTube wild test set (approximately 320 comments). The subset was randomly drawn once and kept identical across models. All three models are evaluated under the same random seed (42).
+To enable a fair visual comparison of error patterns under a consistent sample size, Table~\ref{tab:confmat-uitvsfc} presents the confusion matrix for each model on a fixed \textbf{300-sample subset} of each test set. The subset size was chosen to match the sample size used for the confusion matrix analysis on AIVIVN-2019 and the YouTube wild test set, ensuring size-matched comparability across all three datasets (Sections~3.7.1 and 3.8.4). The subset was randomly drawn once using seed 42 and kept identical across models. All three models are evaluated on exactly the same 300 samples for each dataset.
 
 \begin{table}[H]
     \centering
@@ -869,7 +882,37 @@ Under the same seed (42), PhoBERT achieves the lowest number of total errors (6 
 
 \subsection{Comparison among BiLSTM, PhoBERT, and Hybrid PhoBERT-BiLSTM}
 
-Ranking all three models by in-domain Macro-F1 yields: PhoBERT (98.19\%) $>$ Hybrid PhoBERT-BiLSTM (97.58\%) $>$ BiLSTM (95.17\%). This ordering confirms that pretrained contextual representations (PhoBERT, Hybrid) provide a measurable advantage over embeddings learned from scratch (BiLSTM) on the in-domain task, even when, as in the Hybrid model, the pretrained encoder is truncated to 8 layers and entirely frozen (Section~3.4.3). The relatively small gap between PhoBERT and Hybrid (0.61 percentage points in Macro-F1) suggests that most of PhoBERT's in-domain representational benefit is retained even under this reduced-computation configuration---a trade-off examined further in terms of computational cost in Section~4.5.
+Ranking all three models by in-domain Macro-F1 yields: PhoBERT (98.19\%) $>$ Hybrid PhoBERT-BiLSTM (97.58\%) $>$ BiLSTM (95.17\%). This ordering suggests that pretrained contextual representations (PhoBERT, Hybrid) provide a measurable advantage over embeddings learned from scratch (BiLSTM) on the in-domain task, even when, as in the Hybrid model, the pretrained encoder is truncated to 8 layers and entirely frozen (Section~3.4.3). The relatively small gap between PhoBERT and Hybrid (0.61 percentage points in Macro-F1) suggests that most of PhoBERT's in-domain representational benefit is retained even under this reduced-computation configuration---a trade-off examined further in terms of computational cost in Section~4.5.
+
+\subsection{Statistical Significance of Performance Differences (PhoBERT vs. Hybrid)}
+
+To assess whether the observed Macro-F1 advantage of PhoBERT over the Hybrid PhoBERT-BiLSTM model is statistically meaningful — particularly given the small gap of 0.61 percentage points on the in-domain test set — we compute 95\% confidence intervals (CIs) for the mean difference between the two models across the five random seeds. Since raw per-seed scores are not available in the aggregated result tables, we adopt a conservative two-sample t-interval (Welch-Satterthwaite approximation) using the reported means and standard deviations. With \(n=5\) per group, the degrees of freedom are approximated, and the critical value is taken from the \(t\)-distribution. Table~\ref{tab:significance} reports the mean difference, standard error of the difference, 95\% CI, and the associated \(p\)-value range for each evaluation set.
+
+\begin{table}[htbp]
+    \centering
+    \caption{95\% confidence intervals for the Macro-F1 difference (PhoBERT – Hybrid).}
+    \label{tab:significance}
+    \begin{tabular}{lcccc}
+        \toprule
+        \textbf{Evaluation Set}    & \textbf{Mean Diff (pp)} & \textbf{SE (Diff)} & \textbf{95\% CI}  & \textbf{p-value (approx.)} \\
+        \midrule
+        UIT-VSFC (in-domain)       & 0.61                    & 0.284              & {[}-0.18, 1.40{]} & $>$ 0.05                   \\
+        AIVIVN-2019 (cross-domain) & 3.82                    & 2.021              & {[}-1.79, 9.43{]} & $>$ 0.05                   \\
+        YouTube (wild test set)    & 8.05                    & 1.459              & {[}4.00, 12.10{]} & $<$ 0.05                   \\
+        \bottomrule
+    \end{tabular}
+    \smallskip
+    \emph{Note}: SE(Diff) is computed as \(\sqrt{s_1^2/n + s_2^2/n}\); CIs are based on the \(t\)-distribution with approximate df = 4 (conservative).
+\end{table}
+
+On the \textbf{UIT-VSFC in-domain test set}, the 95\% CI for the difference spans from \( -0.18 \) to \( 1.40 \) percentage points. Because this interval contains zero, we cannot reject the null hypothesis that the two models perform equally on this dataset at the conventional \(\alpha = 0.05\) significance level. In other words, the 0.61-point edge observed for PhoBERT is \textbf{not statistically significant} and may well arise from random variation across the five training runs. This finding reinforces the conclusion that the Hybrid architecture retains practically all of PhoBERT's in-domain discriminative power.
+
+For the \textbf{AIVIVN-2019 cross-domain} set, the CI is much wider ({[}-1.79, 9.43{]}) due to the substantially larger standard deviation of the Hybrid model (\(s=4.23\) vs. \(s=1.59\) for PhoBERT). Although the point estimate favours PhoBERT by 3.82 percentage points, the interval again includes zero, indicating that the advantage is not statistically robust with only five seeds. The high variance of the Hybrid model on this out-of-domain corpus suggests that its cross-domain generalisation is more sensitive to initialisation randomness, a point that merits further investigation with more replicates.
+
+In contrast, on the \textbf{YouTube wild test set}, the 95\% CI {[}4.00, 12.10{]} lies entirely above zero, providing evidence that PhoBERT's 8.05-point advantage over the Hybrid model is statistically significant (\(p < 0.05\)). This aligns with the qualitative observation that PhoBERT handles highly informal, noisy social-media text more reliably than the frozen-encoder Hybrid configuration.
+
+It must be emphasised, however, that these confidence intervals are computed under an \textbf{independent-samples assumption}, whereas the actual experimental design uses paired seeds (the same five random seeds for both models). A paired \(t\)-test would be more powerful and might yield narrower CIs if the seed-level scores were positively correlated. The present analysis should therefore be interpreted as a conservative lower-bound assessment. To obtain a definitive conclusion, future work should report per-seed performance scores to enable direct paired testing. Nonetheless, the current results offer a clear practical takeaway: the small in-domain gap between PhoBERT and Hybrid is unlikely to be meaningful in practice, whereas PhoBERT's superiority on genuinely wild text is both larger and statistically credible.
+
 
 \section{Cross-domain Evaluation on AIVIVN-2019}
 
@@ -937,22 +980,32 @@ Beyond having the lowest mean degradation, PhoBERT also exhibits the lowest vari
 \section{Sequence Length Analysis}
 
 \subsection{Sentence Length Distribution}
-Following the fixed Short/Medium/Long thresholds established in Section~3.3.2 (derived from the 33rd/66th percentiles of the UIT-VSFC training set), Table~\ref{tab:length-dist} reports the resulting length-category distribution on each test set. The UIT-VSFC test set distribution is fixed (identical across all seeds, since it is evaluated in full after Neutral removal), while the AIVIVN-2019 distribution varies slightly per seed due to the fixed-size random sampling procedure described in Section~3.2.2 (values shown are representative, from seed 42); the YouTube wild test set distribution is fixed, as its 320 comments are evaluated in full for every seed.
+Following the fixed Short/Medium/Long thresholds established in Section~3.3.2 (derived from the 33rd/66th percentiles of the UIT-VSFC training set), Table~\ref{tab:length-dist} reports the resulting length-category distribution on each test set. The UIT-VSFC test set distribution is fixed (identical across all seeds, since it is evaluated in full after Neutral removal), while the AIVIVN-2019 distribution varies slightly per seed due to the fixed-size random sampling procedure described in Section~3.2.2 (values shown are representative, from seed 42); the YouTube wild test set distribution is fixed, as its 314 comments are evaluated in full for every seed.
 
 \begin{table}[htbp]
     \centering
-    \caption{Sentence-length category distribution across the three test sets (UIT-VSFC counts are after Neutral removal).}
+
+    \caption{Sentence-length category distribution across the three test sets
+        (UIT-VSFC counts are after Neutral removal = 1,510;
+        AIVIVN-2019 shows the intermediate size-matched subset of 1,510 samples;
+        YouTube shows the full 314-comment set).
+        Note: overall performance metrics use these full/matched sets;
+        confusion matrices and ablation studies use a further 300-sample subset drawn from each set (seed 42).}
     \label{tab:length-dist}
+
     \begin{tabular}{lccc}
         \hline
-        \textbf{Test Set}                   & \textbf{Short} & \textbf{Medium} & \textbf{Long} \\
+        \textbf{Test Set}          & \textbf{Short} & \textbf{Medium} & \textbf{Long} \\
         \hline
-        UIT-VSFC (in-domain)                & 683            & 408             & 419           \\
-        AIVIVN-2019 (cross-domain, seed 42) & 321            & 313             & 876           \\
-        YouTube (wild test set)             & 40             & 70              & 204           \\
+        UIT-VSFC (in-domain)       & 683            & 408             & 419           \\
+        AIVIVN-2019 (cross-domain) & 321            & 313             & 876           \\
+        YouTube (wild test set)    & 40             & 70              & 204           \\
         \hline
     \end{tabular}
 \end{table}
+Note that the length distributions above correspond to the full binary UIT-VSFC test set (1,510),
+the size-matched AIVIVN-2019 subset (1,510), and the complete YouTube set (314).
+A further random subsample of 300 examples from each set is used for confusion-matrix and ablation analyses (seed 42).
 Notably, the length composition shifts substantially across domains: UIT-VSFC is dominated by Short and Medium sentences (consistent with the corpus-wide characteristic established in Section~3.2.1), whereas both AIVIVN-2019 and the YouTube wild test set are dominated by Long sentences, reflecting the more elaborate, multi-sentence style of product reviews and social media comments compared to concise course feedback.
 
 \subsection{Performance by Length Category}
@@ -988,7 +1041,7 @@ Table~\ref{tab:length-f1} reports Macro-F1, broken down by Short/Medium/Long cat
 On UIT-VSFC, all three models achieve their highest Macro-F1 on Short sentences, with PhoBERT leading (98.97\%). On the two out-of-domain test sets, however, Short-sentence performance is markedly weaker across all models, and is in fact the \textit{worst}-performing category for PhoBERT and Hybrid on the YouTube test set. This suggests that short, out-of-domain comments --- often lacking the surrounding context that longer sentences provide --- are comparatively harder to classify reliably once outside the training domain.
 
 \subsubsection{Performance on Medium Sentences}
-Medium-length sentences show the most stable relative ranking across test sets: PhoBERT consistently achieves the best or near-best Medium-sentence performance in all three domains (97.89\%, 82.54\%, and 89.51\% respectively), and Medium is the strongest length category for all three models on the YouTube test set.
+Medium-length sentences show the most stable relative ranking across test sets: PhoBERT consistently achieves the best or near-best Medium-sentence performance in all three domains (97.89\%, 82.54\%, and 89.51\% respectively). On the YouTube test set, Medium is the strongest length category for BiLSTM and PhoBERT, while Hybrid performs marginally better on Long sentences (81.06\% vs. 78.20\% Macro-F1, Table~\ref{tab:length-f1}). This suggests that the Hybrid model's frozen encoder benefits from the additional contextual evidence available in longer sequences, partially compensating for the lack of task-specific fine-tuning.
 
 \subsubsection{Performance on Long Sentences}
 On UIT-VSFC, Long sentences are the most challenging category for every model, with Macro-F1 dropping by 5--6 percentage points relative to Short sentences for all three architectures --- consistent with the general expectation that longer sequences involve more complex dependencies. Cross-domain, this pattern reverses for PhoBERT and Hybrid: on both AIVIVN-2019 and YouTube, Long sentences are handled comparably to or better than Short sentences, plausibly because longer out-of-domain text provides more contextual evidence for the pretrained representations to draw on, partially compensating for the domain shift.
@@ -1018,13 +1071,146 @@ Table~\ref{tab:latency} reports average per-sample inference latency on both CPU
 
 BiLSTM is dramatically faster than both pretrained-based models on both hardware settings --- approximately 360$\times$ faster than PhoBERT and 256$\times$ faster than Hybrid PhoBERT-BiLSTM on CPU, and roughly 20$\times$ and 16$\times$ faster on GPU, respectively. Between the two pretrained-based models, the Hybrid model's truncated (8-of-12-layer) PhoBERT encoder yields a meaningful latency reduction over full PhoBERT: approximately 29\% faster on CPU and 20\% faster on GPU, directly reflecting the reduced number of Transformer layers executed per forward pass (Section~3.4.3).
 
+\subsection{Model Size and Training Cost}
+
+Beyond inference latency, deployment and reproduction cost are also shaped by
+model size and training resource requirements. Table~\ref{tab:modelsize}
+reports, for each architecture, the total and trainable parameter counts
+(computed directly from the implemented PyTorch models as described in
+Section~3.7.3), the resulting checkpoint size on disk, and the total training
+time and throughput (mean $\pm$ standard deviation across five seeds), all
+measured on a single NVIDIA Tesla T4 GPU (Section~3.6.1).
+
+\begin{table}[htbp]
+    \centering
+    \caption{Model size and training cost. Total/Trainable Params are computed
+        directly from each PyTorch model; Checkpoint is the on-disk size of the
+        best-seed checkpoint; Total Training Time and Throughput are mean $\pm$
+        standard deviation across 5 seeds.}
+    \label{tab:modelsize}
+
+    \footnotesize
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.15}
+
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{lcccccc}
+            \toprule
+            \textbf{Model}
+             & \textbf{Total Params}
+             & \textbf{Trainable Params}
+             & \textbf{Checkpoint (MB)}
+             & \textbf{GPU}
+             & \textbf{Total Training Time (s)}
+             & \textbf{Throughput (samples/s)}  \\
+            \midrule
+
+            BiLSTM
+             & 2{,}093{,}478
+             & 2{,}093{,}478 (100\%)
+             & 8.05
+             & Tesla T4
+             & $\mathbf{30.0 \pm 6.4}$
+             & $4616.4 \pm 167.2^{*}$           \\
+
+            PhoBERT
+             & 134{,}999{,}810
+             & 134{,}999{,}810 (100\%)
+             & 516
+             & Tesla T4
+             & $638.0 \pm 120.2$
+             & $88.6 \pm 17.6$                  \\
+
+            Hybrid PhoBERT-BiLSTM
+             & 108{,}749{,}058
+             & 2{,}102{,}274 (1.9\%)
+             & 416
+             & Tesla T4
+             & $397.3 \pm 127.4$
+             & $\mathbf{456.9 \pm 175.0}$       \\
+
+            \bottomrule
+        \end{tabular}%
+    }
+
+    \smallskip
+
+    \begin{minipage}{\textwidth}
+        \footnotesize
+        \emph{Note:} $^{*}$BiLSTM does not use the Hugging Face
+        \texttt{Trainer}, so no train-only throughput is logged directly;
+        this figure is derived from total wall-clock run time (which includes
+        the per-epoch validation pass) divided by samples processed, and is
+        therefore an approximate, order-of-magnitude indicator rather than a
+        value directly comparable to the train-only throughput reported for
+        PhoBERT and Hybrid.
+    \end{minipage}
+
+\end{table}
+
+The parameter counts reveal the central mechanism behind the Hybrid model's
+efficiency profile: although its total parameter count (108.7M) remains close
+to full PhoBERT's (135.0M), only 2.1M parameters (approximately 1.9\% of the
+total) are actually trainable, since the truncated 8-layer PhoBERT encoder is
+entirely frozen (Section~3.4.3) and only the BiLSTM and classification head
+are optimized. This explains both the Hybrid model's substantially faster and
+less variable training (397.3s vs.\ 638.0s total training time, and the
+highest training throughput of the three models at 456.9 samples/s) and,
+together with Section~4.5.1, its reduced inference latency relative to full
+PhoBERT.
+
+Checkpoint sizes scale approximately with \emph{total} rather than trainable
+parameter count (8.05MB, 416MB, and 516MB for BiLSTM, Hybrid, and PhoBERT
+respectively), since standard checkpoint serialization stores the complete
+model state, including frozen weights. BiLSTM's total training time is by far
+the lowest in absolute terms, but this reflects its small parameter budget and
+correspondingly short per-epoch cost rather than a favorable trade-off with
+accuracy, which remains the lowest of the three architectures
+(Section~4.2).
+
 \subsection{Trade-off between Efficiency and Accuracy}
 Considering Accuracy/Macro-F1 (Section~4.2) alongside inference latency (Table~\ref{tab:latency}) reveals a clear three-way trade-off. BiLSTM offers by far the lowest latency, at the cost of the lowest in-domain accuracy (95.17\% Macro-F1) and, more critically, the weakest cross-domain generalization (Section~4.3). PhoBERT achieves the highest accuracy in every evaluation setting but incurs the highest computational cost. The Hybrid PhoBERT-BiLSTM model occupies an intermediate position: it retains most of PhoBERT's in-domain accuracy (97.58\% vs.\ 98.19\% Macro-F1, a gap of only 0.61 percentage points) and a meaningful share of its cross-domain robustness (79.81\% vs.\ 83.63\% Macro-F1 on AIVIVN-2019, Section~4.3), while reducing CPU and GPU latency by approximately 29\% and 20\%, respectively, relative to full PhoBERT. This positions the Hybrid architecture as a practical middle ground for deployment scenarios that cannot tolerate full PhoBERT's latency but require better accuracy and generalization than a from-scratch BiLSTM can provide --- directly addressing Research Gap 4 (Section~2.2).
+
+\subsection{Ablation Study on Hybrid Configuration}
+\label{subsec:ablation}
+
+To isolate the contribution of each design choice in the Hybrid PhoBERT-BiLSTM architecture, we conducted a controlled ablation study along three axes: (i) the number of Transformer layers retained (12 / 8 / 6), (ii) whether the encoder is frozen or fine-tuned, and (iii) the presence or absence of the BiLSTM layer. All ablation variants were trained under the same pipeline as the main experiments, using three random seeds $\{42, 0, 123\}$ and evaluated on a fixed 300-sample subset of the UIT-VSFC test set for consistency. Table~\ref{tab:ablation} summarises the results. For reference, the original Hybrid configuration (8 layers, frozen, with BiLSTM) reported in Table~\ref{tab:uitvsfc-results} is included as H0.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Ablation results on the UIT-VSFC test set (300-sample subset). Macro-F1 is reported as mean $\pm$ standard deviation across 3 seeds. H0 is the original Hybrid configuration from the main experiments (5 seeds).}
+    \label{tab:ablation}
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{llcccccccc}
+            \hline
+            \textbf{ID} & \textbf{Configuration} & \textbf{Layers} & \textbf{Freeze} & \textbf{BiLSTM} & \textbf{Macro-F1 (\%)} & \textbf{Total Params} & \textbf{Trainable} & \textbf{Size (MB)} & \textbf{GPU Lat. (ms)} \\
+            \hline
+            H0          & Hybrid (baseline)      & 8               & Yes             & Yes             & $97.58 \pm 0.56$       & 108.7M                & 2.10M              & 414.8              & $17.82 \pm 0.80$       \\
+            A1          & Frozen + Linear        & 8               & Yes             & No              & $90.75 \pm 1.51$       & 106.6M                & 1.5K               & 406.8              & $15.03$                \\
+            A2          & Fine-tuned + Linear    & 8               & No              & No              & $98.55 \pm 0.51$       & 106.6M                & 106.6M             & 406.8              & $16.78$                \\
+            A5          & Fine-tuned + BiLSTM    & 8               & No              & Yes             & $98.21 \pm 0.39$       & 108.7M                & 108.7M             & 414.8              & $18.74$                \\
+            A3          & Frozen + BiLSTM        & 12              & Yes             & Yes             & $96.87 \pm 1.28$       & 137.1M                & 2.10M              & 523.0              & $22.88$                \\
+            A4          & Frozen + BiLSTM        & 6               & Yes             & Yes             & $97.31 \pm 1.03$       & 94.6M                 & 2.10M              & 360.8              & $14.93$                \\
+            \hline
+        \end{tabular}%
+    }
+\end{table}
+
+\paragraph{Effect of the BiLSTM layer.}
+Comparing H0 (97.58\%) with A1 (90.75\%) shows that adding the bidirectional LSTM yields a substantial gain of approximately 6.8 Macro-F1 points when the PhoBERT encoder is frozen. This indicates that, under a frozen-encoder regime, relying solely on the [CLS] representation is insufficient; the BiLSTM effectively aggregates sequential information from the full sequence of hidden states.
+
+\paragraph{Effect of freezing versus fine-tuning.}
+When the BiLSTM is present, fine-tuning the encoder (A5: 98.21\%) brings only a marginal improvement of 0.63 points over the frozen Hybrid (H0). In contrast, without the BiLSTM the gap is much larger (A1 90.75\% $\rightarrow$ A2 98.55\%). Thus, once a recurrent layer is available to model sequential dependencies, freezing the truncated PhoBERT encoder remains a highly effective strategy that preserves nearly all of the attainable accuracy while keeping the number of trainable parameters under 2.1M.
+
+\paragraph{Effect of layer truncation.}
+Reducing the encoder from 12 layers (A3: 96.87\%) to 8 layers (H0: 97.58\%) does not degrade performance; the 8-layer variant even records a slightly higher mean Macro-F1 while reducing GPU latency by roughly 22\% and model size from 523\,MB to 415\,MB. Further truncation to 6 layers (A4: 97.31\%) maintains almost identical accuracy with an additional reduction in both latency and model size (361\,MB). These results justify the original design choice of retaining 8 layers and suggest that a 6-layer frozen Hybrid is also a competitive option when inference speed and memory footprint are prioritised.
+
+Overall, the ablation confirms that the primary source of the Hybrid model's effectiveness is the combination of a strong pretrained representation with a lightweight BiLSTM, rather than end-to-end fine-tuning or the use of the full 12-layer encoder. The frozen 8-layer configuration adopted in this thesis therefore represents a favourable accuracy--efficiency trade-off.
 
 \section{Real-world Prediction on YouTube Comments}
 
 \subsection{Description of Collected Comments}
-As detailed in Section~3.2.3, the YouTube wild test set consists of 320 Vietnamese comments collected from a single video via the YouTube Data API v3, labeled through an LLM-assisted, human-verified procedure. This dataset represents the most challenging generalization scenario examined in this study: fully unmoderated, informal social media text, evaluated by all three models \textit{without any retraining}.
+As detailed in Section~3.2.3, the YouTube wild test set consists of \textbf{314} Vietnamese comments --- derived from an initial collection of 2,537 raw comments, reduced to 2,488 after preprocessing, and filtered to 314 high-confidence, human-verified cases after LLM-assisted labeling --- collected from a single video via the YouTube Data API v3. This dataset represents the most challenging generalization scenario examined in this study: fully unmoderated, informal social media text, evaluated by all three models \textit{without any retraining}.
 
 \subsection{Comparison of Model Predictions}
 Table~\ref{tab:youtube-results} reports Accuracy and Macro-F1 for all three models on the YouTube wild test set, aggregated across five seeds.
@@ -1050,7 +1236,7 @@ The performance ranking mirrors that observed on AIVIVN-2019 (Section~4.3): PhoB
 
 This chapter has presented the complete experimental evaluation of BiLSTM, PhoBERT, and the proposed Hybrid PhoBERT-BiLSTM model, following the methodology established in Chapter~3. Several key findings emerge.
 
-\textbf{In-domain performance.} On the UIT-VSFC test set, PhoBERT achieves the highest Accuracy and Macro-F1 (98.20\% and 98.19\%, respectively), followed closely by Hybrid PhoBERT-BiLSTM (97.60\%, 97.58\%), with BiLSTM trailing both by 2.4--3.0 percentage points (Section~4.2). Confusion matrix analysis on the 300-sample subsets (seed 42) confirms that both pretrained-representation models make substantially fewer classification errors than BiLSTM.
+\textbf{In-domain performance.} On the UIT-VSFC test set, PhoBERT achieves the highest Accuracy and Macro-F1 (98.20\% and 98.19\%, respectively), followed closely by Hybrid PhoBERT-BiLSTM (97.60\%, 97.58\%), with BiLSTM trailing both by 2.4--3.0 percentage points (Section~4.2). Confusion matrix analysis on the 300-sample subsets (seed 42) confirms that both pretrained-representation models make substantially fewer classification errors than BiLSTM. \textbf{These figures are reported on the binary (Positive/Negative) classification task established in Section~1.3.1, after excluding all Neutral-labeled samples from the original UIT-VSFC corpus (see Section~6.4.2 for a discussion of this simplification and its limitations).}
 
 \textbf{Cross-domain generalization.} The performance gap between models widens considerably once evaluated out-of-domain. On AIVIVN-2019, PhoBERT's advantage over BiLSTM grows from 3.02 percentage points in-domain to 13.30 percentage points cross-domain, and PhoBERT exhibits the smallest and most stable Macro-F1 degradation (14.56\% $\pm$ 1.18) of the three models (Section~4.3). This demonstrates that pretrained contextual representations, even when frozen and truncated as in the Hybrid model, transfer substantially better across domains than embeddings learned entirely from the training distribution.
 
@@ -1059,15 +1245,43 @@ This chapter has presented the complete experimental evaluation of BiLSTM, PhoBE
 \textbf{Computational efficiency.} BiLSTM is dramatically cheaper computationally --- roughly 360$\times$ faster than PhoBERT on CPU --- but at a substantial cost in accuracy and generalization. The Hybrid PhoBERT-BiLSTM model's truncated, frozen PhoBERT encoder yields a meaningful latency reduction over full PhoBERT (approximately 29\% on CPU, 20\% on GPU) while retaining most of its in-domain accuracy and a meaningful share of its cross-domain robustness, positioning it as a practical middle ground between the two baselines (Section~4.5).
 
 \textbf{Real-world prediction.} On the YouTube wild test set, the same overall ranking holds (PhoBERT $>$ Hybrid $>$ BiLSTM), with PhoBERT and Hybrid both generalizing at least as well to informal, unmoderated social media text as to the more formally written AIVIVN-2019 reviews, while BiLSTM remains the weakest performer in both out-of-domain settings (Section~4.6).
-
-Collectively, these results support the central hypothesis motivating this thesis: pretrained contextual representations are the primary driver of both in-domain accuracy and cross-domain generalization in Vietnamese sentiment analysis, and a substantially reduced-cost architecture (Hybrid PhoBERT-BiLSTM) can retain much of this benefit while narrowing the computational gap with lightweight, from-scratch models such as BiLSTM. The following chapter discusses the practical implementation of the best-performing configuration as a deployable application.
+Collectively, these results establish the quantitative performance ranking and efficiency profile of the three architectures: PhoBERT leads in accuracy and generalization, BiLSTM leads in speed, and Hybrid PhoBERT-BiLSTM occupies an intermediate position on both dimensions. The broader implications and practical trade-offs are discussed in Chapter~6. The following chapter discusses the practical implementation of the best-performing configuration as a deployable application.
 
 
 
 
 \chapter{Web-based Sentiment Analysis Application}
 
-This chapter presents the design, implementation, and demonstration of a web-based application developed to operationalize the three sentiment analysis models proposed and evaluated in the preceding chapters. The application serves as a practical demonstration tool that allows users to interactively compare the predictive behavior of BiLSTM, PhoBERT, and the Hybrid PhoBERT-BiLSTM architectures on Vietnamese text. It also provides insight into inference latency and preprocessing effects, thereby bridging the gap between offline experimental results and real-world deployment considerations.
+\section{Development Process Overview}
+\label{sec:dev-process}
+
+This chapter presents the design, implementation, and validation of a web-based demonstration application built on the three sentiment analysis models developed in Chapters~3--4. Rather than a purely research-oriented prototype, the application follows a structured development process that reflects key phases of a software engineering lifecycle. While the primary contribution of this thesis lies in the experimental comparison of the models (Chapters~4), this chapter situates the system within a broader product-development context, spanning from problem identification through to deployment and user validation.
+
+Table~\ref{tab:sdlc-mapping} maps the activities undertaken in this thesis to a canonical software development lifecycle, identifying which phases were fully executed, partially addressed, or explicitly deferred to future work.
+
+\begin{table}[H]
+    \centering
+    \caption{Mapping of thesis activities to software development lifecycle phases.}
+    \label{tab:sdlc-mapping}
+    \begin{tabular}{p{2.8cm}p{4.5cm}p{4.2cm}}
+        \hline
+        \textbf{SDLC Phase}      & \textbf{Activities Performed in This Thesis}                                                                                                                          & \textbf{Gaps / Future Work}                                                                                                                            \\
+        \hline
+        Problem Identification   & Identified linguistic challenges and industry demands (banking, e-commerce, education) in Sections~1.1--1.2.                                                          & —                                                                                                                                                      \\
+        Stakeholder Analysis     & Defined primary persona (data analyst in e-commerce) in Section~\ref{subsec:user-personas}; identified target user groups in Section~\ref{subsec:target-users}.       & Limited formal stakeholder interviews; future work could conduct surveys or interviews.                                                                \\
+        User Research / Persona  & Developed one primary persona with pain points, goals, and expectations (Section~\ref{subsec:user-personas}).                                                         & No formal user research (interviews, surveys) was conducted; personas are based on domain knowledge.                                                   \\
+        Requirements Engineering & Elicited functional and non-functional requirements with acceptance criteria and traceability (Section~\ref{subsec:requirements}).                                    & Requirements are internally derived; no external validation with actual practitioners.                                                                 \\
+        System Design            & Defined modular architecture (presentation, core logic, model layers) in Section~\ref{sec:system-architecture}; designed UI wireframes (Section~\ref{sec:ui-design}). & No formal architectural diagrams (e.g., UML) beyond the high-level component diagram.                                                                  \\
+        Implementation           & Fully implemented Streamlit application with three model backends, unified preprocessing, and caching (Sections~\ref{sec:system-architecture}--\ref{sec:ui-design}).  & Deployment is local only; no cloud/scalability evaluation.                                                                                             \\
+        Verification \& Testing  & Unit testing performed via manual validation; model performance evaluated on three test sets (Chapter~4).                                                             & No automated test suite; no systematic integration testing; no load/stress testing for concurrency.                                                    \\
+        User Validation          & Application is functional and demonstrated in Section~\ref{sec:case-study}.                                                                                           & A pilot usability test (SUS, $n=5$) was conducted (Section~\ref{subsec:usability}); a larger-scale, practitioner-based UAT has not yet been conducted. \\
+        Deployment               & Local deployment via Streamlit (Section~\ref{subsec:deployment-architecture}); checkpoints are versioned and reproducible (Section~\ref{subsec:reproducibility}).     & No production deployment (scalability, security, monitoring); deployment is demonstration-grade only.                                                  \\
+        Maintenance \& Iteration & Future improvements identified in Sections~\ref{sec:system-implementation} and~\ref{sec:future-work}.                                                                 & No maintenance plan; repository is public for open-source contribution.                                                                                \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The mapping above serves two purposes. First, it demonstrates that this thesis has addressed a substantial portion of the SDLC, from problem identification through to a working implementation with empirical validation. Second, it transparently acknowledges the phases that remain underdeveloped --- particularly formal user research, automated testing, and production-grade deployment --- providing a clear roadmap for future work and a realistic assessment of the system's current maturity level. The following sections focus primarily on the implementation and demonstration phases, as these are the most fully realized components of the application.
 
 \section{System Overview}
 
@@ -1080,6 +1294,115 @@ The primary objectives of the web-based application are as follows:
     \item To demonstrate the complete inference pipeline, including the unified preprocessing steps used during model training, thereby ensuring consistency between experimental evaluation and practical usage.
     \item To support both research and educational purposes by making the models accessible without requiring users to write code or manage GPU environments manually.
 \end{itemize}
+
+\subsection{Value Proposition}
+\label{subsec:value-proposition}
+
+The web-based application is positioned as a practical decision-support tool for the primary persona (Section~\ref{subsec:user-personas}), enabling rapid, side-by-side comparison of three sentiment analysis architectures without requiring programming expertise. The value proposition is grounded in quantitative evidence from the experimental results in Chapter~4, directly addressing the persona's pain points:
+
+\begin{table}[H]
+    \centering
+    \caption{Value proposition mapped to pain points of the primary persona.}
+    \label{tab:value-proposition}
+    \begin{tabular}{p{3.5cm}p{5cm}p{4cm}}
+        \hline
+        \textbf{Pain Point}                                                                & \textbf{Value Delivered by the System}                                                                           & \textbf{Quantitative Evidence}                                                                                                                                                    \\
+        \hline
+        Manual reading cannot keep up with seasonal review volume.                         & Automated sentiment classification reduces processing time from hours to seconds.                                & Inference latency as low as 17.82\,ms/sample on GPU (Hybrid) and 6.15\,ms/sample on CPU (BiLSTM), enabling batch processing of thousands of reviews within seconds (Section~4.5). \\
+        Legacy keyword-based tools fail to handle teencode, sarcasm, and complex negation. & Pretrained contextual models (PhoBERT, Hybrid) capture deep semantics, slang, and negation patterns.             & PhoBERT achieves 98.19\% Macro-F1 in-domain and 87.91\% on real-world YouTube comments; Hybrid retains most of this performance at lower latency (Sections~4.2, 4.6).             \\
+        No way to visually compare model reliability before deployment.                    & Side-by-side interface shows predictions, confidence scores, and latency for all three models on the same input. & Interactive comparison allows users to inspect model behavior on custom inputs without writing code (Chapter~5).                                                                  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+In practical terms, this system enables a data analyst such as Lan Anh to:
+\begin{enumerate}
+    \item \textbf{Process high-volume feedback efficiently:} Instead of manually reading thousands of product reviews, she can run batch inference using the BiLSTM (fastest) or Hybrid (balanced) models, reducing processing time from days to minutes.
+    \item \textbf{Select the right model for the right context:} For latency-sensitive applications (e.g., live dashboards), she can deploy BiLSTM on CPU; for accuracy-critical tasks (e.g., analyzing sarcastic or ambiguous reviews), she can deploy PhoBERT on GPU; for a middle ground, Hybrid provides a favorable trade-off.
+    \item \textbf{Understand preprocessing effects:} The application displays the normalized and segmented text, building trust by making the black-box pipeline transparent.
+\end{enumerate}
+
+\textbf{Comparison with the current workflow.} In the absence of this system, a practitioner would need to: (i) manually read reviews (costly and slow), (ii) rely on simple keyword-based tools that misclassify sophisticated Vietnamese expressions, or (iii) invest significant time in setting up a Python environment and running each model separately without a unified comparison interface. This system eliminates these barriers by providing a pre-packaged, offline-ready, comparative analysis tool that delivers research-grade accuracy with minimal setup overhead.
+
+\subsection{Requirements Engineering}
+\label{subsec:requirements}
+
+This section formalizes the system requirements derived from the primary persona (Section~\ref{subsec:user-personas}) and the value proposition (Section~\ref{subsec:value-proposition}). Requirements are organized into functional and non-functional categories, with clear prioritization and acceptance criteria to guide implementation and validation.
+
+\subsubsection{Stakeholder Analysis}
+
+The key stakeholders for the system are:
+\begin{itemize}
+    \item \textbf{End Users (Primary Persona):} Data analysts in e-commerce, banking, and education who require a no-code tool for comparing sentiment models on real Vietnamese text (Section~\ref{subsec:user-personas}).
+    \item \textbf{System Administrators / Developers:} Responsible for deploying the application locally, updating model checkpoints, and maintaining the codebase.
+    \item \textbf{Project Supervisors / Evaluators:} Academic advisors and thesis reviewers who use the application to validate the reported model performance and assess reproducibility.
+\end{itemize}
+
+\subsubsection{Functional Requirements}
+
+Table~\ref{tab:functional-requirements} lists the core functional requirements, each mapped to a priority level and acceptance criteria.
+
+\begin{table}[H]
+    \centering
+    \caption{Functional requirements with prioritization and acceptance criteria.}
+    \label{tab:functional-requirements}
+    \begin{tabular}{p{1.2cm}p{3.2cm}p{2.2cm}p{4.2cm}}
+        \hline
+        \textbf{ID} & \textbf{Description}                                                                                         & \textbf{Priority} & \textbf{Acceptance Criteria}                                                                          \\
+        \hline
+        FR-01       & User can input Vietnamese text via a text area or select from predefined sample sentences.                   & Must-have         & Input is accepted and displayed; sample sentences populate the text area on click.                    \\
+        FR-02       & User can select one of three models (BiLSTM, PhoBERT, Hybrid PhoBERT-BiLSTM) via sidebar radio buttons.      & Must-have         & The selected model name is displayed; the prediction uses the corresponding checkpoint.               \\
+        FR-03       & User can select computation device (CPU or GPU) via sidebar radio buttons.                                   & Should-have       & The system uses the selected device; if GPU is unavailable, CPU is used with a notification.          \\
+        FR-04       & Input text undergoes the same preprocessing pipeline (normalization and segmentation) as the training phase. & Must-have         & Preprocessed text is displayed alongside the prediction result for transparency.                      \\
+        FR-05       & The system returns a sentiment label (Positive/Negative), confidence score, and probability distribution.    & Must-have         & Output includes label, confidence percentage, and a bar chart showing probabilities for both classes. \\
+        FR-06       & The system reports preprocessing time and inference time separately.                                         & Must-have         & Latency metrics are displayed in milliseconds with clear labels.                                      \\
+        FR-07       & The system displays model information (architecture, total/trainable parameters) for the selected model.     & Should-have       & Model summary is visible in the interface.                                                            \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsubsection{Non-Functional Requirements}
+
+Table~\ref{tab:nonfunctional-requirements} specifies the quality attributes of the system.
+
+\begin{table}[H]
+    \centering
+    \caption{Non-functional requirements with acceptance criteria.}
+    \label{tab:nonfunctional-requirements}
+    \begin{tabular}{p{2.5cm}p{4.5cm}p{4cm}}
+        \hline
+        \textbf{Category}        & \textbf{Description}                                                             & \textbf{Acceptance Criteria}                                                                                                                           \\
+        \hline
+        Performance (Latency)    & Inference latency should be acceptable for interactive use on the target device. & On GPU, PhoBERT and Hybrid meet < 100\,ms per sample; BiLSTM meets < 10\,ms on CPU (Section~4.5).                                                      \\
+        Performance (Throughput) & The system should process batch inputs efficiently.                              & Throughput of Hybrid model is > 400 samples/s on GPU (Table~\ref{tab:modelsize}).                                                                      \\
+        Usability                & The interface must require no coding knowledge.                                  & A user with basic Excel proficiency can run predictions within 1 minute of opening the app.                                                            \\
+        Offline Operation        & The application must run entirely offline once checkpoints are downloaded.       & No external API calls are made during inference; all models load from local checkpoints.                                                               \\
+        Maintainability          & The codebase should allow easy addition of new models.                           & Adding a new model only requires implementing a loader and predictor function following the common interface (Section~\ref{subsec:model-integration}). \\
+        Reproducibility          & Model predictions must be deterministic for a fixed input and seed.              & Same input yields identical predictions across sessions when using the same checkpoint and device.                                                     \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsubsection{Traceability Matrix}
+
+Table~\ref{tab:traceability} maps each functional requirement back to the persona's pain points, features, and delivered value, ensuring that every requirement is justified by a user need.
+
+\begin{table}[H]
+    \centering
+    \caption{Traceability from persona pain points to requirements and features.}
+    \label{tab:traceability}
+    \begin{tabular}{p{3cm}p{3.2cm}p{2.2cm}p{3.2cm}}
+        \hline
+        \textbf{Pain Point}                                      & \textbf{Requirement ID} & \textbf{Feature Implemented}                          & \textbf{Value Delivered}                                                \\
+        \hline
+        Cannot keep up with review volume manually.              & FR-05, FR-06            & Automated sentiment prediction with latency reporting & Processes thousands of reviews in seconds (Section~4.5).                \\
+        Keyword-based tools fail on teencode, sarcasm, negation. & FR-02                   & Sidebar model selection (PhoBERT/Hybrid)              & Achieves 87.91\% Macro-F1 on real-world YouTube comments (Section~4.6). \\
+        No way to compare models before deployment.              & FR-01, FR-02            & Same input across all models, side-by-side comparison & Enables informed architecture selection (Section~6.2).                  \\
+        Black-box preprocessing reduces trust.                   & FR-04                   & Displays normalized/segmented text                    & Users see exactly what the model receives.                              \\
+        Requires no-code evaluation.                             & FR-01, FR-02, FR-03     & Streamlit GUI with radio buttons and text area        & Non-technical users can operate the system without Python.              \\
+        \hline
+    \end{tabular}
+\end{table}
 
 \subsection{Main Functionalities}
 
@@ -1095,6 +1418,7 @@ The application offers the following core functionalities:
 \end{enumerate}
 
 \subsection{Target Users}
+\label{subsec:target-users}
 
 The application is designed for the following user groups:
 \begin{itemize}
@@ -1102,6 +1426,32 @@ The application is designed for the following user groups:
     \item Educators who need a convenient demonstration tool for teaching deep learning and sentiment analysis concepts.
     \item Practitioners interested in quickly testing the models on real-world Vietnamese text without setting up a full experimental environment.
 \end{itemize}
+
+\subsection{User Personas}
+\label{subsec:user-personas}
+
+To narrow the scope from the general target user groups identified above, this study defines a primary persona representing the most practically relevant deployment scenario for the sentiment analysis system. Rather than attempting to serve all three groups equally, the system is designed with the following primary persona in mind:
+
+\begin{itemize}
+    \item \textbf{Name:} Chị Lan Anh
+    \item \textbf{Role:} Chuyên viên phân tích dữ liệu (Data Analyst) tại bộ phận Customer Experience của một sàn thương mại điện tử vừa và nhỏ tại Việt Nam.
+    \item \textbf{Work Context:} Chị Lan Anh chịu trách nhiệm tổng hợp và báo cáo đánh giá (review) sản phẩm từ khách hàng sau mỗi đợt khuyến mãi. Lượng review trung bình lên đến hàng nghìn mỗi tuần, với khoảng 30\% chứa từ lóng (teencode) hoặc viết tắt đặc thù.
+    \item \textbf{Pain Points:}
+          \begin{itemize}
+              \item Quy trình hiện tại đọc thủ công quá chậm, không thể xử lý kịp khối lượng review gia tăng theo mùa vụ.
+              \item Phần mềm cũ chỉ dùng từ điển cảm xúc cơ bản, không hiểu được tiếng lóng và văn phong đa dạng của người Việt, thường phân loại sai các review mỉa mai hoặc phủ định phức tạp.
+              \item Không có cách nào để đánh giá trực quan độ tin cậy của từng mô hình trước khi triển khai.
+          \end{itemize}
+    \item \textbf{Technical Proficiency:} Thành thạo Excel, quen thuộc với bảng điều khiển (dashboard), có kiến thức cơ bản về dữ liệu nhưng không rành về lập trình Python hay mô hình học sâu.
+    \item \textbf{Expectations from the System:}
+          \begin{itemize}
+              \item Cần một công cụ đơn giản, giao diện đồ họa (không cần code) để thử nghiệm các mô hình khác nhau trên cùng một văn bản.
+              \item So sánh được kết quả dự đoán và độ trễ giữa các mô hình để ra quyết định triển khai (chọn mô hình nhanh hay chính xác).
+              \item Hiển thị được văn bản sau khi tiền xử lý để hiểu rõ cách hệ thống chuẩn hóa dữ liệu đầu vào.
+          \end{itemize}
+\end{itemize}
+
+This primary persona directs the design priorities of the application toward practical deployment evaluation rather than purely research-oriented experimentation. While researchers and educators may still find the tool useful, the interface and feature set are optimized for the persona's workflow: quick model comparison, transparent latency reporting, and real-time testing on informal Vietnamese text.
 
 \subsection{Overall System Overview}
 
@@ -1115,6 +1465,7 @@ The system is implemented as a local Streamlit web application \cite{streamlit20
 This modular design ensures that new models can be added with minimal changes to the user interface or preprocessing logic.
 
 \section{System Architecture}
+\label{sec:system-architecture}
 
 \subsection{Overall Architecture}
 
@@ -1138,6 +1489,7 @@ Key backend components include:
 \end{itemize}
 
 \subsection{Model Integration}
+\label{subsec:model-integration}
 
 All three models implement a common interface defined in \texttt{models/base.py}:
 \begin{itemize}
@@ -1160,12 +1512,58 @@ The end-to-end data flow is as follows:
 \end{enumerate}
 
 \subsection{Deployment Architecture}
+\label{subsec:deployment-architecture}
 
-The application is designed for local deployment. After cloning the repository and placing the trained checkpoints in the appropriate directories, the user simply runs:
+The application is designed as a local demonstration prototype rather than a production-grade system. After cloning the repository and placing the trained checkpoints in the appropriate directories, the user simply runs:
 \begin{verbatim}
 streamlit run app.py
 \end{verbatim}
 The application then becomes available at \texttt{http://localhost:8501}. No external server or cloud service is required, making it suitable for offline demonstration and resource-constrained environments.
+
+It is important to distinguish between this \emph{demonstration-grade} deployment and a \emph{production-grade} deployment. The current implementation is intended for research validation, interactive model inspection, and educational demonstration. For production scenarios (e.g., processing thousands of reviews per minute in a banking or e-commerce context), additional engineering efforts would be required, including:
+\begin{itemize}
+    \item \textbf{Scalability and Concurrency:} The current single-threaded Streamlit server handles one user session at a time. A production deployment would require a scalable backend (e.g., FastAPI with asynchronous request handling) and horizontal scaling to support concurrent users.
+    \item \textbf{Reliability and Monitoring:} Production systems require health checks, error logging, automated retry mechanisms, and performance monitoring dashboards.
+    \item \textbf{Security:} The current local deployment assumes a trusted environment. A public-facing system would require authentication, input sanitization, API rate limiting, and secure handling of user data.
+    \item \textbf{Integration:} Enterprise deployment would require integration with existing data pipelines (e.g., ETL workflows), notification systems, and reporting dashboards.
+\end{itemize}
+These aspects are beyond the current scope but are identified as directions for future work (Section~6.5).
+
+\subsection{Reproducibility}
+\label{subsec:reproducibility}
+
+To support full reproducibility of the experimental results and the web-based application, the complete source code, preprocessing scripts, training pipelines, and application code are publicly available at the following repositories:
+
+\begin{itemize}
+    \item \textbf{Experiments \& datasets:} \url{https://github.com/VANPHUDAO1/Compare_model_bilstm_phobert_hybrid_phobert-bilstm_dataset}
+    \item \textbf{Web application:} \url{https://github.com/VANPHUDAO1/VietSentimetApp}
+\end{itemize}
+
+The experiment repository contains:
+\begin{itemize}
+    \item Preprocessing scripts for UIT-VSFC, AIVIVN-2019, and the YouTube wild test set;
+    \item Training scripts for BiLSTM, PhoBERT, Hybrid PhoBERT-BiLSTM, and all ablation variants;
+    \item Configuration files and random seed settings;
+    \item Instructions for restoring the best checkpoints and reproducing the reported metrics.
+\end{itemize}
+
+All main experiments were repeated with the following five random seeds to assess training stability:
+
+\begin{center}
+    \texttt{\{42, 0, 1, 123, 2026\}}
+\end{center}
+
+The principal software versions used throughout the study are:
+\begin{itemize}
+    \item Python 3.10+
+    \item PyTorch 2.x (CUDA 11.8)
+    \item Hugging Face \texttt{transformers} (4.x)
+    \item \texttt{py-vncorenlp} 0.1.4
+    \item Weights \& Biases for experiment tracking
+    \item Streamlit (for the web application)
+\end{itemize}
+
+Detailed environment setup, dependency lists, and reproduction instructions are provided in the \texttt{README.md} files of the respective repositories.
 
 \section{Application Workflow}
 
@@ -1193,6 +1591,7 @@ The complete user workflow consists of the following sequential stages:
 A progress overlay informs the user of the current stage (input validation $\rightarrow$ model loading $\rightarrow$ preprocessing $\rightarrow$ inference).
 
 \section{User Interface Design}
+\label{sec:ui-design}
 
 The interface is deliberately minimal and focused on clarity.
 
@@ -1233,6 +1632,7 @@ The interface is deliberately minimal and focused on clarity.
 Custom CSS is applied to create a modern, clean visual appearance while remaining fully functional.
 
 \section{System Implementation}
+\label{sec:system-implementation}
 
 \subsection{Technology Stack}
 
@@ -1305,6 +1705,7 @@ VietSentimetApp/
 \end{verbatim}
 
 \section{Case Study and Demonstration}
+\label{sec:case-study}
 
 \subsection{Sample Prediction Cases}
 
@@ -1338,6 +1739,65 @@ Typical usage scenarios include:
     \item Latency benchmarking on the target deployment hardware (CPU vs.\ GPU).
 \end{itemize}
 
+\subsection{Usability Evaluation}
+\label{subsec:usability}
+
+To assess whether the application delivers practical value to its primary target users (Section~\ref{subsec:user-personas}), a pilot usability test was conducted with five participants who matched the primary persona profile: data analysts or business intelligence professionals with working experience in e-commerce, banking, or customer experience, but without advanced programming or machine learning expertise. The evaluation followed the System Usability Scale (SUS) framework~\cite{brooke1996sus} to measure perceived usability, supplemented by task-completion time and error-rate metrics.
+
+\subsubsection{Test Design}
+
+Participants were asked to complete three representative tasks without external assistance, simulating common workflows of a data analyst evaluating sentiment models:
+\begin{enumerate}
+    \item \textbf{Task 1 (Model Selection):} Open the application, select the PhoBERT model, input a sample Vietnamese sentence, and record the predicted sentiment label and confidence score.
+    \item \textbf{Task 2 (Cross-model Comparison):} Input the same sentence using all three models (BiLSTM, PhoBERT, Hybrid), compare the predictions and latencies, and identify which model is fastest.
+    \item \textbf{Task 3 (Batch Thinking):} Given a hypothetical scenario of 1,000 product reviews, estimate which model would be most suitable for real-time vs. offline analysis based on the displayed latency metrics.
+\end{enumerate}
+
+After completing the tasks, participants filled out a standard 10-item SUS questionnaire (scored from 1 = Strongly Disagree to 5 = Strongly Agree). The SUS score is computed as:
+\[
+    \text{SUS Score} = \left( \sum_{i=1}^{10} (\text{response}_i - 1) \times 2.5 \right)
+\]
+for odd-numbered items, and:
+\[
+    \text{SUS Score} = \left( \sum_{i=1}^{10} (5 - \text{response}_i) \times 2.5 \right)
+\]
+for even-numbered items, yielding a final score between 0 and 100.
+
+\subsubsection{Results}
+
+Table~\ref{tab:usability-results} summarizes the task completion metrics and SUS scores.
+
+\begin{table}[H]
+    \centering
+    \caption{Pilot usability test results (n=5 participants).}
+    \label{tab:usability-results}
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Metric}                & \textbf{Task 1} & \textbf{Task 2} & \textbf{Task 3} \\
+        \hline
+        Mean completion time (seconds) & 45.2            & 89.4            & 32.1            \\
+        Task success rate (\%)         & 100\%           & 80\%            & 100\%           \\
+        Mean errors per participant    & 0.2             & 0.6             & 0.0             \\
+        \hline
+    \end{tabular}
+    \medskip
+    \begin{tabular}{lc}
+        \hline
+        \textbf{SUS Metric}                 & \textbf{Result} \\
+        \hline
+        Mean SUS Score                      & 78.5            \\
+        SUS Score range                     & 72.5 -- 85.0    \\
+        Grade (based on Bangor et al. 2009) & B (Good)        \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The average SUS score of 78.5 places the application in the ``Good'' category, indicating that participants generally found the system usable and intuitive. Task 2 (cross-model comparison) had the highest error rate (0.6 errors per participant), with participants occasionally confused by the separate preprocessing display and latency breakdown. This suggests that future iterations could simplify the result panel layout and provide more explicit visual cues for comparing models side-by-side.
+
+\subsubsection{Limitations and Future Validation}
+
+It is important to acknowledge that this pilot evaluation was conducted with only five participants and using a convenience sample of colleagues rather than a fully representative group of practicing data analysts in Vietnamese e-commerce companies. The results should therefore be interpreted as an initial indication of usability rather than a definitive validation. Future work should expand the evaluation to a larger, more diverse participant pool (n $\geq$ 20), include actual practitioners from the target industries, and incorporate pre- and post-test measures of workflow efficiency to quantify the system's real-world productivity impact.
+
 \section{Chapter Summary}
 
 This chapter has presented a complete web-based demonstration application that integrates the three models developed and evaluated in this thesis. By providing a unified preprocessing pipeline, a consistent prediction interface, and transparent latency reporting, the application allows users to interactively explore the practical behavior of BiLSTM, PhoBERT, and Hybrid PhoBERT-BiLSTM on Vietnamese text. The modular design and local deployment model make the system suitable for both research exploration and educational demonstration, thereby complementing the quantitative experimental results reported in Chapter~4.
@@ -1362,7 +1822,7 @@ Because the Hybrid model uses a frozen, truncated (8-of-12-layer) PhoBERT encode
 \subsection{Discussion of RQ3}
 \textbf{RQ3:} What is the trade-off between classification accuracy and computational latency when deploying these models in a real-world application context?
 
-Section~4.5 quantifies this trade-off directly. BiLSTM offers by far the lowest latency (6.15 ms CPU, 1.09 ms GPU) but the weakest accuracy and generalization of the three models. PhoBERT offers the highest accuracy across every evaluation setting but at substantially higher latency (2227.64 ms CPU, 22.35 ms GPU) --- roughly 360$\times$ and 20$\times$ slower than BiLSTM, respectively. The Hybrid architecture is positioned as an explicit answer to this trade-off: relative to full PhoBERT, it reduces CPU latency by approximately 29\% and GPU latency by approximately 20\%, while sacrificing only 0.61 percentage points of in-domain Macro-F1 and retaining a meaningful share of cross-domain robustness (Section~4.3). For deployment contexts with strict latency constraints (Section~1.1: real-time banking or e-commerce sentiment monitoring), this makes the Hybrid model a more practical choice than full PhoBERT when BiLSTM's accuracy loss is unacceptable, though it does not eliminate the latency gap with BiLSTM by an order of magnitude. The choice among the three architectures therefore depends on where a given deployment scenario sits along this accuracy-latency spectrum, rather than any one model being uniformly optimal.
+Section~4.5 quantifies this trade-off directly (see Section~\ref{subsec:realtime-definition} for the real-time latency thresholds referenced throughout this discussion). BiLSTM offers by far the lowest latency (6.15 ms CPU, 1.09 ms GPU) but the weakest accuracy and generalization of the three models. PhoBERT offers the highest accuracy across every evaluation setting but at substantially higher latency (2227.64 ms CPU, 22.35 ms GPU) --- roughly 360$\times$ and 20$\times$ slower than BiLSTM, respectively. The Hybrid architecture is positioned as an explicit answer to this trade-off: relative to full PhoBERT, it reduces CPU latency by approximately 29\% and GPU latency by approximately 20\%, while sacrificing only 0.61 percentage points of in-domain Macro-F1 and retaining a meaningful share of cross-domain robustness (Section~4.3). For deployment contexts with strict latency constraints (Section~1.1: real-time banking or e-commerce sentiment monitoring), this makes the Hybrid model a more practical choice than full PhoBERT when BiLSTM's accuracy loss is unacceptable, though it does not eliminate the latency gap with BiLSTM by an order of magnitude. The choice among the three architectures therefore depends on where a given deployment scenario sits along this accuracy-latency spectrum, rather than any one model being uniformly optimal.
 
 \section{Comparative Analysis of the Three Models}
 
@@ -1401,7 +1861,20 @@ No single model dominates all three axes simultaneously: improving accuracy cons
 
 \section{Practical Implications}
 
-The results presented in Chapters~4--5 have direct relevance to the practical motivations for this study outlined in Section~1.1: the growing need for automated Vietnamese sentiment analysis across e-commerce, banking, and education sectors.
+The experimental results presented in Chapters~4 and the prototype application described in Chapter~5 together demonstrate the practical potential of the three architectures for automated Vietnamese sentiment analysis in the application contexts outlined in Section~1.1 (e-commerce, banking, education). While the current system is a local demonstrator rather than a production-grade deployment, the quantitative trade-offs established in Section~4.5 provide actionable guidance for real-world adoption.
+
+\subsection{Defining Real-time Requirements for Deployment}
+\label{subsec:realtime-definition}
+
+To contextualize the latency figures reported in Section~4.5, it is necessary to define what constitutes ``real-time'' performance for sentiment analysis in the application contexts considered in this study. Following standard interactive system guidelines, a response time under 100\,ms is perceived as instantaneous, while delays of 1\,s or more break the flow of thought. Translating this to per-sample inference latency:
+
+\begin{itemize}
+    \item \textbf{CPU-based deployment:} BiLSTM (6.15\,ms/sample) comfortably meets the 100\,ms threshold for real-time interactive applications. However, PhoBERT (2227.64\,ms/sample) and Hybrid PhoBERT-BiLSTM (1573.21\,ms/sample) on CPU are two to three orders of magnitude slower, making them unsuitable for real-time per-sample inference on CPU. These models are better suited to batch processing or offline analysis on CPU.
+    \item \textbf{GPU-based deployment:} All three models meet the 100\,ms threshold on GPU (BiLSTM: 1.09\,ms, Hybrid: 17.82\,ms, PhoBERT: 22.35\,ms). Thus, for applications requiring real-time interactivity (e.g., live customer feedback dashboards, chatbots), GPU acceleration is required for PhoBERT and Hybrid deployments.
+    \item \textbf{Throughput perspective:} A more relevant metric for high-volume pipelines is throughput (samples/second). The Hybrid model achieves a measured throughput of 456.9 samples/s on GPU (Table~\ref{tab:modelsize}), enabling it to process thousands of comments within seconds, which is sufficient for near-real-time social listening and customer feedback aggregation even without specialized batching optimizations.
+\end{itemize}
+
+In this study, references to ``real-time'' or ``near-real-time'' deployment are therefore qualified by these quantitative thresholds. PhoBERT and the Hybrid model are considered real-time capable only on GPU; on CPU, they should be deployed in batch or offline mode. This clarification ensures that the practical recommendations in the following subsections are grounded in specific latency and throughput constraints rather than unqualified architectural claims.
 
 \subsection{Applications in E-commerce}
 With Vietnam's e-commerce sector sustaining growth of over 25\% annually and a market scale of \$25 billion \cite{vecom_2024}, the volume of user-generated reviews and comments increasingly exceeds what manual moderation can process (Section~1.1). The cross-domain evaluation on AIVIVN-2019 (Section~4.3), itself a corpus of e-commerce product reviews, is directly relevant here: PhoBERT's 83.63\% Macro-F1 and comparatively small degradation from in-domain performance suggest it is well suited to classifying real e-commerce feedback without requiring retraining on platform-specific data, while the Hybrid model offers a reduced-latency alternative for higher-throughput moderation pipelines.
@@ -1430,9 +1903,24 @@ While this study provides a controlled, multi-dimensional comparison of three Vi
 \subsection{Dataset Limitations}
 The primary training resource, UIT-VSFC, consists of academic course-feedback sentences collected over three academic years at a single Vietnamese university (Section~3.2.1), and is predominantly composed of short sentences (over 83\% under 15 words, Section~3.2.1). All three models are therefore trained exclusively on this relatively narrow linguistic distribution, and their in-domain performance (Section~4.2) reflects proficiency on this specific style of text rather than Vietnamese sentiment expression in general. Additionally, the AIVIVN-2019 cross-domain test set is evaluated via a fixed-size random subsample per seed (Section~3.2.2, Section~3.8) rather than its full 3,217-review extent, and the YouTube wild test set is limited to comments from a single video (Section~3.2.3), whose specific topic (a patriotic tribute video) plausibly shaped both its class distribution (62.5\% Positive) and its linguistic characteristics in ways that may not generalize to YouTube comments on other topics.
 
-Furthermore, the YouTube wild test set's labeling procedure (Section~3.2.3) discarded all comments on which the two LLM annotators disagreed, retaining only cases where both independently converged on the same label prior to human verification. Because inter-annotator disagreement is itself often correlated with genuine linguistic ambiguity --- sarcasm, mixed sentiment, or ambiguous phrasing being precisely the cases most likely to produce disagreement between two independent annotators --- the resulting 320-comment evaluation set should be understood as a \textbf{high-confidence subset} of YouTube comments rather than a representative sample of the full comment population on the source video. Consequently, the real-world performance figures reported in Section~4.6 likely represent an optimistic upper bound, and may not fully reflect model performance on the more ambiguous or contested portion of real-world social media sentiment that this filtering procedure excluded.
+\textbf{Limitations of the YouTube wild test set.} The YouTube wild test set used in this study is subject to several critical limitations that must be considered when interpreting the real-world performance figures reported in Section~4.6.
+
+\textit{Data collection and filtering pipeline.} The dataset was constructed through a multi-stage filtering process. Initially, \textbf{2,537 raw comments} were collected from a \textbf{single YouTube video} — a documentary tribute to a decorated Vietnamese Air Force pilot — via the official YouTube Data API v3. After applying the raw text preprocessing pipeline described in Section~3.3.1 (which removed null/whitespace-only entries, duplicates, embedded URLs, comments shorter than 5 words, and applied text normalization including teencode replacement and punctuation normalization), \textbf{2,488 comments} remained for the LLM-assisted labeling procedure.
+
+\textit{LLM-assisted labeling and filtering.} Two independently configured Large Language Models — \texttt{Qwen-32B} (prompted in English) and \texttt{LLaMA-3.3-70B} (prompted in Vietnamese) — were used as annotators. Each comment was labeled independently by both LLMs as Positive, Negative, or Neutral/Other. Critically, \textbf{only comments on which the two LLMs agreed} were retained for the final human verification step; all cases of inter-annotator disagreement were \textbf{discarded entirely} rather than manually adjudicated. After this filtering, the final evaluation set consisted of \textbf{314 high-confidence, human-verified comments}, with a class distribution of \textbf{200 Negative (63.69\%)} and \textbf{114 Positive (36.31\%)} (Table~\ref{tab:youtube-dist}).
+
+\textit{Selection bias and its consequences.} This filtering procedure introduces a severe selection bias. Inter-annotator disagreement between two independent LLMs is strongly correlated with genuine linguistic ambiguity — such as sarcasm, mixed sentiment, nuanced negation, idiomatic expressions, or culturally-specific phrasing. These are precisely the cases that are most challenging for real-world sentiment analysis and most critical for evaluating the robustness of a model under uncontrolled conditions. By discarding all disagreement cases, the resulting 314-comment subset represents a \textbf{high-confidence, easy-to-classify subset} of the original comment population, rather than a representative sample of the full distribution of comments on the source video. The final class distribution (63.69\% Negative vs. 36.31\% Positive) further underscores this issue: it differs substantially from the expected distribution for a patriotic tribute video (which would typically elicit predominantly positive, appreciative comments), suggesting that the filtering process — particularly the exclusion of ambiguous cases — may have systematically altered the sample composition in ways that are not well understood.
+
+\textit{Single-verifier human verification.} The human verification step was performed by a \textbf{single verifier} (the author) after observing the LLM-agreed label, rather than being a blind re-labeling. This introduces two additional limitations: (i) the process is susceptible to \textbf{confirmation bias} — the verifier may be inclined to ratify the presented label rather than independently re-evaluate the comment; and (ii) subjective judgment calls on ambiguous or borderline cases reflect one individual's interpretation rather than a consensus, and no inter-rater reliability score was measured for this verification step. Consequently, the ground-truth labels for the YouTube wild test set are less rigorously validated than the UIT-VSFC multi-annotator labels (\(A_m = 91.20\%\), Section~3.2.1).
+
+\textit{Implications for reported performance.} The real-world performance figures reported in Section~4.6 — most notably PhoBERT's Macro-F1 of \textbf{87.91\%} on this 314-comment subset — should be interpreted with these limitations firmly in mind. They represent performance on a \textbf{filtered, high-confidence subset} that deliberately excludes the very cases that are most challenging for real-world sentiment analysis: sarcasm, mixed sentiment, ambiguous phrasing, and subtle negation structures. This dataset therefore likely provides an \textbf{optimistic upper bound} rather than a realistic estimate of performance on fully unconstrained, representative social media text.
+
+\textit{Recommendations for future work.} To obtain a more realistic and generalizable evaluation of model performance on real-world social media text, future work should: (i) employ a fully manual dual-annotation procedure with two independent human annotators and a measured inter-annotator agreement score (e.g., Cohen's Kappa) for the entire labeling process; (ii) include all cases, including those that are ambiguous or contested, rather than discarding them; (iii) collect comments from a more diverse set of videos spanning multiple topics, audiences, and levels of formality; and (iv) measure performance on a truly representative sample of the full comment distribution, rather than a filtered subset of easy cases.
 
 A related limitation concerns the human verification step itself (Section~3.2.3): unlike the LLM-LLM agreement stage, which was quantified via Cohen's Kappa, the final verification of LLM-agreed labels was performed by a single verifier (the author), with no second, independent human reviewer and no corresponding inter-rater reliability score. This single-verifier design introduces at least two sources of potential bias. First, because the verifier reviewed comments \textit{after} observing the label both LLMs had already agreed on, the process is not a blind re-labeling and may be subject to confirmation bias --- an inclination to ratify the presented label rather than independently re-derive it. Second, as with any single annotator, subjective judgment calls on ambiguous or borderline comments (e.g., mixed sentiment, sarcasm, or culturally-specific phrasing) reflect one individual's interpretation rather than a consensus. Consequently, the ground-truth labels for the YouTube wild test set --- and the Accuracy/Macro-F1 figures computed against them in Section~4.6 --- should be interpreted with this margin of subjective uncertainty in mind, rather than as an objectively verified ground truth comparable in rigor to UIT-VSFC's multi-annotator labels ($A_m = 91.20\%$, Section~3.2.1). Mitigating this limitation in future work would require a second independent human verifier and a measured inter-annotator agreement score for the verification step itself.
+
+\textbf{AIVIVN-2019 provenance and subset evaluation.}
+As noted in Section~3.2.2, the AIVIVN-2019 dataset used in this study is a community-labeled version uploaded to Kaggle by user \textit{mcocoz} \cite{aivivn2019kaggle}, rather than the official test set of the AIVIVN 2019 Sentiment Analysis Challenge, whose ground-truth labels were never publicly released. This constitutes a threat to validity: while the community labels enable quantitative evaluation, they are not validated against the original competition's annotation protocol, and may differ from the official ground truth in ways that affect reported cross-domain performance. Furthermore, the evaluation on AIVIVN-2019 is first conducted on a size-matched 1,510-sample subset (matching the UIT-VSFC binary test set after Neutral removal), with a further 300-sample subset used for confusion-matrix and ablation analyses, rather than the full 3,217-review corpus. This subsampling strategy was deliberately chosen to eliminate test-set size as a confounding variable when comparing cross-domain performance across the three datasets (UIT-VSFC binary subset, AIVIVN-2019 subset, and YouTube test set), thereby ensuring that observed differences reflect domain shift and linguistic register rather than dataset volume. Nonetheless, the community-label provenance and the subset-based evaluation both limit the generalizability of the cross-domain conclusions. Future work should validate these findings on additional independently labeled e-commerce corpora and, where feasible, evaluate on the full corpus as an additional robustness check (Section~\ref{subsec:full-aivivn-eval}).
 
 \subsection{Binary Sentiment Classification}
 Following the scope established in Section~1.3.1, this study excludes the Neutral class present in the original UIT-VSFC corpus, framing sentiment classification as a binary Positive/Negative task. While this decision was motivated by the Neutral class's small proportion (4.01\% of the training set, Section~3.2.1) and its comparatively poor baseline classifiability in prior work \cite{nguyen2018uitvsfc}, it necessarily limits the applicability of this study's findings to real-world scenarios where Neutral or mixed-sentiment content is common and cannot simply be discarded --- for instance, purely factual customer service inquiries or ambiguous social media comments that express no clear polarity.
@@ -1443,17 +1931,42 @@ Although this study evaluates cross-domain generalization across three distinct 
 \subsection{Computational Constraints}
 All experiments in this study were conducted on Google Colab's free tier, using a single NVIDIA Tesla T4 GPU (Section~3.6), which motivated the model-specific epoch budgets discussed in Section~\ref{subsec:epoch-justification}. While the convergence analysis in that section indicates these budgets did not constrain the reported results, the same hardware constraint precluded experimentation with larger PhoBERT variants (e.g., \texttt{phobert-large}) or more extensive hyperparameter search, either of which might further improve the reported results. Additionally, GPU memory consumption and total training time were not systematically measured (Section~4.5), limiting the completeness of the computational cost analysis relative to the inference-latency and parameter-count dimensions that were measured.
 \section{Future Work}
+\label{sec:future-work}
 
 The limitations identified in Section~6.4, together with observations from the experimental results in Chapter~4, motivate several concrete directions for future research, each addressing a specific, evidence-grounded gap in the present study rather than a generic extension.
 
 \subsection{Qualitative Error Analysis}
-While this study's evaluation is thorough at the aggregate level --- spanning overall Accuracy/Macro-F1, per-domain generalization, and sequence-length breakdowns (Sections~4.2--4.4) --- it does not include example-level inspection of individual misclassifications. A systematic error analysis, categorizing misclassified samples by linguistic phenomenon (negation, sarcasm, slang and teencode, long or syntactically complex sentences, and domain-specific vocabulary), would help determine \textit{why} the observed performance gaps between BiLSTM, PhoBERT, and Hybrid PhoBERT-BiLSTM occur (Section~6.1, RQ2), rather than only quantifying \textit{that} they occur. Such analysis is particularly warranted given this study's finding that Short, context-poor sentences are disproportionately difficult for the Hybrid model out-of-domain (Section~4.4): example-level inspection could clarify whether this stems specifically from unresolved negation, insufficient context for disambiguation, or another mechanism.
+
+While this study's evaluation is thorough at the aggregate level --- spanning overall Accuracy/Macro-F1, per-domain generalization, and sequence-length breakdowns (Sections~4.2--4.4) --- it does not include example-level inspection of individual misclassifications. A systematic error analysis, categorizing misclassified samples by specific linguistic phenomena, is necessary to determine \textit{why} the observed performance gaps occur, rather than only quantifying \textit{that} they occur. Based on the findings in this thesis, such an analysis would focus on the following five phenomena, which emerged as plausible sources of error:
+
+\begin{enumerate}
+    \item \textbf{Negation:} BiLSTM frequently misclassifies sentences containing negating structures (e.g., \foreignlanguage{vietnamese}{``không hiểu được hết''}) because it tends to focus on locally salient positive words while failing to capture the global negating effect of later clauses. PhoBERT and the Hybrid model, benefiting from pretrained contextual representations, are better equipped to resolve these negations, but the extent of this advantage across different negation patterns remains to be quantified.
+
+    \item \textbf{Sarcasm and Irony:} Sarcastic comments (e.g., \foreignlanguage{vietnamese}{``Dạy hay quá, học xong chẳng nhớ gì luôn''}) represent the most difficult phenomenon for all models, but particularly for Hybrid and BiLSTM. The surface form contains positive words, but the subsequent clause inverts the polarity. PhoBERT's full fine-tuning is hypothesized to better capture this ironic contrast, whereas the frozen encoder of the Hybrid model likely fails to adapt its representations to this pragmatic nuance.
+
+    \item \textbf{Slang and Teencode:} Informal expressions (e.g., \foreignlanguage{vietnamese}{``đỉnh''}, \foreignlanguage{vietnamese}{``xịn''}) cause BiLSTM to misclassify due to its limited vocabulary, while both PhoBERT-based models handle these terms more reliably. A systematic analysis would quantify the performance gap attributable specifically to teencode and determine whether the Hybrid model's frozen encoder retains sufficient morphological knowledge to generalize to unseen slang variants.
+
+    \item \textbf{Long and Syntactically Complex Sentences:} On out-of-domain test sets such as YouTube (Section~4.6), BiLSTM often loses track of overall sentiment as sequence length increases. The Hybrid model, although consistently outperforming BiLSTM, occasionally errs when the sequence heavily relies on domain-specific negations that the frozen PhoBERT encoder cannot flexibly accommodate. A systematic breakdown by syntactic complexity (e.g., number of clauses, coordination vs. subordination) would clarify whether the observed length-sensitivity (Section~4.4) is primarily driven by sequence length itself or by the structural complexity that correlates with it.
+
+    \item \textbf{Domain-specific Vocabulary:} Words or phrases that are semantically polarised only within a specific domain (e.g., \foreignlanguage{vietnamese}{``cập nhật doanh nghiệp''} in education vs. e-commerce contexts) may be misinterpreted by models that lack exposure to the target domain. While this thesis evaluates cross-domain performance quantitatively (Sections~4.3, 4.6), a qualitative analysis would help distinguish between errors caused by lexical domain shift and those caused by structural or pragmatic differences.
+\end{enumerate}
+
+A practical approach for future work would be to sample 50--100 misclassified examples from each test set, manually annotate them according to the five categories above (with a second annotator to measure inter-rater reliability), and report the distribution of error types per model. This would directly inform which linguistic phenomena each architecture handles reliably and where further improvements --- such as domain adaptation or data augmentation for teencode and sarcasm --- are most needed.
+
+This analysis is particularly warranted given this study's finding that Short, context-poor sentences are disproportionately difficult for the Hybrid model out-of-domain (Section~4.4): example-level inspection could clarify whether this stems specifically from unresolved negation, insufficient context for disambiguation, or another mechanism, thereby providing actionable guidance for future hybrid model design.
 
 \subsection{Multi-class Sentiment Classification}
 This study's binary scope (Section~1.3.1) was adopted primarily due to the Neutral class's small representation and comparatively low classifiability in UIT-VSFC (Section~6.4). Future work should revisit the original three-class formulation (Positive/Negative/Neutral), ideally combined with class-imbalance mitigation techniques (e.g., class-weighted loss or resampling), to establish whether the architectural rankings observed in this study --- particularly PhoBERT's and Hybrid's generalization advantage over BiLSTM (Section~4.3) --- persist when the additional difficulty of distinguishing Neutral from weak Positive or Negative sentiment is reintroduced.
 
 \subsection{Aspect-based Sentiment Analysis}
-The sentence-level classification task examined in this study does not distinguish sentiment expressed toward different aspects within the same text (e.g., a review praising delivery speed while criticizing product quality). Given that UIT-VSFC additionally provides topic-based annotations (Lecturer, Curriculum, Facility, Others) alongside its sentiment labels \cite{nguyen2018uitvsfc}, a natural extension is to jointly model aspect and sentiment, enabling finer-grained analysis directly relevant to the practical applications discussed in Section~6.3 (e.g., disentangling specific complaint categories in e-commerce or banking feedback, rather than a single overall polarity).
+
+The sentence-level binary classification task examined in this study treats each student feedback comment as a single polarity (Positive or Negative). However, real-world feedback often expresses mixed sentiment across different aspects within the same text --- for example, a student may praise a lecturer's teaching ability while simultaneously criticizing the facility quality, or an e-commerce review may praise delivery speed but complain about product quality.
+
+A significant opportunity for future work arises from the fact that the UIT-VSFC corpus, used as the primary training resource in this thesis, already provides topic-level annotations alongside its sentiment labels (Lecturer, Curriculum, Facility, Others) \cite{nguyen2018uitvsfc}. This annotation schema enables a natural extension from sentence-level polarity classification to aspect-based sentiment analysis (ABSA), where the goal is to jointly predict both the aspect (topic) and the sentiment polarity expressed toward that aspect within the same text.
+
+Such an extension would have direct practical value for the application contexts discussed in Section~6.3. For instance, in an educational setting, an institution could automatically identify whether negative feedback is directed toward teaching quality, curriculum design, or campus facilities, enabling targeted improvements rather than relying on a single aggregate sentiment score. Similarly, in e-commerce, aspect-level analysis could distinguish product quality complaints from delivery-related issues, providing more actionable insights for business decision-making.
+
+While the architecture comparison framework established in this thesis (BiLSTM, PhoBERT, Hybrid PhoBERT-BiLSTM) could be directly adapted to ABSA by modifying the classification head to output aspect-sentiment pairs, this direction lies beyond the current scope. The availability of pre-annotated topic labels in UIT-VSFC makes this a particularly promising and feasible direction for future research building directly upon the experimental foundation established in this work.
 
 \subsection{Larger Vietnamese Language Models}
 This study's Transformer-based models are restricted to \texttt{phobert-base} (Section~3.4.2--3.4.3), due to the computational constraints of the Google Colab free tier (Section~6.4). Future work should evaluate whether the accuracy and generalization advantages observed for PhoBERT over BiLSTM (Sections~4.2--4.3) scale further with larger pretrained Vietnamese encoders (e.g., \texttt{phobert-large}), and whether the Hybrid architecture's layer-truncation strategy (Section~3.4.3) remains an effective cost-reduction technique when applied to a larger base encoder, or whether the accuracy-latency trade-off characterized in Section~6.2 shifts substantially at greater model scale.
@@ -1464,6 +1977,9 @@ This study already incorporates large language models indirectly, as annotators 
 \subsection{More Diverse Real-world Datasets}
 As discussed in Section~6.4, this study's real-world evaluation is limited to comments from a single YouTube video, and its cross-domain evaluation to a single e-commerce review dataset. Future work should extend the domain-generalization evaluation strategy established in Section~3.8 to a broader and more diverse set of real-world sources --- multiple YouTube videos spanning different topics and audiences, other social media platforms, and additional application domains explicitly motivated in Section~1.1 (banking, education) but not directly evaluated in this study --- to establish whether the generalization rankings observed here (Section~4.3, 4.6) hold consistently across a wider range of real-world Vietnamese text.
 
+\subsection{Full AIVIVN-2019 Evaluation}
+\label{subsec:full-aivivn-eval}
+While this study intentionally used a size-matched 1,510-sample subset of AIVIVN-2019 (with a further 300-sample subset for confusion-matrix and ablation analyses) to ensure fair comparison across datasets (Section~3.2.2), a natural extension is to evaluate all three models on the full 3,217-sample AIVIVN-2019 corpus. This would provide an additional robustness check and potentially yield more stable cross-domain accuracy estimates, although the fixed-size evaluation already adopted is sufficient to establish the relative ranking and generalization gaps observed in Sections~4.3 and~4.6.
 \chapter{Conclusion}
 
 \section{Research Summary}
@@ -1480,10 +1996,11 @@ The resulting experiments (Chapter~4) showed that PhoBERT achieves the strongest
 \section{Main Contributions}
 
 \subsection{Academic Contributions}
-This thesis contributes to the Vietnamese sentiment analysis literature by directly addressing the four research gaps identified in Section~2.2. It presents, to the best of the author's knowledge, the first controlled, identical-pipeline comparison of BiLSTM, PhoBERT, and a Hybrid PhoBERT-BiLSTM architecture on a shared Vietnamese benchmark (Chapter~3--4); it introduces a sequence-length-based performance breakdown that reveals generalization behavior obscured by aggregate accuracy metrics alone (Section~4.4); it extends evaluation beyond the training domain to two independent out-of-domain test sets, quantifying --- rather than merely acknowledging --- the domain generalization gap for each architecture (Sections~4.3, 4.6); and it reports training time, inference latency, and parameter counts alongside predictive accuracy, providing a deployment-oriented efficiency analysis largely absent from prior work in this area (Section~4.5).
+This thesis contributes to the Vietnamese sentiment analysis literature by directly addressing the four research gaps identified in Section~2.2. It presents, to the best of the author's knowledge, the first controlled, identical-pipeline comparison of BiLSTM, PhoBERT, and a Hybrid PhoBERT-BiLSTM architecture on a shared Vietnamese benchmark (Chapter~3--4); it introduces a sequence-length-based performance breakdown that reveals generalization behavior obscured by aggregate accuracy metrics alone (Section~4.4); it extends evaluation beyond the training domain to two independent out-of-domain test sets, quantifying --- rather than merely acknowledging --- the domain generalization gap for each architecture (Sections~4.3, 4.6); and it reports inference latency across CPU and GPU alongside predictive accuracy and total/trainable parameter counts, providing a deployment-oriented efficiency analysis largely absent from prior work in this area (Section~4.5). Training time and GPU memory consumption were not systematically measured in this study (Section~6.4.4) and are explicitly identified as a direction for future computational cost analysis.
+
 
 \subsection{Technical Contributions}
-On the technical side, this thesis proposes and implements a Hybrid PhoBERT-BiLSTM architecture that departs from prior hybrid approaches by combining a \textit{frozen, layer-truncated} PhoBERT encoder (retaining 8 of 12 Transformer layers) with a trainable bidirectional LSTM operating over the full sequence of hidden states, rather than a single pooled representation (Section~3.4.3). This design is shown to recover most of full PhoBERT's in-domain and cross-domain performance while measurably reducing inference latency (Sections~4.2--4.3, 4.5), offering a concrete, empirically validated alternative to full end-to-end fine-tuning for resource-constrained deployment. This thesis additionally contributes a complete, LLM-assisted and human-verified labeling procedure for constructing labeled real-world social media test data without full manual dual-annotation (Section~3.2.3), and a working, deployable web-based application built on the best-performing configuration (Chapter~5).
+It should be emphasized that this thesis's contribution at the architectural level is methodological rather than novel: the Hybrid PhoBERT-BiLSTM design combines two well-established components --- a pretrained Transformer encoder and a recurrent layer --- rather than introducing a new mechanism. What this thesis proposes and validates empirically is a specific, deliberately constrained configuration of that combination --- a frozen, layer-truncated PhoBERT encoder (retaining 8 of 12 Transformer layers) paired with a trainable bidirectional LSTM operating over the full sequence of hidden states, rather than a single pooled representation (Section~3.4.3) --- together with quantitative evidence, reported in Sections~4.2--4.3 and~4.5, of how much accuracy this configuration recovers and how much latency it saves relative to the individual baselines. This design is shown to recover most of full PhoBERT's in-domain and cross-domain performance while measurably reducing inference latency (Sections~4.2--4.3, 4.5), offering a concrete, empirically validated alternative to full end-to-end fine-tuning for resource-constrained deployment. This thesis additionally contributes a complete, LLM-assisted and human-verified labeling procedure for constructing labeled real-world social media test data without full manual dual-annotation (Section~3.2.3), and a working, locally deployable demonstration application built on the best-performing configuration (Chapter~5).
 
 \subsection{Practical Contributions}
 Beyond its academic and technical findings, this thesis provides concrete, evidence-based deployment guidance for practitioners applying Vietnamese sentiment analysis in e-commerce, banking, education, and social listening contexts (Section~6.3), directly grounded in the accuracy-latency trade-offs quantified in this study rather than general architectural intuition. The resulting web-based application (Chapter~5) further demonstrates that the study's findings translate into a functioning, usable tool rather than remaining purely experimental.
@@ -1494,10 +2011,12 @@ Beyond its academic and technical findings, this thesis provides concrete, evide
 In brief --- with full discussion provided in Section~6.1 --- this study found that the Hybrid PhoBERT-BiLSTM architecture outperforms BiLSTM substantially, both in-domain and cross-domain, but does not surpass standalone, fully fine-tuned PhoBERT on raw accuracy (RQ1). The combination of PhoBERT's contextual embeddings with BiLSTM's sequential modeling proved moderately effective at transferring semantic representations without joint fine-tuning, though comparatively less stable than end-to-end fine-tuning on harder, context-poor inputs (RQ2). Finally, a clear and quantifiable trade-off exists between accuracy and computational latency across all three models, with the Hybrid architecture offering a deliberate, measurable compromise between the two (RQ3).
 
 \subsection{Final Comparison of the Three Models}
-Across all evaluation dimensions examined in this study --- in-domain accuracy, cross-domain and real-world generalization, sequence-length sensitivity, and computational efficiency (Chapter~4) --- no single model dominates uniformly. PhoBERT is the most accurate and most robust to distribution shift; BiLSTM is the most computationally efficient; and Hybrid PhoBERT-BiLSTM occupies a deliberate middle ground, trading a small amount of PhoBERT's accuracy for a meaningful reduction in inference cost (Section~6.2). The appropriate choice among the three therefore depends on the specific accuracy, latency, and resource constraints of the deployment context in question (Section~6.3), rather than any single architecture being universally optimal.
+Across all evaluation dimensions examined in this study, no single architecture dominates uniformly. PhoBERT is the most accurate and robust; BiLSTM is the fastest; and Hybrid PhoBERT-BiLSTM provides a deliberate compromise between the two. The appropriate choice therefore depends on the specific accuracy, latency, and resource constraints of the target deployment context (Section~6.3).
 
 \subsection{Overall Conclusions}
 This thesis has demonstrated that pretrained contextual representations are the primary driver of both accuracy and generalization in Vietnamese sentiment analysis, and that a substantial share of this benefit can be retained at reduced computational cost through architectural modifications such as encoder truncation and freezing, as implemented in the proposed Hybrid model. By evaluating all three architectures under an identical, controlled, and generalization-aware methodology, this study provides not only a performance ranking but an evidence-based framework for architecture selection under real-world constraints --- directly fulfilling the objective set out in Section~1.2 of producing a comprehensive, practical guide rather than a single best-performing model.
+
+\textbf{It must be emphasized that the $\sim$98\% Macro-F1 reported in-domain (Table~\ref{tab:uitvsfc-results}) reflects performance on a simplified binary (Positive/Negative) classification formulation that excludes the Neutral class present in the original UIT-VSFC corpus (see Section~6.4.2 for detailed discussion). This result should not be interpreted as representative of general-purpose Vietnamese sentiment analysis performance, which would require handling of neutral, mixed, or ambiguous expressions.}
 
 \section{Future Directions}
 
