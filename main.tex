@@ -1194,6 +1194,18 @@ To isolate the contribution of each design choice in the Hybrid PhoBERT-BiLSTM a
             \hline
         \end{tabular}%
     }
+    \smallskip
+
+    \begin{minipage}{\textwidth}
+        \footnotesize
+        \emph{Note:} The H0/A5 checkpoint size (414.8\,MB) differs slightly from the
+        Hybrid PhoBERT-BiLSTM checkpoint size reported in Table~\ref{tab:modelsize}
+        (416\,MB) for the same architecture. This discrepancy arises because the
+        ablation checkpoints were saved from independent training runs using a
+        different serialization routine than the main experiments, which additionally
+        stored optimizer/scheduler state alongside the model weights; both figures
+        reflect the same underlying architecture and parameter count.
+    \end{minipage}
 \end{table}
 
 \paragraph{Effect of the BiLSTM layer.}
@@ -1929,7 +1941,7 @@ Following the scope established in Section~1.3.1, this study excludes the Neutra
 Although this study evaluates cross-domain generalization across three distinct sources (UIT-VSFC, AIVIVN-2019, and YouTube comments), all three remain within a broadly similar register of consumer- or citizen-generated Vietnamese text. Domains explicitly motivated in Section~1.1 --- such as banking customer service transcripts or e-learning platform feedback --- are not directly evaluated, and the practical implications discussed in Section~6.3 for these domains are therefore extrapolated from related, but not identical, evaluation settings rather than directly measured.
 
 \subsection{Computational Constraints}
-All experiments in this study were conducted on Google Colab's free tier, using a single NVIDIA Tesla T4 GPU (Section~3.6), which motivated the model-specific epoch budgets discussed in Section~\ref{subsec:epoch-justification}. While the convergence analysis in that section indicates these budgets did not constrain the reported results, the same hardware constraint precluded experimentation with larger PhoBERT variants (e.g., \texttt{phobert-large}) or more extensive hyperparameter search, either of which might further improve the reported results. Additionally, GPU memory consumption was not systematically measured, although total training time is reported in Table~\ref{tab:model-size-training-cost} (Section~4.5.2), limiting the completeness of the computational cost analysis relative to the inference-latency and parameter-count dimensions that were measured.
+All experiments in this study were conducted on Google Colab's free tier, using a single NVIDIA Tesla T4 GPU (Section~3.6), which motivated the model-specific epoch budgets discussed in Section~\ref{subsec:epoch-justification}. While the convergence analysis in that section indicates these budgets did not constrain the reported results, the same hardware constraint precluded experimentation with larger PhoBERT variants (e.g., \texttt{phobert-large}) or more extensive hyperparameter search, either of which might further improve the reported results. Additionally, GPU memory consumption was not systematically measured, although total training time is reported in Table~\ref{tab:modelsize} (Section~4.5.2), limiting the completeness of the computational cost analysis relative to the inference-latency and parameter-count dimensions that were measured.
 \section{Future Work}
 \label{sec:future-work}
 
